@@ -1,0 +1,48 @@
+{{#if isDone}}
+
+    <div class="col-sm-6 col-md-5 card-div-h">
+        <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module sridhara disabled w-100 card-custom-h d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module">
+            <div id="{{name}}TitleCard" class="games-box-title sridhara">{{name}}</div>
+            <div class="games-box-caption">
+                <div class="platform-body">{{letter}}</div>
+            </div>
+        </a>
+    </div>
+
+
+{{else}}
+
+    <div class="col-sm-6 col-md-5 card-div-h">
+        <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module bhaskara w-100 card-custom-h d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module">
+            <div id="{{name}}TitleCard" class="games-box-title bhaskara">{{name}}</div>
+            <div class="games-box-caption">
+                <div class="platform-body">{{letter}}</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="modal fade" id="{{name}}Module" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title text-center">{{name}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <div class="col-1">
+                            {{letter}}
+                        </div>
+                        <div class="col-2 form-check form-switch p-0 d-flex justify-content-center">
+                            <input class="form-check-input ms-0" style="height: 25px; width: 50px" type="checkbox" id="{{name}}Switch" onchange="switchChangeMain(this.checked, this.id)">
+                        </div>
+                        <div class="col-1">
+                            {{letter}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/if}}
+

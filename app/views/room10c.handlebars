@@ -1,0 +1,479 @@
+
+<div class="container-fluid height-mobile-100">
+    <div class="row text-center mx-0 height-mobile-100" id="boxAll">
+
+        <div class="col-12 col-lg-8 height-mobile-100">
+
+            <div class="row text-center height-mobile-75">
+
+                 <div class="col-12 col-lg-8 btn btn-omega border border-custom {{className}} p-0 position-relative overflow-hidden">
+
+{{!--                     <div class="position-absolute" style="left: 1%; top: 1%; z-index: 10">
+
+                        {{#if isDone}}
+                            <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                            <label class="btn btn-outline-success" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                            <label class="btn btn-outline-success" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                        {{else}}
+                            <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                            <label class="btn btn-outline-danger" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                            <label class="btn btn-outline-danger" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                        {{/if}}
+
+                    </div> --}}
+
+                    {{#if isDone}}
+
+                        {{#if finalC}}
+
+                            <div class="position-absolute" style="left: 1%; top: 1%; z-index: 10">
+                                <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                                <label class="btn btn-outline-light" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                                <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                                <label class="btn btn-outline-light" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                            </div>
+
+                            <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#omegaModuleDone">
+                                <div class="games-box-title">
+                                    <img id="gifOmega" src="/system10/assets/omegaC.gif" width="100%">
+                                    <img id="imgOmega" class="d-none" src="/system10/assets/omegaC.png" width="100%">
+                                </div>
+                                <div class="games-box-caption">
+                                    <div class="platform-body {{className}}">
+                                        <div class="mb-2 h5 font-xirod">MÓDULO PRINCIPAL</div>
+                                        <div class="h1"><span class="h2 font-xirod">ÔMEGA</span> (Ω)</div>
+                                        <div class="h2 font-xirod m-0">DESLIGADO</div>
+                                    </div>
+                                </div>
+                            </a> 
+
+
+
+                        {{else}}
+                            <div class="position-absolute" style="left: 1%; top: 1%; z-index: 10">
+                                <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                                <label class="btn btn-outline-success" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                                <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                                <label class="btn btn-outline-success" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                            </div>
+
+                            <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#omegaModuleDone">
+                                <div class="games-box-title">
+                                    <img id="gifOmega" src="/system10/assets/omegaG.gif" width="100%">
+                                    <img id="imgOmega" class="d-none" src="/system10/assets/omegaG.png" width="100%">
+                                </div>
+                                <div class="games-box-caption">
+                                    <div class="platform-body {{className}}">
+                                        <div class="mb-2 h5 font-xirod">MÓDULO PRINCIPAL</div>
+                                        <div class="h1"><span class="h2 font-xirod">ÔMEGA</span> (Ω)</div>
+                                        <div class="h2 font-xirod m-0">OPERANTE</div>
+                                    </div>
+                                </div>
+                            </a> 
+
+                        {{/if}}
+
+
+                    {{else}}
+
+                        {{#if isFinal}}
+
+                            <div class="position-absolute" style="left: 1%; top: 1%; z-index: 10">
+                                <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                                <label class="btn btn-outline-warning" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                                <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                                <label class="btn btn-outline-warning" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                            </div>
+
+                            <a id="omegaTagA" role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#omegaModule">
+                                <div class="games-box-title">
+                                    <img id="gifOmega" src="/system10/assets/omegaO.gif" width="100%">
+                                    <img id="imgOmega" class="d-none" src="/system10/assets/omegaO.png" width="100%">
+                                </div>
+                                <div class="games-box-caption">
+                                    <div class="platform-body" style="text-shadow: 0 0 10px #ffae00;">
+                                        <div class="mb-2 h5 font-xirod">MÓDULO PRINCIPAL</div>
+                                        <div class="h1 m-0"><span class="h2 m-0 font-xirod">ÔMEGA</span> (Ω)</div>
+                                    </div>
+                                </div>
+                            </a> 
+
+                        {{else}}
+                            <div class="position-absolute" style="left: 1%; top: 1%; z-index: 10">
+                                <input type="checkbox" class="btn-check" id="btn-check-back" onclick="staticBack(this.checked)">
+                                <label class="btn btn-outline-danger" for="btn-check-back"><i class="fas fa-ban"></i></label>
+
+                                <input type="checkbox" class="btn-check" id="btn-check-audio" onclick="playAmbient(this.checked)">
+                                <label class="btn btn-outline-danger" for="btn-check-audio"><i class="fas fa-play"></i></label>
+                            </div>
+
+                            <a class="games-box w-100 h-100 d-flex justify-content-center align-items-center" style="cursor: default;">
+                                <div class="games-box-title">
+                                    <img id="gifOmega" src="/system10/assets/omega.gif" width="100%">
+                                    <img id="imgOmega" class="d-none" src="/system10/assets/omega.png" width="100%">
+                                </div>
+                                <div class="games-box-caption">
+                                    <div class="platform-body {{className}}">
+                                        <div class="mb-2 h5 font-xirod">MÓDULO PRINCIPAL</div>
+                                        <div class="mb-2 h1"><span class="h2 font-xirod">ÔMEGA</span> (Ω)</div>
+                                        <div class="h2 m-0 font-xirod">INDISPONÍVEL</div>
+
+                                    </div>
+                                </div>
+                            </a> 
+
+                        {{/if}}
+
+                    {{/if}}
+
+
+
+                </div>
+
+                <div class="col-12 col-lg-4 border border-custom {{className}}" >
+
+                    <div class="row justify-content-center align-items-center text-center height-mobile-100 py-3 overflow-auto">
+
+                        {{#if isFinal}}
+
+                            <div class="col-sm-12">
+                                <h5>UNIDADE CENTRAL DE PROCESSOS</h5>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h6 class="text-white-75">NOME:</h6>
+                                <h6>EULER</h6>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h6 class="text-white-75">T:</h6>
+                                <h6 id="finalTime">{{finalTime}}</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">CLASSE OPER.:</h6>
+                                <h6>HIGH>>X+++</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">PROPRIEDADE:</h6>
+                                <h6>EXPOENTE</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">PROG-N:</h6>
+                                <h6>{{userName}}-{{groupNum}}</h6>
+                            </div>
+
+                            {{#if isDone}}
+
+                                {{#if finalC}}
+
+                                    <div class="col-sm-12">
+                                        <h6 class="text-white-75">STATUS:</h6>
+                                        <h6 class="text-light shadow-dark">DESLIGADO</h6>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <h6 class="text-light shadow-dark">TODOS OS MÓDULOS DESLIGADOS</h6>
+                                    </div>
+
+                                {{else}}
+
+                                    <div class="col-sm-12">
+                                        <h6 class="text-white-75">STATUS:</h6>
+                                        <h6 class="text-success shadow-dark">OPERANTE</h6>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <h6 class="text-success shadow-dark">TODOS OS MÓDULOS FUNCIONANDO</h6>
+                                    </div>
+
+                                {{/if}}
+
+
+
+                            {{else}}
+
+                                <div class="col-sm-12">
+                                    <h6 class="text-white-75">STATUS:</h6>
+                                    <h6 class="text-warning shadow-dark">CRÍTICO</h6>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <h6 class="text-warning shadow-dark">MÓDULO PRINCIPAL LIBERADO</h6>
+                                </div>
+
+                            {{/if}}
+
+                        {{else}}
+
+                            <div class="col-sm-12">
+                                <h5>U̴͚̐͆N̵͈͓͍̩̓̏IDÁ̸͎̻D̷̨̪͕̳̄̚̕Ë̷̥́͝͝ ̵̢̣̣̰͊̾C̴͙̽̂̌E̸͉͙̺͋͜N̸̡̬̋TR̸̞̐A̶̜̘̓̏͒L ̷͕̾̒͗͐D̶̼̤̥̀͗̊͝E̸̦͙̓̅̉̽ ̶̢̛͈͑P̶̳̜͍̐R̴͇̉̉OCË̷̯̩́S̶̬̹̅̈̑͘͜S̶̠͍̬̾̄̂͘O̴̟͚̍̀S</h5>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h6 class="text-white-75">NoM̸͖̗͖̐͝ͅe:</h6>
+                                <h6>Ē̵͈̱͙̞Ṷ̴̓̌̍͝L̸̳̔͛͝E̵̞̖̾̍R̴̩͎̤̲̍</h6>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <h6 class="text-white-75">T̴̥̺̊̚:</h6>
+                                <h6 id="finalTime">{{finalTime}}</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">ClaS̸̟̞̈̀S̴̙͍̜̓͐̚e O̴̲̜̺̐̕P̸͔̈Ë̴̦̟̮Ŕ̵̬:</h6>
+                                <h6>H̵̠̥̥̠͆́̒Í̵̳̎Ģ̶͈͙͈̽H̸̢̨̧̜͛͗̏̇>̵͔̫̙̀̈́͑̽>̵̨̩̠̬͆͌̽X̴̝̰͋̽++̵̘̻̃̈́͑+̸͚̳̩̓̃̒͝</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">PropȒ̵̰̤͓̲̈́̊Ḯ̸̬̞͆͆̀ͅE̷̖̣̹̼͛͗dade:</h6>
+                                <h6>ExpO̷̢̥̚enT̵͎͉̗̏̚e</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">P̷̢̬̫̀̅͒̾ͅR̷̡̦͓͉̬̟͕̤͔̀̅͒͒Ǒ̸̡̙̦̺̰̙̲̈́́̽͌͆̚ͅG̷̝̅́̽̎-̶̜̦̤̘͔̼̙̳̼̎̍̏̃̅̚͝N̸̹̙̲̾̀̍̋͗̏̋͠</h6>
+                                <h6>{{userName}}Ȓ̷̼̱͚E̸͕̥̿̂͠-{{groupNum}}</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-white-75">S̷͓͇̺͘taT̸̨͌ͅU̸̡͓͋̔͝s:</h6>
+                                <h6 class="text-danger shadow-dark">InoP̴̡̢̼̈́̎̅͑É̵͎̲̾̃ran%̷̩͛́͝!̶̢̳̠̌́̔͘!̵̞̬͎̭͊̂e̸̗̔e̸͉͑̐̅ ̸̢̛͕̀#̷̙̞͔̗̌̂̽E̶̺̅ŗ̷̣̰̐r̵̭͆̓_̸̤̃̃̐͝@̶̪̲̀͋͆͐</h6>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6 class="text-danger shadow-dark">A̷̼͖͉̬͒͐̌̚͠LǴ̴̨̢̘͖͉̓͐̑͝U̵̩͚̳̬͍̐̈́̈́N̴̡̥̱̩͑͆̓͝S móḐ̴͍̥̏͊̆̓͜U̸̱͐̈͊̐L̸̯̘̀͒os estão aP̵̻͚͑̄͂͜Ṙ̵̤̮̳͖̍̃̑esenT̴̛̰̙̜̀̆anD̶̖̞̺͔̊̓̃͘O̴͓̍̒ probE̴̻͉͌̿M̴͓̲͈̲̀as</h6>
+                            </div>
+
+                        {{/if}}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row text-center height-mobile-25">
+
+                <div class="col-6 col-sm-3 btn btn-omega border border-custom {{className}} p-0 overflow-hidden">
+                
+                    <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center py-3" data-bs-toggle="modal" data-bs-target="#file1Modal">
+                        <div class="games-box-title">
+                            <img src="/system10/assets/file1.png" width="60%">
+                        </div>
+                        <div class="games-box-caption">
+                            <div class="platform-body {{className}}">
+                                <div class="h5 font-xirod">Arquivo</div>
+                                <div class="h1 m-0">#1</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                {{> system10/files/file1}}
+
+                <div class="col-6 col-sm-3 btn btn-omega border border-custom {{className}} p-0 overflow-hidden">
+                
+                    <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center py-3" data-bs-toggle="modal" data-bs-target="#file2Modal">
+                        <div class="games-box-title">
+                            <img src="/system10/assets/file2.png" width="60%">
+                        </div>
+                        <div class="games-box-caption">
+                            <div class="platform-body {{className}}">
+                                <div class="h5 font-xirod">Arquivo</div>
+                                <div class="h1 m-0">#2</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                {{> system10/files/file2}}
+
+                <div class="col-6 col-sm-3 btn btn-omega border border-custom {{className}} p-0 overflow-hidden">
+                
+                    <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center py-3" data-bs-toggle="modal" data-bs-target="#file3Modal">
+                        <div class="games-box-title">
+                            <img src="/system10/assets/file3.png" width="60%">
+                        </div>
+                        <div class="games-box-caption">
+                            <div class="platform-body {{className}}">
+                                <div class="h5 font-xirod">Arquivo</div>
+                                <div class="h1 m-0">#3</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                {{> system10/files/file3}}
+
+
+                <div class="col-6 col-sm-3 btn btn-omega border border-custom {{className}} p-0 overflow-hidden">
+                    <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center py-3" data-bs-toggle="modal" data-bs-target="#file4Modal">
+
+                        <div class="games-box-title">
+                            <img src="/system10/assets/file4.png" width="60%">
+                        </div>
+                        <div class="games-box-caption">
+                            <div class="platform-body {{className}}">
+                                <div class="h5 font-xirod">Arquivo</div>
+                                <div class="h1 m-0">#4</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                {{> system10/files/file4}}
+
+
+            </div>
+
+        </div>
+
+        <div class=" col-12 col-lg-4 border border-custom {{className}} h-100">
+
+            <div class="row justify-content-center align-items-center text-center h-100 overflow-auto">
+
+
+                <h3 class="my-2">MÓDULOS ({{nModules}})</h3>
+
+                {{#if deltaModule}}
+                    {{> system10/modules/deltaModule deltaModule}}
+                {{/if}}
+
+                {{#each modules}}
+                    {{> system10/allModules this}}
+                {{/each}}
+
+                {{> system10/modules/omegaModule omegaModuleContent}}
+
+                {{> system10/modules/omegaModuleDone contentFinal}}
+
+{{!--                 {{> system10/allModules modules.beta }}
+                {{> system10/allModules modules.zeta }}
+                {{> system10/allModules modules.epsilon }}
+                {{> system10/allModules modules.mi }}
+                {{> system10/allModules modules.sigma }}
+                {{> system10/allModules modules.lambda }}
+                {{> system10/allModules modules.kappa }} 
+                {{> system10/allModules modules.alfa }}
+                {{> system10/allModules modules.psi }} --}}
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<input class="d-none" id="code88" value="{{code88}}">
+<input class="d-none" id="modulesDone" value="{{modulesDone}}">
+<input class="d-none" id="phase" value="{{phase}}">
+<input class="d-none" id="omegaPhase" value="{{omegaPhase}}">
+<input class="d-none" id="namePerson" value="{{userName}}">
+<input class="d-none" id="isFinal" value="{{isFinal}}">
+<input class="d-none" id="isDone" value="{{isDone}}">
+
+
+
+<script src="/js/jquery-3.6.0.min.js"></script>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script src="/system10/js/scripts.js"></script>
+
+<script src="/system10/js/modules/alfa.js"></script>
+<script src="/system10/js/modules/kappa.js"></script>
+<script src="/system10/js/modules/gama.js"></script>
+<script src="/system10/js/modules/mi.js"></script>
+<script src="/system10/js/modules/sigma.js"></script>
+<script src="/system10/js/modules/psi.js"></script>
+<script src="/system10/js/modules/beta.js"></script>
+<script src="/system10/js/modules/lambda.js"></script>
+<script src="/system10/js/modules/delta.js"></script>
+<script src="/system10/js/modules/omega.js"></script>
+
+
+
+
+
+{{!-- 
+                <div class="position-absolute myRecomends" style="right: 1%; top: 1%">
+
+                    <input type="checkbox" class="btn-check" id="btn-check-back" autocomplete="off" onclick="staticBack(this.checked)">
+                    <label class="btn btn-outline-danger" for="btn-check-back"><i class="fas fa-ban"></i></label><br>
+
+                </div>
+
+                <div style="height: 10%;" class="d-flex justify-content-center align-items-center">
+                    <a role="button" data-bs-toggle="modal" data-bs-target="#infoCPU">
+                        <h3 class="title-main {{className}}">Unidade Central de Processamento</h3>
+                    </a>
+                </div>
+
+                <div class="row justify-content-center align-items-center" style="height: 85%;">
+
+                    {{#if phaseOne}}
+                        {{> system10/mainModules modules.omega }}
+                        {{> system10/mainModules modules.delta }}
+
+                        <div class="w-100"></div>
+                    {{/if}}
+
+                    {{> system10/allModules modules.mi }}
+                    {{> system10/allModules modules.zeta }}
+                    {{> system10/allModules modules.beta }}
+
+                    <div class="w-100"></div>
+
+                    {{> system10/allModules modules.sigma }}
+                    {{> system10/allModules modules.epsilon }}
+
+                    <div class="w-100"></div>
+
+                    {{> system10/allModules modules.alfa }}
+                    {{> system10/allModules modules.psi }}
+                    {{> system10/allModules modules.lambda }}
+
+                    <div class="w-100"></div>
+
+                    {{> system10/allModules modules.gama }}
+                    {{> system10/allModules modules.kappa }} 
+
+
+                </div> --}}
+
+{{!-- 
+===Ambiente
+    Bio Unit - Deep
+    Pariah - Twix Glitch
+    Bio Unit - Heaven
+    Bio Unit - Jazz Terminal
+    Bio Unit - Noir
+    Bio Unit - Parameter
+
+===Botões
+    ambient.wav
+    click-electronic-13.wav
+    click-minimal-ui-sounds.wav
+    enchantment-track-loop.mp3
+    entering.wav
+    exit-sound.wav
+    ui-correct-button2.wav
+    ui-menu-exit-resume.wav
+ --}}
+
+

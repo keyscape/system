@@ -1,0 +1,334 @@
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../assets/fonts/Merriweather-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../assets/fonts/Merriweather-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../assets/fonts/Merriweather-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../assets/fonts/Merriweather-Black.ttf');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Merriweather Sans';
+    src: url('../assets/fonts/Merriweather-Sans.ttf');
+}
+
+:root {
+    scroll-behavior: auto;
+    --bs-font-sans-serif: 'Merriweather Sans', system-ui, -apple-system,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+        'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --bs-font-monospace: 'Merriweather', SFMono-Regular, Menlo, Monaco, Consolas,
+        'Liberation Mono', 'Courier New', monospace;
+}
+
+body {
+    font-family: var(--bs-font-monospace);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: var(--bs-font-sans-serif);
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, #292929ce 0%, #292929ce 100%),
+        url('../assets/img/bg-masthead.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100vh;
+}
+
+header.masthead h1 {
+    font-size: 2.25rem;
+}
+
+#mainNav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+    font-family: var(--bs-font-sans-serif);
+    font-weight: 700;
+    color: #212529;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: #292d31;
+    font-family: var(--bs-font-sans-serif);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active {
+    color: #7f868b;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active {
+    color: #7f868b !important;
+}
+
+.page-section {
+    padding: 4rem 0;
+}
+
+.page-section h2.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#team img {
+    width: 14rem;
+    height: 14rem;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+}
+
+#rooms .container-fluid {
+    max-width: 1920px;
+}
+#rooms .container-fluid .rooms-box {
+    position: relative;
+    display: block;
+}
+#rooms .container-fluid .rooms-box .rooms-box-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    background: #292929ce;
+    transition: opacity 0.25s ease;
+    text-align: center;
+}
+
+#rooms .container-fluid .rooms-box .rooms-box-caption .project-category {
+    font-family: var(--bs-font-sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+#rooms .container-fluid .rooms-box .rooms-box-caption .project-name {
+    font-size: 1.2rem;
+}
+#rooms .container-fluid .rooms-box:hover .rooms-box-caption {
+    opacity: 1;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #ffffff;
+}
+
+hr.light {
+    border-color: #fff;
+}
+
+hr.dark {
+    border-color: #000;
+}
+
+.btn-round {
+    height: 2.5rem;
+    width: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 100%;
+}
+
+.btn-round-lg {
+    height: 4.5rem;
+    width: 4.5rem;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-lighter {
+    font-weight: lighter !important;
+}
+
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font-weight-bolder {
+    font-weight: bolder !important;
+}
+
+.text-black {
+    color: rgba(0, 0, 0) !important;
+}
+
+.text-black-75 {
+    color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.text-gray {
+    color: #7c7c7c !important;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.bg-black {
+    background-color: #000000 !important;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+    }
+
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+
+    header.masthead h1 {
+        font-size: 3rem;
+    }
+
+    #mainNav {
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    #mainNav .navbar-brand {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #mainNav .navbar-brand:hover {
+        color: #fff;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 1rem;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color: #fff;
+    }
+
+    #mainNav .navbar-nav .nav-item:last-child .nav-link {
+        padding-right: 0;
+    }
+
+    #mainNav.navbar-scrolled {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand {
+        color: #000000;
+    }
+
+    #mainNav.navbar-scrolled .navbar-brand:hover {
+        color: #7f868b;
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+        color: #000000;
+    }
+
+    #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+        color: #7f868b;
+    }
+}
+
+.modal .modal-dialog .modal-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-close {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-x-lg' viewBox='0 0 16 16'><path d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/></svg>");
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Scrollbar Custom */
+/* width */
+::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

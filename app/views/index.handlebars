@@ -1,0 +1,371 @@
+<!-- Navigation-->
+<nav class='navbar navbar-expand-lg navbar-light fixed-top' id='mainNav'>
+	<div class='container'>
+		<a class='navbar-brand' href='#pageTop' id='pageTop' role='button'>
+			<img href='#pageTop' src='/assets/img/logos/keyscape_sq.png' alt='logo' width='25' height='25' class='d-inline-block align-text-top me-1'>
+			<span href='#pageTop'>Keyscape</span>
+		</a>
+
+		<button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarResponsive'>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+
+		<div class='collapse navbar-collapse' id='navbarResponsive'>
+			<ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+				<li class='nav-item'>
+					<a class='nav-link' href='#about'>Sobre</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#rooms'>Salas</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#events'>Eventos</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#team'>Equipe</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#program'>Programa</a>
+				</li>
+				<li class='nav-item'>
+					<a class='nav-link' href='#contact'>Contato</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- Masthead-->
+<header class='masthead'>
+	<div class='container h-100'>
+		<div class='row h-100 align-items-center justify-content-center text-center'>
+			<div class='col-lg-10 align-self-end'>
+				<h1 class='text-uppercase text-white font-weight-bold'>
+					Keyscape
+				</h1>
+				<hr class='divider my-4 mx-auto'>
+			</div>
+			<div class='col-lg-8 align-self-baseline'>
+				<p class='text-white-75 font-weight-light mb-5'>
+					{{#if config.0.isSite}}
+						O <i>Escape Room</i> como forma de desenvolvimento de habilidades
+					{{else}}
+						Se você estiver <i>10conectado</i>, dê uma olhada na seção de Contato
+					{{/if}}
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+
+<!-- About-->
+<section class='page-section bg-black' id='about'>
+	<div class='container'>
+		<div class='row justify-content-center' style='padding-bottom: 20px'>
+			<div class='col-lg-8 text-center'>
+				<h2 class='text-white mt-0 section-heading'>
+					O que é um <i>Escape Room</i>?
+				</h2>
+				<hr class='divider light my-4 mx-auto'>
+				<p class='text-gray mb-4'>
+					O <i>Escape Room</i> é uma sala no qual um grupo de participantes precisa desvendar algum mistério, num tempo pré-determinado, através da resolução de quebra-cabeças. Estes quebra-cabeças são de diversos tipos, e estão espalhados pela sala, misturados com outros itens que fazem parte da história criada para um determinado evento.
+				</p>
+			</div>
+		</div>
+
+		<div class='row justify-content-center' style='padding-top: 20px'>
+			<div class='col-lg-8 text-center'>
+				<h2 class='text-white mt-0 section-heading'>
+					Quem somos nós?
+				</h2>
+				<hr class='divider light my-4 mx-auto'>
+				<p class='text-gray mb-4'>
+					O projeto faz a criação e apresentação de <i>Escape Rooms</i>, e é desenvolvido por alunos e professores da Universidade Tecnológica Federal do Paraná (UTFPR), câmpus Cornélio Procópio.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='rooms'>
+	<div class='container-fluid p-0'>
+		<div class='row mx-0'>
+			{{#each rooms}}
+				{{> cardRoom this }}
+				{{> modalRoom this }}
+			{{/each}}
+		</div>
+	</div>
+</section>
+
+<!-- Next Events-->
+<section class='page-section' id='events'>
+	<div class='container'>
+		<h2 class='text-center text-dark section-heading'>
+			Eventos
+		</h2>
+		<hr class='divider dark my-4 mx-auto'>
+		<div class='row justify-content-center'>
+
+			{{#each events}}
+				{{> cardEvent this }}
+			{{else}}
+				<div class='col-lg-6 col-md-8 text-center'>
+					<h2 class='text-uppercase text-gray'>
+						Não há eventos programados.
+					</h2>
+				</div>
+			{{/each}}
+
+		</div>
+	</div>
+</section>
+
+<!-- Team-->
+<section class='page-section bg-light' id='team'>
+	<div class='container'>
+		<div class='text-center'>
+			<h2 class='text-dark section-heading'>
+				Equipe
+			</h2>
+			<hr class='divider dark my-4 mx-auto'>
+		</div>
+
+		<div class='row justify-content-center'>
+			<div class='col-12 col-lg-10 col-xl-8'>
+				<div class='row justify-content-center'>
+					{{#each team}}
+						<div class='col-sm-{{../config.0.nRows.sm}} col-md-{{../config.0.nRows.md}} col-lg-{{../config.0.nRows.lg}}'>
+							{{> cardTeam this }}
+						</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Program-->
+<section class='page-section' id='program'>
+	<div class='container'>
+		<div class='row justify-content-center mb-3'>
+			<div class='col-lg-9 col-sm-9 text-center'>
+				<h2 class='text-dark section-heading'>
+					Programa
+				</h2>
+				<hr class='divider dark my-4 mx-auto'>
+				<p class='text-gray'>
+					O <b>LUDICO</b> - Laboratório Universitário de Desenvolvimento de Inteligências e Cognições, 
+					é um programa de extensão da Universidade Tecnológica Federal do Paraná (UTFPR), tendo como 
+					objetivo desenvolver capacidades de aprendizagem nos participantes, melhorando também sua 
+					aptidão em raciocínio lógico, análise crítica de ações e de pontos de vista, organização e 
+					em relações interpessoais.<br>O programa tem como vertente três projetos de extensão.
+				</p>
+			</div>
+		</div>
+
+		<div class='row justify-content-center'>
+			<div class='col-sm-4 col-lg-3 text-center mb-4 mb-lg-0'>
+				<img height='200px' src='/assets/img/logos/logo_bd.png'>
+				<p class='text-gray mt-3 h5'>
+					<b>Board Games</b>
+				</p>
+			</div>
+			<div class='col-sm-4 col-lg-3 text-center mb-4 mb-lg-0'>
+				<img height='200px' src='/assets/img/logos/logo_escape.png'>
+				<p class='text-gray mt-3 h5'>
+					<b>Escape Room</b>
+				</p>
+			</div>
+			<div class='col-sm-4 col-lg-3 text-center mb-4 mb-lg-0'>
+				<img height='200px' src='/assets/img/logos/logo_rpg.png'>
+				<p class='text-gray mt-3 h5'>
+					<b>RPG</b>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Contact-->
+<section class='page-section bg-black' id='contact'>
+	<div class='container'>
+		<div class='row justify-content-center'>
+			<div class='col-lg-8 col-sm-6 text-center mb-4'>
+				<h2 class='text-white section-heading'>
+					Contato
+				</h2>
+				<hr class='divider my-4 mx-auto'>
+				<p class='text-gray'>
+					Caso tenha alguma dúvida, entre em contato com algum integrante da equipe, 
+					ou mande uma mensagem através das nossas redes sociais abaixo.
+				</p>
+			</div>
+		</div>
+		<div class='row justify-content-center'>
+			{{#each contact}}
+				{{> cardContact this }}
+			{{/each}}
+		</div>
+	</div>
+</section>
+
+<!-- Footer-->
+<footer class='bg-light py-5'>
+	<div class='container'>
+		{{#unless config.0.isSite}}
+			<div class='text-center pb-4'>
+				<div class='text-dark'>
+					Saibam e estejam avisados, este projeto de Escape Room, que faz parte do programa 
+					de extensão LUDICO, está mentindo para vocês, eles não são quem dizem ser.<br><br>
+					Estudos e pesquisas do MIT (Minha InTuição) indicam que as 
+					<span class="text-danger">redes sociais</span> do programa de extensão LUDICO 
+					(que podem ser encontradas logo acima, na 
+					<span class="text-danger">seção de Contato</span>) 
+					estão diretamente relacionadas com os illuminatis, o que foi comprovado pela rede 
+					de rádio e televisão VMC-TV (Vozes da Minha Cabeça - TV). Por isso, nós <b>Paralógicos</b>, 
+					do movimento 'Liberta Eu(ler)', hackeamos todas as redes sociais do LUDICO, e relacionamos as 
+					<span class="text-danger">formas geométricas</span> deixadas nas fazendas e sítios online do programa.<br><br>
+					Espero que entendam, não queremos o mal de Euler, queremos libertá-lo das garras da Expoente.<br><br>
+					Não sabemos por quanto tempo tudo ficará no ar, mas quando obtiverem as informações, 
+					parte da resposta estará neste link:</div><br><br>
+				
+				<a class="link-primary" target='_blank' href='https://keyscape.github.io/euclidesModule/'>
+					https://keyscape.github.io/euclidesModule/
+				</a>
+			</div>
+		{{/unless}}
+		<div class='small text-center text-dark'>
+			Copyright © 2021 - Lucas do Prado Pinto
+		</div>
+	</div>
+</footer>
+
+<!-- All Modals-->
+{{!-- <div id='allModals'></div> --}}
+
+<!-- Example Card Room-->
+{{! <div id="exampleCardRoom" class="col-lg-6 col-sm-6 px-0 d-none">
+	<a class="rooms-box cardRoomLink" role="button" data-bs-toggle="modal"
+		><img class="img-fluid cardRoomImage" alt="" />
+		<div class="rooms-box-caption">
+			<div class="project-category text-white-50 cardRoomCategory"></div>
+			<div class="project-name cardRoomName"></div></div
+	></a>
+</div> }}
+
+<!-- Example Modal Room-->
+{{! <div
+	class="modal fade"
+	id="exampleModalRoom"
+	tabindex="-1"
+	aria-labelledby="exampleModalLabel"
+	aria-hidden="true"
+>
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title modalRoomTitle"></h5>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="modal"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="modal-body">
+				<img class="modalRoomImage" width="100%" />
+				<p class="mt-2 modalRoomDescription"></p>
+			</div>
+		</div>
+	</div>
+</div> }}
+
+<!-- Example Card Event-->
+{{! <div
+	id="exempleCardEvent"
+	class="col-lg-4 col-md-12 mb-4 mb-lg-0 text-center d-none"
+>
+	<div>
+		<h2
+			class="section-heading text-black cardEventDate"
+			style="font-size: 4rem"
+		>
+			11/11
+		</h2>
+		<div>
+			<span class="text-dark h5">Local: </span>
+			<span class="text-gray h5 cardEventLocal">aaaa</span>
+		</div>
+		<div>
+			<span class="text-dark h5">Horário: </span>
+			<span class="text-gray h5 cardEventTime">13h</span>
+		</div>
+		<div>
+			<span class="text-dark h5">Sala: </span>
+			<span class="text-gray h5 cardEventRoom">quar</span>
+		</div>
+	</div>
+</div> }}
+
+<!-- Example Card Team-->
+{{! <div id="exampleCardTeam" class="d-none">
+	<div class="mb-5 text-center">
+		<img class="mx-auto rounded-circle cardTeamImage" />
+		<h5 class="mt-3 mb-0 cardTeamName"></h5>
+		<h6 class="text-black-75 mb-0 cardTeamRole"></h6>
+		<p class="mb-2" style="font-size: 0.8rem">
+			<a
+				class="link-secondary text-decoration-none cardTeamEmail"
+				data-bs-toggle="tooltip"
+				data-bs-html="true"
+				data-bs-placement="bottom"
+			></a>
+		</p>
+		<a class="btn btn-dark btn-round mx-2 cardTeamLattes" target="_blank"
+			><i class="fas fa-user"></i></a
+		><a class="btn btn-dark btn-round mx-2 cardTeamFb" target="_blank"
+			><i class="fab fa-facebook-f"></i></a
+		><a class="btn btn-dark btn-round mx-2 cardTeamLk" target="_blank"
+			><i class="fab fa-linkedin-in"></i
+		></a>
+	</div>
+</div> }}
+
+<!-- Example Card Program-->
+{{! <div
+	id="exampleCardProgram"
+	class="col-sm-4 col-lg-3 text-center mb-4 mb-lg-0 d-none"
+>
+	<img height="200px" class="cardProgramImage" />
+	<p class="text-gray mt-3 h5 cardProgramName"><b></b></p>
+</div> }}
+
+<!-- Example Card Contact-->
+{{! <div id="exampleCardContact" class="col-lg-2 text-center mb-4 mb-lg-0 d-none">
+	<a
+		class="btn btn-light btn-round btn-round-lg mb-2 cardContactLink"
+		target="_blank"
+	>
+		<i class="fa-3x cardContactLogo"></i>
+	</a>
+	<div>
+		<span class="text-light h6 cardContactName"></span>
+	</div>
+</div> }}
+
+<!-- jQuerry-->
+<script src='/js/jquery-3.6.0.min.js'></script>
+
+<!-- Bootstrap core JS-->
+<script src='/js/bootstrap.bundle.min.js'></script>
+
+<!-- Third party plugin JS-->
+<!-- All the Info-->
+{{!-- <script src='js/infos.json'></script>
+<script src='js/teste.js'></script> --}}
+<!-- <script src="js/infos.js"></script> -->
+<!--<script src="https://keyscape.github.io/keyscapeAPI/infos.js"></script>-->
+
+<!-- Core theme JS-->
+<script src='/js/scripts.js'></script>

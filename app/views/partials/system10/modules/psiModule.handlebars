@@ -1,0 +1,166 @@
+<div class="modal fade" id="{{name}}Module" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title text-center">{{name}}</h4>
+            </div>
+
+            {{#if isDone}}
+                <div id="{{name}}BodyDone" class="modal-body">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h4>Módulo Finalizado</h4>
+                    </div>
+                </div>
+            {{else}}
+                <div id="{{name}}BodyNot" class="modal-body">
+
+                    <div class="position-absolute" style="right: 1%; top: 1%; z-index: 10">
+                        <button class="btn btn-lg btn-outline-light" onclick="psiReset()">
+                            <i class="fas fa-redo-alt"></i>
+                        </button>
+                    </div>
+
+                    <div class="row justify-content-center text-center mx-0" style="font-size: 25px">
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-1" autocomplete="off" onchange="psiCheck(1)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-1" for="btn-check-psi-1">
+                                <img class="img-fluid" src="/system10/assets/kappa/lmosfet.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-2" autocomplete="off" onchange="psiCheck(2)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-2" for="btn-check-psi-2">
+                                <img class="img-fluid" src="/system10/assets/kappa/c.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/and.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-3" autocomplete="off" onchange="psiCheck(3)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-3" for="btn-check-psi-3">
+                                <img class="img-fluid" src="/system10/assets/kappa/ac.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/diode.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-4" autocomplete="off" onchange="psiCheck(4)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-4" for="btn-check-psi-4">
+                                <img class="img-fluid" src="/system10/assets/kappa/lnand.png">
+                            </label>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-5" autocomplete="off" onchange="psiCheck(5)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-5" for="btn-check-psi-5">
+                                <img class="img-fluid" src="/system10/assets/alfa/rrr.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-6" autocomplete="off" onchange="psiCheck(6)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-6" for="btn-check-psi-6">
+                                <img class="img-fluid" src="/system10/assets/alfa/sl.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/dc.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-7" autocomplete="off" onchange="psiCheck(7)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-7" for="btn-check-psi-7">
+                                <img class="img-fluid" src="/system10/assets/kappa/and.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/l.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-8" autocomplete="off" onchange="psiCheck(8)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-8" for="btn-check-psi-8">
+                                <img class="img-fluid" src="/system10/assets/kappa/lnot.png">
+                            </label>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-9" autocomplete="off" onchange="psiCheck(9)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-9" for="btn-check-psi-9">
+                                <img class="img-fluid" src="/system10/assets/kappa/diode.png">
+                                <img class="img-fluid" src="/system10/assets/alfa/suu.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-10" autocomplete="off" onchange="psiCheck(10)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-10" for="btn-check-psi-10">
+                                <img class="img-fluid" src="/system10/assets/kappa/l.png">
+                                <img class="img-fluid" src="/system10/assets/alfa/srr.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-11" autocomplete="off" onchange="psiCheck(11)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-11" for="btn-check-psi-11">
+                                <img class="img-fluid" src="/system10/assets/kappa/snand.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/nor.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-12" autocomplete="off" onchange="psiCheck(12)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-12" for="btn-check-psi-12">
+                                <img class="img-fluid" src="/system10/assets/kappa/lac.png">
+                            </label>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-13" autocomplete="off" onchange="psiCheck(13)" checked disabled>
+                            <label class="btn btn-outline-gama" id="label-check-psi-13" for="btn-check-psi-13">
+                                <img class="img-fluid" src="/system10/assets/alfa/rrr.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-14" autocomplete="off" onchange="psiCheck(14)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-14" for="btn-check-psi-14">
+                                <img class="img-fluid" src="/system10/assets/kappa/nor.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/not.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-15" autocomplete="off" onchange="psiCheck(15)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-15" for="btn-check-psi-15">
+                                <img class="img-fluid" src="/system10/assets/kappa/dc.png">
+                                <img class="img-fluid" src="/system10/assets/kappa/mosfet.png">
+                            </label>
+                        </div>
+
+                        <div class="col-2 ps-0 pe-0">
+                            <input type="checkbox" class="btn-check" id="btn-check-psi-16" autocomplete="off" onchange="psiCheck(16)">
+                            <label class="btn btn-outline-gama" id="label-check-psi-16" for="btn-check-psi-16">
+                                <img class="img-fluid" src="/system10/assets/kappa/lc.png">
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="{{name}}BodyDone" class="modal-body d-none">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h4>Módulo Finalizado</h4>
+                    </div>
+                </div>
+
+            {{/if}}
+        </div>
+    </div>
+</div> 
+
+

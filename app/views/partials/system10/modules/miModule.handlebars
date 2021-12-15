@@ -1,0 +1,407 @@
+<div class="modal fade" id="{{name}}Module" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title text-center">{{name}}</h4>
+
+                <div style="right: 3%; z-index: 10" class="position-absolute">
+                    <a role="button" class="link-light" tabindex="0" data-bs-html=true data-bs-trigger="focus" data-bs-container="body" data-bs-placement="left" data-bs-toggle="popover" title="Dicas" data-bs-content="<strong>[0]</strong> Arquivo 2: Informações;<br><strong>[1]</strong> Arquivo 3: E-mails e Chamadas.">
+                        <i class="far fa-question-circle h3 m-0"></i>
+                    </a>
+                </div>
+
+            </div>
+            {{#if isDone}}
+                <div id="{{name}}BodyDone" class="modal-body">
+                    <div class="row justify-content-center text-center">
+                        <h6>Módulo Finalizado</h6>
+                        <h6>Informação Recuperada</h6>
+                        
+                        <div class="col-sm-8">
+
+                            <table class="table table-secondary table-hover table-bordered text-center font-nasalization">
+                                <thead>
+                                    <tr class="table-dark">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">E-mail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Silvia</td>
+                                        <td>silvisantos@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sandro</td>
+                                        <td>sandro_expo@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Julia</td>
+                                        <td>jinx@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Roger</td>
+                                        <td>rogersilva@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silvio</td>
+                                        <td>silv_expo@expoente.com</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            {{else}}
+                <div id="{{name}}BodyNot" class="modal-body">
+
+                    <table class="table">
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <div class="row justify-content-center text-center">
+
+                        {{!-- ##################################################################
+                        ############################### Silvio ##############################
+                        ########################################################################--}}
+
+                        <div class="col-sm-2">
+
+                            <h6>Silvio</h6>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiCargoSilvio" onchange="miChange(0, 'Cargo', 'Silvio', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">CEO</option>
+                                    <option value="2">Chefe de TI</option>
+                                    <option value="3">Gerente de Projetos</option>
+                                    <option value="4">Gestão de Pessoas</option>
+                                    <option value="5">Zelador</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiCargoSilvio">Cargo</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiEmailSilvio" onchange="miChange(1, 'Email', 'Silvio', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">jinx</option>
+                                    <option value="2">rogersilva</option>
+                                    <option value="3">sandro_expo</option>
+                                    <option value="4">silvisantos</option>
+                                    <option value="5">silv_expo</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiEmailSilvio">E-mail</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiTelefoneSilvio" onchange="miChange(2, 'Telefone', 'Silvio', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">xxxxx-0391</option>
+                                    <option value="2">xxxxx-2554</option>
+                                    <option value="3">xxxxx-4747</option>
+                                    <option value="4">xxxxx-7990</option>
+                                    <option value="5">xxxxx-6579</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiTelefoneSilvio">Telefone</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiBebidaSilvio" onchange="miChange(3, 'Bebida', 'Silvio', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">Água</option>
+                                    <option value="2">Café</option>
+                                    <option value="3">Chá</option>
+                                    <option value="4">Refrigerante</option>
+                                    <option value="5">Suco</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiBebidaSilvio">Bebida</label>
+                            </div>
+                        </div>
+
+                        {{!-- ##################################################################
+                        ############################### Roger ##############################
+                        ########################################################################--}}
+
+                        <div class="col-sm-2">
+
+                            <h6>Roger</h6>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiCargoRoger" onchange="miChange(0, 'Cargo', 'Roger', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">CEO</option>
+                                    <option value="2">Chefe de TI</option>
+                                    <option value="3">Gerente de Projetos</option>
+                                    <option value="4">Gestão de Pessoas</option>
+                                    <option value="5">Zelador</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiCargoRoger">Cargo</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiEmailRoger" onchange="miChange(1, 'Email', 'Roger', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">jinx</option>
+                                    <option value="2">rogersilva</option>
+                                    <option value="3">sandro_expo</option>
+                                    <option value="4">silvisantos</option>
+                                    <option value="5">silv_expo</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiEmailRoger">E-mail</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiTelefoneRoger" onchange="miChange(2, 'Telefone', 'Roger', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">xxxxx-0391</option>
+                                    <option value="2">xxxxx-2554</option>
+                                    <option value="3">xxxxx-4747</option>
+                                    <option value="4">xxxxx-7990</option>
+                                    <option value="5">xxxxx-6579</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiTelefoneRoger">Telefone</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiBebidaRoger" onchange="miChange(3, 'Bebida', 'Roger', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">Água</option>
+                                    <option value="2">Café</option>
+                                    <option value="3">Chá</option>
+                                    <option value="4">Refrigerante</option>
+                                    <option value="5">Suco</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiBebidaRoger">Bebida</label>
+                            </div>
+                        </div>
+
+                        {{!-- ##################################################################
+                        ############################### Julia ##############################
+                        ########################################################################--}}
+
+                        <div class="col-sm-2">
+
+                            <h6>Julia</h6>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiCargoJulia" onchange="miChange(0, 'Cargo', 'Julia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">CEO</option>
+                                    <option value="2">Chefe de TI</option>
+                                    <option value="3">Gerente de Projetos</option>
+                                    <option value="4">Gestão de Pessoas</option>
+                                    <option value="5">Zelador</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiCargoJulia">Cargo</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiEmailJulia" onchange="miChange(1, 'Email', 'Julia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">jinx</option>
+                                    <option value="2">rogersilva</option>
+                                    <option value="3">sandro_expo</option>
+                                    <option value="4">silvisantos</option>
+                                    <option value="5">silv_expo</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiEmailJulia">E-mail</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiTelefoneJulia" onchange="miChange(2, 'Telefone', 'Julia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">xxxxx-0391</option>
+                                    <option value="2">xxxxx-2554</option>
+                                    <option value="3">xxxxx-4747</option>
+                                    <option value="4">xxxxx-7990</option>
+                                    <option value="5">xxxxx-6579</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiTelefoneJulia">Telefone</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiBebidaJulia" onchange="miChange(3, 'Bebida', 'Julia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">Água</option>
+                                    <option value="2">Café</option>
+                                    <option value="3">Chá</option>
+                                    <option value="4">Refrigerante</option>
+                                    <option value="5">Suco</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiBebidaJulia">Bebida</label>
+                            </div>
+                        </div>
+
+                        {{!-- ##################################################################
+                        ############################### Sandro ##############################
+                        ########################################################################--}}
+
+                        <div class="col-sm-2">
+
+                            <h6>Sandro</h6>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiCargoSandro" onchange="miChange(0, 'Cargo', 'Sandro', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">CEO</option>
+                                    <option value="2">Chefe de TI</option>
+                                    <option value="3">Gerente de Projetos</option>
+                                    <option value="4">Gestão de Pessoas</option>
+                                    <option value="5">Zelador</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiCargoSandro">Cargo</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiEmailSandro" onchange="miChange(1, 'Email', 'Sandro', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">jinx</option>
+                                    <option value="2">rogersilva</option>
+                                    <option value="3">sandro_expo</option>
+                                    <option value="4">silvisantos</option>
+                                    <option value="5">silv_expo</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiEmailSandro">E-mail</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiTelefoneSandro" onchange="miChange(2, 'Telefone', 'Sandro', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">xxxxx-0391</option>
+                                    <option value="2">xxxxx-2554</option>
+                                    <option value="3">xxxxx-4747</option>
+                                    <option value="4">xxxxx-7990</option>
+                                    <option value="5">xxxxx-6579</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiTelefoneSandro">Telefone</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiBebidaSandro" onchange="miChange(3, 'Bebida', 'Sandro', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">Água</option>
+                                    <option value="2">Café</option>
+                                    <option value="3">Chá</option>
+                                    <option value="4">Refrigerante</option>
+                                    <option value="5">Suco</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiBebidaSandro">Bebida</label>
+                            </div>
+                        </div>
+
+                        {{!-- ##################################################################
+                        ############################### Silvia ##############################
+                        ########################################################################--}}
+
+                        <div class="col-sm-2">
+
+                            <h6>Silvia</h6>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiCargoSilvia" onchange="miChange(0, 'Cargo', 'Silvia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">CEO</option>
+                                    <option value="2">Chefe de TI</option>
+                                    <option value="3">Gerente de Projetos</option>
+                                    <option value="4">Gestão de Pessoas</option>
+                                    <option value="5">Zelador</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiCargoSilvia">Cargo</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiEmailSilvia" onchange="miChange(1, 'Email', 'Silvia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">jinx</option>
+                                    <option value="2">rogersilva</option>
+                                    <option value="3">sandro_expo</option>
+                                    <option value="4">silvisantos</option>
+                                    <option value="5">silv_expo</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiEmailSilvia">E-mail</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiTelefoneSilvia" onchange="miChange(2, 'Telefone', 'Silvia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">xxxxx-0391</option>
+                                    <option value="2">xxxxx-2554</option>
+                                    <option value="3">xxxxx-4747</option>
+                                    <option value="4">xxxxx-7990</option>
+                                    <option value="5">xxxxx-6579</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiTelefoneSilvia">Telefone</label>
+                            </div>
+
+                            <div class="form-floating form-floating-sm mb-2">
+                                <select class="form-select form-select-mi" id="floatingSelectMiBebidaSilvia" onchange="miChange(3, 'Bebida', 'Silvia', this.value)">
+                                    <option value="0" selected></option>
+                                    <option value="1">Água</option>
+                                    <option value="2">Café</option>
+                                    <option value="3">Chá</option>
+                                    <option value="4">Refrigerante</option>
+                                    <option value="5">Suco</option>
+                                </select>
+                                <label class="label-mi" for="floatingSelectMiBebidaSilvia">Bebida</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="buttonMiSubmit" type="button" class="btn btn-sm btn-outline-light my-3" onclick="miSubmit()">Enviar</button>
+
+                    <h5 id="countdownMi" class="d-none">10</h5>
+
+                </div>
+
+                <div id="{{name}}BodyDone" class="modal-body d-none">
+                    <div class="row justify-content-center text-center">
+                        <h6>Módulo Finalizado</h6>
+                        <h6>Informação Recuperada</h6>
+                        
+                        <div class="col-sm-8">
+
+                            <table class="table table-secondary table-hover table-bordered text-center font-nasalization">
+                                <thead>
+                                    <tr class="table-dark">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">E-mail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Silvia</td>
+                                        <td>silvisantos@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sandro</td>
+                                        <td>sandro_expo@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Julia</td>
+                                        <td>jinx@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Roger</td>
+                                        <td>rogersilva@expoente.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silvio</td>
+                                        <td>silv_expo@expoente.com</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            {{/if}}
+        </div>
+    </div>
+</div> 

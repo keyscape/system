@@ -1,0 +1,27 @@
+
+<div class="col-6 my-2" id="{{name}}Card">
+
+    {{#if isDone}}
+
+        {{#if finalC}}
+            <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module aryabhata w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
+                <div id="{{name}}TitleCard" class="games-box-title aryabhata">{{name}}</div>
+
+        {{else}}
+            <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module sridhara w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
+                <div id="{{name}}TitleCard" class="games-box-title sridhara">{{name}}</div>
+
+        {{/if}}
+
+    {{else}}
+        <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module bhaskara w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
+            <div id="{{name}}TitleCard" class="games-box-title bhaskara">{{name}}</div>
+    {{/if}}
+
+        <div class="games-box-caption">
+            <div class="platform-body">{{{letter}}}</div>
+        </div>
+    </a>
+</div>
+
+{{> (lookup . 'moduleName') this}}

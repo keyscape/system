@@ -1,0 +1,44 @@
+<div class='mb-5 text-center'>
+	<img class='mx-auto rounded-circle' src='{{image}}'>
+	<h5 class='mt-3 mb-0'>
+		{{name}}
+	</h5>
+	<h6 class='text-black-75 mb-0'>
+		{{role}}
+	</h6>
+	<p class='mb-2' style='font-size: 0.8rem'>
+		<a class='link-secondary text-decoration-none' href='mailto:{{email.emailFull}}' data-bs-toggle='tooltip' data-bs-html='true' data-bs-placement='bottom' title='{{email.emailStart}}<br>{{email.emailEnd}}'>
+			{{email.emailStart}}
+		</a>
+	</p>
+
+	{{#if social.lattes}}
+		<a class='btn btn-dark btn-round mx-2' href='{{social.lattes}}' target='_blank'>
+			<i class='fas fa-user'></i>
+		</a>
+	{{/if}}
+
+	{{#if social.fb}}
+		<a class='btn btn-dark btn-round mx-2' href='{{social.fb}}' target='_blank'>
+			<i class='fab fa-facebook-f'></i>
+		</a>
+	{{else}}
+		{{#if social.ig}}
+			<a class='btn btn-lg btn-dark btn-round mx-2' href='{{social.ig}}' target='_blank'>
+				<i class="fab fa-instagram"></i>
+			</a>
+		{{else}}
+			{{#if social.tt}}
+				<a class='btn btn-dark btn-round mx-2' href='{{social.tt}}' target='_blank'>
+					<i class="fab fa-twitter"></i>
+				</a>
+			{{/if}}
+		{{/if}}
+	{{/if}}
+
+	{{#if social.lk}}
+		<a class='btn btn-dark btn-round mx-2' href='{{social.lk}}' target='_blank'>
+			<i class='fab fa-linkedin-in'></i>
+		</a>
+	{{/if}}
+</div>

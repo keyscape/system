@@ -1,0 +1,23 @@
+<!-- Example Card Room-->
+{{! <div id='exampleCardRoom' class='col-lg-6 col-sm-6 px-0 d-none'>
+	<a class='rooms-box cardRoomLink' role='button' data-bs-toggle='modal'><img
+			class='img-fluid cardRoomImage'
+			alt=''
+		/>
+		<div class='rooms-box-caption'>
+			<div class='project-category text-white-50 cardRoomCategory'></div>
+			<div class='project-name cardRoomName'></div></div></a>
+</div> }}
+
+<!-- Example Card Room-->
+<div class='col-lg-6 col-sm-6 px-0'>
+	<a
+		class='rooms-box'
+		role='button'
+		data-bs-target='#modal{{roomId}}'
+		data-bs-toggle='modal'
+	><img class='img-fluid' src='{{imageThumb}}' alt='' />
+		<div class='rooms-box-caption'>
+			<div class='project-category text-white-50'>{{theme}}</div>
+			<div class='project-name'>{{name}}</div></div></a>
+</div>
