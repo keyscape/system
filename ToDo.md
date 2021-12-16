@@ -57,3 +57,6 @@ Dica do lambda com os pontos cardeais
 - [ ] Add in the Model of modules the phase system;
 - [ ] Create the time system;
 - [ ] Create the system to show the phase modules;
+
+
+https://jsonformatter.curiousconcept.com/

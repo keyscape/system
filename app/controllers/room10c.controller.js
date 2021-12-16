@@ -423,16 +423,6 @@ module.exports = {
                                 samePhase = true,
                                 newOmegaPhase = groupOne.omegaPhase
 
-                            console.log('\n\n\n================ Antes ================')
-                            console.log('=======================================')
-                            console.log('newOmegaPhase: ' + newOmegaPhase)
-                            console.log('newTeam[0].name: ' + newTeam[0].name)
-                            console.log('newTeam[0].omegaPhase: ' + newTeam[0].omegaPhase)
-                            console.log('newTeam[0].omegaUpdate: ' + newTeam[0].omegaUpdate)
-                            console.log('\nnewTeam[1].name: ' + newTeam[1].name)
-                            console.log('newTeam[1].omegaPhase: ' + newTeam[1].omegaPhase)
-                            console.log('newTeam[1].omegaUpdate: ' + newTeam[1].omegaUpdate)
-                   
                             for(oneModule of groupOne.modules){
                                 if(oneModule.name == 'omega') {
                                     for(onePerson of newTeam){
@@ -465,16 +455,6 @@ module.exports = {
                                 }
                                 newOmegaPhase++
                             }
-
-                            console.log('\n================ Depois ===============')
-                            console.log('=======================================')
-                            console.log('newOmegaPhase: ' + newOmegaPhase)
-                            console.log('newTeam[0].name: ' + newTeam[0].name)
-                            console.log('newTeam[0].omegaPhase: ' + newTeam[0].omegaPhase)
-                            console.log('newTeam[0].omegaUpdate: ' + newTeam[0].omegaUpdate)
-                            console.log('\nnewTeam[1].name: ' + newTeam[1].name)
-                            console.log('newTeam[1].omegaPhase: ' + newTeam[1].omegaPhase)
-                            console.log('newTeam[1].omegaUpdate: ' + newTeam[1].omegaUpdate)
 
                             Group.findByIdAndUpdate(groupOne._id, {
                                 $set: {
