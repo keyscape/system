@@ -68,71 +68,6 @@ function moduleDone(moduleName){
     });
 }
 
-/* function switchChange(isChecked, idSwitch){
-
-    requestGetAjax(pathModuleDone, document.getElementById('code88').value + '/' + idSwitch.split('Switch')[0]).then((resData) => {
-        if(resData.res == 'ok'){
-
-			console.log(isChecked)
-			console.log(idSwitch)
-		
-			let moduleTagA = document.getElementById(idSwitch.split('Switch')[0] + 'TagA')
-			let moduleTitleCard = document.getElementById(idSwitch.split('Switch')[0] + 'TitleCard')
-		
-			moduleTagA.classList.remove('bhaskara')
-			moduleTagA.classList.add('sridhara', 'disabled')
-		
-			moduleTitleCard.classList.remove('bhaskara')
-			moduleTitleCard.classList.add('sridhara')
-
-			modulesDone.push(idSwitch.split('Switch')[0])
-		
-			$('#' + idSwitch.split('Switch')[0] + 'Module').modal('hide')
-            
-        }
-		else if(resData.res == 'phaseOne'){
-
-            location.reload()
-            
-        }
-    });
-
-
-}
-
-//function moduleOmegaNext
-
-function switchChangeMain(isChecked, idSwitch){
-
-    requestGetAjax(pathMainModuleDone, document.getElementById('code88').value + '/' + idSwitch.split('Switch')[0]).then((resData) => {
-        if(resData.res == 'ok'){
-
-			console.log(isChecked)
-			console.log(idSwitch)
-		
-			let moduleTagA = document.getElementById(idSwitch.split('Switch')[0] + 'TagA')
-			let moduleTitleCard = document.getElementById(idSwitch.split('Switch')[0] + 'TitleCard')
-		
-			moduleTagA.classList.remove('bhaskara')
-			moduleTagA.classList.add('sridhara', 'disabled')
-		
-			moduleTitleCard.classList.remove('bhaskara')
-			moduleTitleCard.classList.add('sridhara')
-
-			modulesDone.push(idSwitch.split('Switch')[0])
-		
-			$('#' + idSwitch.split('Switch')[0] + 'Module').modal('hide')
-            
-        }
-		else if(resData.res == 'phaseTwo'){
-
-            location.reload()
-            
-        }
-    });
-
-} */
-
 var timeDefault = 10;
 var timeCountdownGama = timeDefault
 var timeCountdownMi = timeDefault
@@ -148,9 +83,7 @@ setInterval(() => {
 
 		if(isFinal){
 			requestGetAjax(pathOmegaUpdate, document.getElementById('code88').value + '/' + document.getElementById('namePerson').value).then((resData) => {
-				//verificar se houve update
-					//se sim, sumir o loading e mostrar as novas perguntas
-					//se não, fazer nada
+
 
 				if(!resData.err){
 					if(resData.reloadPage){
@@ -335,57 +268,6 @@ setInterval(() => {
 
 }, 1000);
 
-	/*
-var gamaRes = [],
-	gamaCount = 0;
-
-
-function gamaCheck(checkId, checkChecked){
-	let labelCheck = document.getElementById('label-check-' + checkId)
-	let inputCheck = document.getElementById('btn-check-' + checkId)
-	
-	gamaCount++
-	inputCheck.disabled = true
-	gamaRes.push(checkId)
-
-	console.log(gamaRes)
-
-	if(gamaCount == 9){
-
-		if(JSON.stringify([5,1,9,4,3,8,6,2,7]) === JSON.stringify(gamaRes)){
-
-			for(allId = 0; allId < 9; allId++){
-				document.getElementById('label-check-' + (allId + 1)).style.backgroundColor = "#198754"
-			}
-
-			setTimeout(() => {
-				switchChange(true, 'gamaSwitch')
-			}, 1000);
-
-		}
-		else{
-			for(allId = 0; allId < 9; allId++){
-				document.getElementById('label-check-' + (allId + 1)).style.backgroundColor = "#dc3545"
-			}
-
-			setTimeout(() => {
-				for(allId = 0; allId < 9; allId++){
-					document.getElementById('label-check-' + (allId + 1)).style.backgroundColor = ""
-					document.getElementById('btn-check-' + (allId + 1)).disabled = false
-					document.getElementById('btn-check-' + (allId + 1)).checked = false
-				}
-	
-				gamaRes = []
-				gamaCount = 0
-			}, 1000);
-
-		}
-
-	}
-
-}
-*/
-
 function staticBack(isChecked) {
 	let gifOmega = document.getElementById('gifOmega'),
 		imgOmega = document.getElementById('imgOmega')
@@ -443,6 +325,3 @@ window.onclick = playClick;
 function playClick() {
 	btnSnd2.play();
 }
-
-//Personalizar nome
-//Texto Final

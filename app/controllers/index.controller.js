@@ -3,60 +3,30 @@ const Team = require('../models/Team.model');
 const Room = require('../models/Room.model');
 const Contact = require('../models/Contact.model');
 const Event = require('../models/Event.model');
-const Config = require('../models/Config.model');
 
-const dataToEscape = require('../modules/dataToEscape.json');
-
-const fs = require('fs');
 
 module.exports = {
-	get: (req, res) => {
+	get: async (req, res) => {
 
-		Config.find().then((configAll) => {
+		Promise.all([
+			Team.find({isActive: true}).lean(),
+			Room.find().lean(),
+			Contact.find().lean(),
+			Event.find().lean()
+		]).then(allValues => {
 
-			if(configAll[0].updateNow){
+			let teamAll = allValues[0],
+				roomAll = allValues[1]
 
-				Team.find({isActive: true}).then((teamAll) => {
-					Room.find().then((roomAll) => {
-						Contact.find().then((contactAll) => {
-							Event.find().then((eventAll) => {
-	
-								teamAll.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
-								roomAll.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
+				teamAll.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
+				roomAll.sort((a, b) => (a.sequence > b.sequence) ? 1 : -1)
 
-								let dataToEscapeNew = {title: 'Keyscape', team: teamAll, rooms: roomAll, contact: contactAll, events: eventAll, config: configAll}
-								
-								fs.writeFileSync('app/modules/dataToEscape.json', JSON.stringify(dataToEscapeNew));
-	
-								res.render('index', dataToEscapeNew);
-	
-	
-							}).catch((err) => {
-								console.log('---> Find Event Error <---\n' + err)
-							})
-	
-						}).catch((err) => {
-							console.log('---> Find Contact Error <---\n' + err)
-						})
-	
-					}).catch((err) => {
-						console.log('---> Find Room Error <---\n' + err)
-					})
-	
-				}).catch((err) => {
-					console.log('---> Find Team Error <---\n' + err)
-				})
+				res.render('index', {title: 'Keyscape', team: teamAll, rooms: roomAll, contact: allValues[2], events: allValues[3]});
 
-			}
-
-			else{
-				res.render('index', dataToEscape);
-			}
-
-		}).catch((err) => {
-			console.log('---> Find Team Error <---\n' + err)
+		}).catch(err => {
+			console.log(err)
 		})
-	},
+	}
 };
 
 
