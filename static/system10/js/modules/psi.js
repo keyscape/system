@@ -22,9 +22,6 @@ function psiCheck(checkId){
 	inputCheck.disabled = true
 	psiRes.push(checkId)
 
-	console.log(psiRes)
-	console.log(psiCount)
-
 	if(psiCount == 16){
 
 		if(JSON.stringify([13, 16, 2, 7, 10, 12, 3, 9, 1, 15, 6, 5, 8, 14, 11, 4]) === JSON.stringify(psiRes)){

@@ -1,21 +1,36 @@
 /* Módulos */
 require('dotenv').config(); /* Configuração das variáveis de ambiente */
 const app = require('./configs/app'); /* Configuração do app */
-const database = require('./configs/database'); /* Configuração do BD */
+require('./configs/database'); /* Configuração do BD */
 
 const indexRouter = require('./app/routes/index.route'); /* Importa a rota / */
-const room10cRouter = require('./app/routes/room10c.route'); /* Importa a rota /10c */
+const room10cIndexRouter = require('./app/routes/room10c/index.route'); /* Importa a rota /romm10c */
+const room10cLoginRouter = require('./app/routes/room10c/login.route'); /* Importa a rota /romm10c/login */
+const room10cLogoutRouter = require('./app/routes/room10c/logout.route'); /* Importa a rota /romm10c/logout */
+const room10cSignupRouter = require('./app/routes/room10c/signup.route'); /* Importa a rota /romm10c/signup */
+const room10cGroupRouter = require('./app/routes/room10c/group.route'); /* Importa a rota /romm10c/group */
+const room10cJoinGroupRouter = require('./app/routes/room10c/joinGroup.route'); /* Importa a rota /romm10c/joinGroup */
+const room10cUserRouter = require('./app/routes/room10c/user.route'); /* Importa a rota /romm10c/user */
+const room10cAdminRouter = require('./app/routes/room10c/admin.route'); /* Importa a rota /romm10c/joinGroup */
 
-//require('./app/modules/init/group.init')
 //require('./app/modules/init/module.init')
-//require('./app/modules/init/infos.init')
+//require('./app/modules/init/omega.init')
+//require('./app/modules/init/voice.init')
+//require('./app/modules/init/option.init')
 
 /* Constante */
 const PORT = process.env.NODE_ENV === 'development' ? process.env.PORT : 80; /* Define a porta na qual a aplicação vai rodar */
 
 /* Rotas */
 app.use(indexRouter); /* Adiciona ao middleware a rota / */
-app.use(room10cRouter); /* Adiciona ao middleware a rota /10c */
+app.use(room10cIndexRouter); /* Adiciona ao middleware a rota /romm10c */
+app.use(room10cLoginRouter); /* Adiciona ao middleware a rota /romm10c/login */
+app.use(room10cLogoutRouter); /* Adiciona ao middleware a rota /romm10c/logout */
+app.use(room10cSignupRouter); /* Adiciona ao middleware a rota /romm10c/signup */
+app.use(room10cGroupRouter); /* Adiciona ao middleware a rota /romm10c/group */
+app.use(room10cJoinGroupRouter); /* Adiciona ao middleware a rota /romm10c/joinGroup */
+app.use(room10cUserRouter); /* Adiciona ao middleware a rota /romm10c/user */
+app.use(room10cAdminRouter); /* Adiciona ao middleware a rota /romm10c/admin */
 
 /* Abre o servidor na porta especificada */
 app.listen(PORT, () => {
@@ -25,16 +40,3 @@ app.listen(PORT, () => {
 			'\n'
 	);
 });
-
-/*
-for(let num = 0; num < 20; num++){
-	let url = 'isqueiperum&' + ((num + 1) * (num + 1) + 10).toString() + '&' + 'user&'
-	console.log(url);
-}
-
-for(let num = 0; num < 20; num++){
-	let url = 'isqueiperum&' + ((num + 1) * (num + 1) + 10).toString() + '&' + 'user&'
-	console.log(Buffer.from(url).toString('base64'));
-}
-*/
-

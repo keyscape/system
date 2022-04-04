@@ -22,9 +22,6 @@ function alfaCheck(checkId){
 	inputCheck.disabled = true
 	alfaRes.push(checkId)
 
-	console.log(alfaRes)
-	console.log(alfaCount)
-
 	if(alfaCount == 16){
 
 		if(JSON.stringify([6, 7, 15, 13, 5, 8, 16, 4, 1, 3, 11, 9, 12, 10, 2, 14]) === JSON.stringify(alfaRes)){

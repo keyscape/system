@@ -1,0 +1,86 @@
+{{> system10/navbarNot}}
+
+<div style="height: 100vh; padding-top: 3.5rem;">
+    <div class="container-fluid h-100 ">
+        <div class="row h-100 justify-content-center align-items-center text-center">
+            
+            <div class="col-12 row justify-content-center text-center p-0">
+
+                <form id="formLogin" action="/room10c/login" method="post" class="row col-11 col-sm-10 col-md-7 col-lg-4 justify-content-center text-dark p-0 border border-light rounded" style="background-color: rgba(0, 0, 0, 0.6);">
+
+                    <h2 class="my-3 text-light">Entrar</h2>
+
+                    {{#if err}}
+                        <p class="text-center small-4 text-danger">Usuário ou senha inválidos</p>
+                    {{/if}}
+
+                    <div class="col-12 mb-3">
+                        <div class="form-floating">
+                            <input name="username" class="form-control form-control-login font-nasalization" id="floatingUsername" placeholder="Nome de Usuário">
+                            <label class="label-login" for="floatingUsername">Nome de Usuário</label>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row col-12 mb-3 p-0">
+                        <div class="col-10 pe-0">
+
+                            <div class="form-floating">
+                                <input name="password" type="password" class="form-control form-control-login font-nasalization rounded-0 rounded-start" id="floatingPassword" placeholder="Senha">
+                                <label class="label-login" for="floatingPassword">Senha</label>
+                                <div class="invalid-tooltip small-3 font-nasalization">
+                                    Deve conter de 8 a 16 caracteres
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-2 ps-0">
+                            <button class="btn btn-outline-light w-100 h-100 eye-border" type="button" id="buttonEye">
+                                <i class="fas fa-eye-slash" id="iconEye"></i>
+                            </button>
+                        </div>                     
+                    </div>
+
+                    
+
+
+                    <div class="col-sm-6 mb-3">
+                        <button type="submit" class="btn btn-login w-100">Entrar</button>
+                    </div>
+
+                    <p class="text-center small-4 text-white">Ainda não tem uma conta? <a href="/room10c/signup" class="link-secondary">Criar</a></p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+    document.getElementById('navItemLogin').classList.add('active');
+
+    document.getElementById('buttonEye').addEventListener('mousedown', () => {
+        document.getElementById('floatingPassword').type = 'text';
+        document.getElementById("iconEye").classList.remove('fa-eye-slash');
+        document.getElementById("iconEye").classList.add('fa-eye');
+    });
+
+    document.getElementById('buttonEye').addEventListener('mouseup', () => {
+        document.getElementById('floatingPassword').type = 'password';
+        document.getElementById("iconEye").classList.remove('fa-eye');
+        document.getElementById("iconEye").classList.add('fa-eye-slash');
+    });
+
+    // Para que o password não fique exposto apos mover a imagem.
+    document.getElementById('buttonEye').addEventListener('mousemove', () => {
+        document.getElementById('floatingPassword').type = 'password';
+        document.getElementById("iconEye").classList.remove('fa-eye');
+        document.getElementById("iconEye").classList.add('fa-eye-slash');
+    });
+</script>

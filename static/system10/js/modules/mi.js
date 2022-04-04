@@ -1,50 +1,61 @@
-const miRes = {
-    "Silvio":   ['1', '5', '3', '2'],
-    "Roger":    ['5', '2', '2', '5'],
-    "Julia":    ['2', '1', '1', '3'],
-    "Sandro":   ['3', '3', '5', '4'],
-    "Silvia":   ['4', '4', '4', '1'],
+var miRes,
+    miLast,
+    timeCountdownMi = timeBlockDefault,
+    intervalCountdownMi
+
+getMiData()
+
+function getMiData(){
+
+    let i = 0,
+        resArray = '['
+
+    try{
+        while(true){
+            resArray += '[' + gebid('resMi' + i).value + '],'
+            i++
+        }
+
+    }
+    catch(err){
+        //console.log(err)
+    }
+    finally{
+        miRes = JSON.parse(resArray.slice(0, -1) + ']')
+        miLast = miRes.map(x => x.map(x => x)).map(x => x.fill(-1))
+    }
 }
 
-var miLast = {
-    "Silvio":   ['0', '0', '0', '0'],
-    "Roger":    ['0', '0', '0', '0'],
-    "Julia":    ['0', '0', '0', '0'],
-    "Sandro":   ['0', '0', '0', '0'],
-    "Silvia":   ['0', '0', '0', '0'],
-}
+function miChange(indexInfo, indexPerson, value){
 
-var miBlocked = false;
-
-function miChange(index, info, name, value){
-
-    for(onePerson in miRes){
-        if(onePerson != name){
-           document.getElementById('floatingSelectMi' + info + onePerson).getElementsByTagName('option')[value].disabled = true
-           document.getElementById('floatingSelectMi' + info + onePerson).getElementsByTagName('option')[miLast[name][index]].disabled = false
+    try{
+        let i = 0
+        while(true){
+            document.getElementById('floatingSelectMi' + i + indexInfo).getElementsByTagName('option')[parseInt(value) + 1].disabled = true
+            document.getElementById('floatingSelectMi' + i + indexInfo).getElementsByTagName('option')[miLast[indexPerson][indexInfo] + 1].disabled = false
+            i++
         }
     }
-    
-    miLast[name][index] = value
+    catch(err){
+        miLast[indexPerson][indexInfo] = parseInt(value)
+    }
 }
 
 function miSubmit(){
-    let allOk = true;
+
+    let isOk = true
 
     for(onePerson in miRes){
-        if(miRes[onePerson][0] != document.getElementById('floatingSelectMiCargo' + onePerson).value) allOk = false
-
-        if(miRes[onePerson][1] != document.getElementById('floatingSelectMiEmail' + onePerson).value) allOk = false
-
-        if(miRes[onePerson][2] != document.getElementById('floatingSelectMiTelefone' + onePerson).value) allOk = false
-
-        if(miRes[onePerson][3] != document.getElementById('floatingSelectMiBebida' + onePerson).value) allOk = false
- 
-
-        if(!allOk) break;
+        for(oneRes in miRes[onePerson]){
+            if(miRes[onePerson][oneRes] != document.getElementById('floatingSelectMi' + onePerson + oneRes).value){
+                isOk = false
+                break
+            }
+        }
+        if(!isOk) break
     }
 
-    if(allOk) {
+    if(isOk) {
         document.getElementById('buttonMiSubmit').style.backgroundColor = "#198754"
 
         setTimeout(() => {
@@ -55,7 +66,32 @@ function miSubmit(){
         document.getElementById('buttonMiSubmit').disabled = true
         document.getElementById('buttonMiSubmit').style.backgroundColor = "#dc3545"
 
-        miBlocked = true
+        intervalCountdownMi = setInterval(countdownMi, 1000);
         document.getElementById('countdownMi').classList.remove('d-none')
+    }
+}
+
+function countdownMi(){
+    timeCountdownMi--;
+				
+    if(timeCountdownMi < 1){
+        document.getElementById('buttonMiSubmit').disabled = false
+        document.getElementById('buttonMiSubmit').style.backgroundColor = ""
+
+        document.getElementById('countdownMi').classList.add('d-none')
+
+        timeCountdownMi = timeBlockDefault
+
+        clearInterval(intervalCountdownMi)
+    }
+    
+    document.getElementById('countdownMi').innerHTML = timeCountdownMi
+}
+
+function completeMi(){
+    for(onePerson in miRes){
+        for(oneRes in miRes[onePerson]){
+            document.getElementById('floatingSelectMi' + onePerson + oneRes).value =  miRes[onePerson][oneRes]
+        }
     }
 }

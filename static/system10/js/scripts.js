@@ -1,327 +1,314 @@
-const pathModuleDone = '/room10c/moduleDone/'
-const pathModuleOmegaNext = '/room10c/moduleOmegaNext/'
-const pathModuleUpdate = '/room10c/moduleUpdate/'
-const pathOmegaUpdate = '/room10c/omegaUpdate/'
 
-var modulesDone = JSON.parse(document.getElementById('modulesDone').value)
-var isFinal = JSON.parse(document.getElementById('isFinal').value)
 
+const 	_pathUpdateInitPage = '/room10c/update/init/',
+		_pathUpdateFinalPage = '/room10c/update/final/',
+		_pathModuleDone = '/room10c/moduleDone/',
+		_pathModuleDoneOmega = '/room10c/moduleDoneOmega/'
+
+const	phaseGroup = document.getElementById('phaseGroup').value,
+		omegaReady = document.getElementById('omegaReady').value == 'true',
+		timeBlockDefault = 10
+
+var modulesDone = JSON.parse(document.getElementById('modulesDone').value),
+	timeSeconds = parseInt(document.getElementById('timeSeconds').value)
+
+if(omegaReady && phaseGroup != 'done'){
+	gebid('modalQuestionsBody').classList.add('d-none')
+	gebid('modalQuestionsFooter').classList.add('d-none')
+	gebid('modalLoading').classList.remove('d-none')
+}
+
+window.onload = (event) => {
+	if(phaseGroup != 'done'){
+		if(phaseGroup == 'omega'){
+			if(omegaReady) setInterval(updateFinalPage, 2000);
+		}
+		else if(phaseGroup == 'delta'){
+			setInterval(updateFinalPage, 2000);
+		}
+		else{
+			setInterval(updateInitPage, 2000);
+		}
+	}
+};
+  
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
   	return new bootstrap.Popover(popoverTriggerEl)
 })
 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
-async function requestGetAjax(_path, _id = '') {
-	return new Promise((res, rej) => {
-		const xmlhttp = new XMLHttpRequest();
+/*###################################################
+################# Sounds & Back #####################
+###################################################*/
 
-		xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200) {
-				res(JSON.parse(xmlhttp.responseText));
-			}
-		};
+var ambSnd;
 
-		xmlhttp.open('GET', _path + _id, true);
-		xmlhttp.send();
-	});
+var btnSnd1 = new Audio('/system10/assets/sounds/btn0.mp3'),
+	btnSnd2 = new Audio('/system10/assets/sounds/btn1.mp3')
+
+btnSnd1.volume = 0.01;
+btnSnd2.volume = 0.01;
+
+window.onclick = clickSound;
+
+function changeVolume(volume){
+	document.getElementById('spanVolume').innerHTML = Math.ceil(((Math.exp(volume) - 1) / 53.8) * 100)
+	ambSnd.volume = (Math.exp(volume) - 1) / 53.8
+}
+
+function ambientSound(isChecked) {
+
+	if(isChecked){
+		ambSnd = new Audio('/system10/assets/sounds/amb' + Math.floor(Math.random() * 4) + '.mp3');
+
+		ambSnd.volume = 0.05
+		ambSnd.loop = true
+
+		ambSnd.play();
+
+		document.getElementById('pStateAudio').classList.add('d-none')
+		document.getElementById('iconPlay').classList.replace('fa-play', 'fa-stop')
+	}
+	
+	else{
+		ambSnd.pause();
+		document.getElementById('pStateAudio').classList.remove('d-none')
+		document.getElementById('iconPlay').classList.replace('fa-stop', 'fa-play')
+	}
+}
+
+function moduleSound() {
+	btnSnd1.play();
+}
+
+function clickSound() {
+	btnSnd2.play();
+}
+
+function staticBack(isChecked) {
+	let gifOmega = document.getElementById('gifOmega'),
+		imgOmega = document.getElementById('imgOmega'),
+		iconBackOmega = document.getElementById('iconBack')
+
+	if(isChecked){
+		document.body.classList.replace('backGif', 'backImg');
+
+		gifOmega.classList.add('d-none')
+		imgOmega.classList.remove('d-none')
+
+		iconBackOmega.classList.replace('fa-ban', 'fa-check')
+	}
+	
+	else {
+		document.body.classList.replace('backGif', 'backImg');
+		
+		gifOmega.classList.remove('d-none')
+		imgOmega.classList.add('d-none')
+
+		iconBackOmega.classList.replace('fa-check', 'fa-ban')
+	}
+
+}
+
+/*###################################################
+####################### Get #########################
+###################################################*/
+
+async function getData (_path, _id = ''){
+    const response = await fetch(_path + _id);
+
+    return response.json()
+}
+
+async function postData (_path, _data){
+    const response = await fetch(_path, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(_data)
+    });
+
+    return response.json()
+}
+
+function moduleDoneVisual(moduleName){
+	modulesDone.push(moduleName)
+
+	document.getElementById(moduleName + 'BodyNot').classList.add('d-none')
+
+	document.getElementById(moduleName + 'BodyDone').classList.remove('d-none')
+
+	document.getElementById(moduleName + 'TagA').classList.replace('bhaskara', 'sridhara')
+	document.getElementById(moduleName + 'TitleCard').classList.replace('bhaskara', 'sridhara')
 }
 
 function moduleDone(moduleName){
 
-	requestGetAjax(pathModuleDone, document.getElementById('code88').value + '/' + moduleName).then((resData) => {
-        if(!resData.err){
+	let dataToSend = {
+		id: gebid('idGroup').value,
+		moduleName: moduleName
+	}
 
-			resData.isUpdate
-			resData.newPhase
+	postData(_pathModuleDone, dataToSend).then(resp => {
 
-			if(resData.isUpdate){
+		if(!resp.err){
+			moduleDoneVisual(moduleName)
+		}
+		else clog('Err')
+
+	}).catch(err => {
+		clog('Err')
+	})
+}
+
+function updateInitPage(){
+	timeSeconds -= 2
+
+	gebid('timeSecondsShow').innerHTML = (timeSeconds / 60).toFixed(2)
+
+	getData(_pathUpdateInitPage, document.getElementById('idGroup').value).then(resp => {
+
+		if(!resp.err){
+			if(resp.phase != phaseGroup){
 				location.reload()
 			}
 			else{
-			
-				let moduleTagA = document.getElementById(moduleName + 'TagA')
-				let moduleTitleCard = document.getElementById(moduleName + 'TitleCard')
-				let moduleBodyDone = document.getElementById(moduleName + 'BodyDone')
-				let moduleBodyNot = document.getElementById(moduleName + 'BodyNot')
-			
-				moduleTagA.classList.remove('bhaskara')
-				moduleTagA.classList.add('sridhara')
-			
-				moduleTitleCard.classList.remove('bhaskara')
-				moduleTitleCard.classList.add('sridhara')
-				
-				moduleBodyNot.classList.add('d-none')
-				moduleBodyDone.classList.remove('d-none')
-	
-				modulesDone.push(moduleName)
-			
-				//$('#' + moduleName + 'Module').modal('hide')
+				for(oneModule of resp.modules){
+					if(oneModule.isDone && !modulesDone.includes(oneModule.name)) moduleDoneVisual(oneModule.name)
+				}
 			}
-
-            
-        }
+		}
 		else{
-			conbsole.log('Erroooooooo')
-            
-        }
-    });
+			console.log('err')
+		}
+
+	}).catch(err => {
+		console.log(err)
+	})
 }
 
-var timeDefault = 10;
-var timeCountdownGama = timeDefault
-var timeCountdownMi = timeDefault
-var timeCountdownSigma = timeDefault
-var timeCountdownLambda = timeDefault + 10
-var timeCountdownBeta = timeDefault
-var timeCountdownDelta = timeDefault
+function updateFinalPage(){
 
-setInterval(() => {
+	timeSeconds -= 2
 
-	//console.log(!document.getElementById('isDone').value)
-	if(!JSON.parse(document.getElementById('isDone').value)){
+	gebid('timeSecondsShow').innerHTML = (timeSeconds / 60).toFixed(2)
 
-		if(isFinal){
-			requestGetAjax(pathOmegaUpdate, document.getElementById('code88').value + '/' + document.getElementById('namePerson').value).then((resData) => {
+	getData(_pathUpdateFinalPage, document.getElementById('idGroup').value).then(resp => {
 
-
-				if(!resData.err){
-					if(resData.reloadPage){
-						location.reload()
-					}
-					else{
-						document.getElementById('finalTime').innerHTML = resData.finalTime
-
-						if(resData.nextOmegaPhase){
-
-							console.log(resData.contentOmega)
-							
-							document.getElementById('divOmegaContent').innerHTML = resData.contentOmega[0]
-							document.getElementById('buttonOmegaSubmit1').innerHTML = resData.contentOmega[1]
-							document.getElementById('buttonOmegaSubmit2').innerHTML = resData.contentOmega[2]
-							document.getElementById('buttonOmegaSubmit3').innerHTML = resData.contentOmega[3]
-							document.getElementById('buttonOmegaSubmit4').innerHTML = resData.contentOmega[4]
-			
-							
-							document.getElementById('omegaContent').classList.remove('d-none')
-							document.getElementById('omegaLoading').classList.add('d-none')
-
-						}
-					}
-				}
-			});
+		if(!resp.err){
+			if(resp.phase != phaseGroup){
+				location.reload()
+			}
 		}
-	
 		else{
-			if(gamaBlocked){
-				timeCountdownGama--;
-				
-				
-				if(timeCountdownGama == 0){
-					document.getElementById('buttonGamaSubmit').disabled = false
-					document.getElementById('buttonGamaSubmit').style.backgroundColor = ""
-			
-					gamaBlocked = false
-					document.getElementById('countdownGama').classList.add('d-none')
-	
-					timeCountdownGama = timeDefault
-				}
-				
-				document.getElementById('countdownGama').innerHTML = timeCountdownGama
-			}
-	
-			if(miBlocked){
-				timeCountdownMi--;
-				
-				
-				if(timeCountdownMi == 0){
-					document.getElementById('buttonMiSubmit').disabled = false
-					document.getElementById('buttonMiSubmit').style.backgroundColor = ""
-			
-					miBlocked = false
-					document.getElementById('countdownMi').classList.add('d-none')
-	
-					timeCountdownMi = timeDefault
-				}
-				
-				document.getElementById('countdownMi').innerHTML = timeCountdownMi
-			}
-	
-			if(sigmaBlocked){
-				timeCountdownSigma--;
-				
-				
-				if(timeCountdownSigma == 0){
-					document.getElementById('buttonSigmaSubmit').disabled = false
-					document.getElementById('buttonSigmaSubmit').style.backgroundColor = ""
-			
-					sigmaBlocked = false
-					document.getElementById('countdownSigma').classList.add('d-none')
-	
-					timeCountdownSigma = timeDefault
-				}
-				
-				document.getElementById('countdownSigma').innerHTML = timeCountdownSigma
-			}
-	
-			if(lambdaBlocked){
-				timeCountdownLambda--;
-				
-				
-				if(timeCountdownLambda == 0){
-					document.getElementById('buttonLambdaSubmit').disabled = false
-					document.getElementById('buttonLambdaSubmit').style.backgroundColor = ""
-			
-					lambdaBlocked = false
-					document.getElementById('countdownLambda').classList.add('d-none')
-	
-					timeCountdownLambda = timeDefault + 10
-				}
-				
-				document.getElementById('countdownLambda').innerHTML = timeCountdownLambda
-			}
-	
-			if(betaBlocked){
-				timeCountdownBeta--;
-				
-				
-				if(timeCountdownBeta == 0){
-					document.getElementById('buttonBetaSubmit').disabled = false
-					document.getElementById('buttonBetaSubmit').style.backgroundColor = ""
-			
-					betaBlocked = false
-					document.getElementById('countdownBeta').classList.add('d-none')
-	
-					timeCountdownBeta = timeDefault
-				}
-				
-				document.getElementById('countdownBeta').innerHTML = timeCountdownBeta
-			}
-	
-			if(deltaBlocked){
-				timeCountdownDelta--;
-				
-				
-				if(timeCountdownDelta == 0){
-					document.getElementById('buttonDeltaSubmit').disabled = false
-					document.getElementById('buttonDeltaSubmit').style.backgroundColor = ""
-			
-					deltaBlocked = false
-					document.getElementById('countdownDelta').classList.add('d-none')
-	
-					timeCountdownDelta = timeDefault
-				}
-				
-				document.getElementById('countdownDelta').innerHTML = timeCountdownDelta
-			}
-	
-			requestGetAjax(pathModuleUpdate, document.getElementById('code88').value).then((resData) => {
-				if(!resData.err){
-					if(resData.newPhase != parseInt(document.getElementById('phase').value)){
-						location.reload()
-					}
-					else{
-						document.getElementById('finalTime').innerHTML = resData.finalTime
-	
-						if(resData.modulesDone.length != modulesDone.length){
-			
-							let difference = resData.modulesDone.filter(x => !modulesDone.includes(x)).concat(modulesDone.filter(x => !resData.modulesDone.includes(x)));
-				
-							console.log(difference)
-				
-							for(diffModule of difference){
-			
-								let moduleTagA = document.getElementById(diffModule + 'TagA')
-								let moduleTitleCard = document.getElementById(diffModule + 'TitleCard')
-								let moduleBodyDone = document.getElementById(diffModule + 'BodyDone')
-								let moduleBodyNot = document.getElementById(diffModule + 'BodyNot')
-							
-								moduleTagA.classList.remove('bhaskara')
-								moduleTagA.classList.add('sridhara')
-							
-								moduleTitleCard.classList.remove('bhaskara')
-								moduleTitleCard.classList.add('sridhara')
-								
-								moduleBodyNot.classList.add('d-none')
-								moduleBodyDone.classList.remove('d-none')
-					
-								modulesDone.push(diffModule)
-							
-								//$('#' + diffModule + 'Module').modal('hide')
-							}
-			
-						}
-						else{
-							console.log('Vida que segue')
-						}
-					}
-	
-				}
-				else{
-					console.log('Errrrroooooooo')
-				}
-	
-				
-			});
+			console.log('err')
+		}
+
+	}).catch(err => {
+		console.log(err)
+	})
+}
+
+function changeQuestion(index, action){
+
+	let oneModal = bootstrap.Modal.getInstance(document.getElementById('modalQuestion' + index))
+
+	let omegaModuleSize = document.getElementById('omegaModuleSize').value
+
+	if(action == 'prev'){
+		try{
+			new bootstrap.Modal(document.getElementById('modalQuestion' + (index - 1)), {
+				keyboard: false
+			}).show()
+		}
+		catch(err){
+			new bootstrap.Modal(document.getElementById('modalQuestion' + (omegaModuleSize - 1)), {
+				keyboard: false
+			}).show()
+		}		
+		finally{
+			oneModal.hide();
+		}
+
+	}
+	else if(action == 'next'){
+		try{
+			new bootstrap.Modal(document.getElementById('modalQuestion' + (index + 1)), {
+				keyboard: false
+			}).show()
+		}
+		catch(err){
+			new bootstrap.Modal(document.getElementById('modalQuestion0'), {
+				keyboard: false
+			}).show()
+		}		
+		finally{
+			oneModal.hide();
 		}
 	}
-
-}, 1000);
-
-function staticBack(isChecked) {
-	let gifOmega = document.getElementById('gifOmega'),
-		imgOmega = document.getElementById('imgOmega')
-
-	if(isChecked){
-		document.body.classList.remove('backGif');
-		document.body.classList.add('backImg');
-
-		gifOmega.classList.add('d-none')
-		imgOmega.classList.remove('d-none')
-	}
-
-	else {
-		document.body.classList.add('backGif');
-		document.body.classList.remove('backImg');
-
-		gifOmega.classList.remove('d-none')
-		imgOmega.classList.add('d-none')
-	}
-
 }
 
-var ambSnd;
+function ansQuestion(num, letter){
+	document.getElementById('descriptionQuestion' + num).innerHTML = letter
+	document.getElementById('buttonQuestion' + num).classList.remove('border-qomega')
+}
 
-var btnSnd1 = new Audio('/system10/assets/sounds/btn1.wav'),
-	btnSnd2 = new Audio('/system10/assets/sounds/btn2.wav'),
-	btnSnd3 = new Audio('/system10/assets/sounds/btn3.wav');
+function sendOmega(){
+	try{
+		let allId = JSON.parse(document.getElementById('arrayIdOmegaModule').value),
+			dataToSend = {omega: {}}
+	
+		for(oneId of allId){
+			dataToSend.omega[oneId] = document.querySelector('input[name="' + oneId + '"]:checked').value
+		}
 
-btnSnd1.volume = 0.01;
-btnSnd2.volume = 0.01;
-btnSnd3.volume = 0.03;
+		gebid('modalQuestionsBody').classList.add('d-none')
+		gebid('modalQuestionsFooter').classList.add('d-none')
+		gebid('modalLoading').classList.remove('d-none')
+		
+		setInterval(updateFinalPage, 2000);
 
-function playAmbient(isChecked) {
+		dataToSend.idParticipant = gebid('idParticipant').value
 
-	if(isChecked){
-		ambSnd = new Audio('/system10/assets/sounds/amb' + (Math.floor(Math.random() * 6) + 1) + '.mp3');
+		postData(_pathModuleDoneOmega, dataToSend).then(resp => {
 
-		ambSnd.volume = 0.03
-		ambSnd.loop = true
+			if(!resp.reload){
+				clog('Só aguardar')
+			}
+			else{
+				location.reload()
+			}
+			
+		}).catch(err => {
+			console.log(err)
+			location.reload()
+		})
 
-		ambSnd.play();
 	}
-
-	else{
-		ambSnd.pause();
+	catch(err){
+		console.log(err)
+		document.getElementById('errOmegaModule').classList.remove('d-none')
 	}
 }
 
-function playButton() {
-	btnSnd1.play();
+function clog(content){
+	console.log(content)
 }
 
-window.onclick = playClick;
+function gebid(elm){
+	return document.getElementById(elm)
+}
 
-function playClick() {
-	btnSnd2.play();
+function changeVoice(elm){
+
+	//fetch elm.id
+
+	//if success reload
+
 }

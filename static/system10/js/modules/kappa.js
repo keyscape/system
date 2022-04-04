@@ -22,9 +22,6 @@ function kappaCheck(checkId){
 	inputCheck.disabled = true
 	kappaRes.push(checkId)
 
-	console.log(kappaRes)
-	console.log(kappaCount)
-
 	if(kappaCount == 9){
 
 		if(JSON.stringify([5, 1, 9, 4, 3, 8, 6, 2, 7]) === JSON.stringify(kappaRes)){

@@ -11,16 +11,13 @@ const moduleSchema = new Schema({
         required: true,
     },
     phase:	{
-        type: Number,
+        type: String,
         required: true,
     },
     isDone:	{
         type: Boolean,
-        default: false,
         required: true,
-    },
-    content: {},
-    resContent: {}
+    }
 })
 
 module.exports = mongoose.model('module', moduleSchema);

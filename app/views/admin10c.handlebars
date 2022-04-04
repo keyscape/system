@@ -1,0 +1,140 @@
+{{> system10/navbarLog user}}
+
+<div style="height: 100vh; padding-top: 3.5rem;">
+    <div class="container-fluid h-100">
+
+        <input id="nGroups" class="d-none" value="{{nGroups}}">
+
+        <div class="row justify-content-center mt-3 font-nasalization">
+
+            <div class="col-md-2 mb-2">
+                <div class="form-floating">
+                    <select class="form-select form-select-admin" id="floatingGroupsSituation" onchange="updateGroupButtons()">
+                        <option value="all" selected>Todas</option>
+                        <option value="todo">Aguardando</option>
+                        <option value="doing">Em Andamento</option>
+                        <option value="done">Terminado</option>
+                    </select>
+                    <label class="label-admin" for="floatingGroupsSituation">Situação</label>
+                </div>
+            </div>
+
+            <div class="col-md-2 mb-2">
+                <div class="form-floating">
+                    <select class="form-select form-select-admin" id="floatingGroupsDate" onchange="updateGroupButtons()">
+                        <option value="all" selected>Todas</option>
+                        {{#each allDates}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <label class="label-admin" for="floatingGroupsDate">Data</label>
+                </div>
+            </div>
+
+            <div class="col-md-2 mb-2">
+                <button class="btn btn-login w-100 h-100" onclick="showModalCreateGroup()">Criar Grupo</button>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div id="buttonUpdatePage" class="col-md-2 my-3 d-none">
+                <button class="btn btn-warning w-100 h-100" onclick="location.reload()">Atualizar Página</button>
+            </div>
+
+            <div id="divGroupsContent" class="row justify-content-center">
+                {{> system10/adminGroups allGroups}}
+
+{{!--                 {{#each allGroups}}
+
+                    <div class="col-6 col-lg-3 my-2 all {{dateFormated}} {{situation}}">
+                        <a role="button" class="card-box border-{{situation}}" href="/room10c/admin/updateGroup/{{_id}}">
+                            <div class="card-box-title m-0">G#{{num}}</div>
+                            <div class="card-box-caption">
+                                <div class="description-head">
+                                    {{dateFormated}}
+                                </div>
+                                <div class="description-body">
+                                    #{{numParticipants}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                {{/each}} --}}
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade font-nasalization" id="modalCreateGroup" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title text-center">Criar Grupo</h4>
+
+                <div style="right: 2%; z-index: 10" class="position-absolute">
+                    <a role="button" class="link-light" data-bs-dismiss="modal">
+                        <i class="fas fa-times align-middle h3 m-0"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="row justify-content-center text-center">
+
+                    <div class="col-sm-4 mb-3">
+                        <div class="form-floating text-dark">
+                            <input type="date" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupDate" placeholder="Data">
+                            <label class="label-admin" for="floatingCreateGroupDate">Data <span class="text-danger">*</span></label>
+                            <div class="invalid-tooltip small-3 font-nasalization">
+                                Inválida
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <div class="form-floating text-dark">
+                            <input type="time" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupTime" placeholder="Horário">
+                            <label class="label-admin" for="floatingCreateGroupTime">Horário</label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <div class="form-floating text-dark">
+                            <input type="number" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupMaxTime" value="30" placeholder="Tempo Máximo">
+                            <label class="label-admin" for="floatingCreateGroupMaxTime">Tempo Máximo <span class="text-danger">*</span></label>
+                            <div class="invalid-tooltip small-3 font-nasalization">
+                                Min. 20 - Max. 120
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-sm-12 mb-2">
+                        <div class="form-floating text-dark">
+                            <textarea class="form-control form-control-admin font-nasalization" placeholder="Info" id="floatingCreateGroupInfo" style="min-height: 75px;"></textarea>
+                            <label class="label-admin" for="floatingCreateGroupInfo">Info</label>
+                        </div>
+                    </div>
+
+                    <p id="errModalCreateGroup" class="text-center small-2 text-danger my-2 d-none">Algo deu errado, tente novamente!</p>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                
+                <button type="button" class="btn btn-light" onclick="createGroup()">Criar</button>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="/system10/js/adminScript.js"></script>

@@ -1,0 +1,335 @@
+
+<div class="modal-dialog modal-fullscreen modal-dialog-scrollable font-nasalization">
+    <div class="modal-content" style="background-color: #000000d9;color: rgb(255, 255, 255);">
+        <div class="modal-header justify-content-center">
+            <h4 class="modal-title text-center">Grupo #{{oneGroup.num}}</h4>
+
+            <div style="left: 2%; z-index: 10" class="position-absolute">
+                <a role="button" class="link-light" href="/room10c/admin">
+                    <i class="fas fa-arrow-left align-middle h3 m-0"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="row justify-content-center text-center">
+
+                <input id="groupId" class="d-none" value="{{oneGroup._id}}">
+
+                <div class="col-6 col-md-2 mb-3">
+                    <div class="form-floating text-dark">
+                        <input type="number" class="form-control form-control-admin font-nasalization" id="floatingGroupNum" value="{{oneGroup.num}}" placeholder="NGrupo" disabled>
+                        <label class="label-admin" for="floatingGroupNum">N# Grupo</label>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <div class="form-floating text-dark">
+                        <input type="text" class="form-control form-control-admin font-nasalization" id="floatingGroupCode" value="{{oneGroup.code}}" placeholder="Código" disabled>
+                        <label class="label-admin" for="floatingGroupCode">Código</label>
+                    </div>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <input type="radio" class="btn-check" value="Participants" name="radio" id="radioParticipants" autocomplete="off" onchange="changeRadio(this.value)" checked>
+                    <label class="btn btn-outline-light w-100" for="radioParticipants">Participantes</label>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <input type="radio" class="btn-check" value="Modules" name="radio" id="radioModules" autocomplete="off" onchange="changeRadio(this.value)">
+                    <label class="btn btn-outline-light w-100" for="radioModules">Módulos</label>
+                </div>
+
+                <div class="col-6 col-md-3 mb-3">
+                    <input type="radio" class="btn-check" value="Configs" name="radio" id="radioConfigs" autocomplete="off" onchange="changeRadio(this.value)">
+                    <label class="btn btn-outline-light w-100" for="radioConfigs">Configs</label>
+                </div>
+
+                <hr>
+
+                <div id="divParticipants" class="row justify-content-center">
+
+
+                    {{!-- Checks 
+                    <div class="row col-11 col-sm-10 justify-content-center small border border-light pt-2 mb-2" style="background-color: rgba(0, 0, 0, 0.5);">
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="username" id="checkboxParticipantsUsername" onchange="changeCheckboxParticipants(this)" checked disabled>
+                            <label class="form-check-label" for="checkboxParticipantsUsername">Nome de Usuário</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="fullName" id="checkboxParticipantsFullName" onchange="changeCheckboxParticipants(this)" checked>
+                            <label class="form-check-label" for="checkboxParticipantsFullName">Nome</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="email" id="checkboxParticipantsEmail" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsEmail">E-mail</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="ra" id="checkboxParticipantsRA" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsRA">RA</label>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="cpf" id="checkboxParticipantsCPF" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsCPF">CPF</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="age" id="checkboxParticipantsAge" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsAge">Idade</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="omegaValue" id="checkboxParticipantsOmegaValue" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsOmegaValue">OmegaValue</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="omegaReady" id="checkboxParticipantsOmegaReady" onchange="changeCheckboxParticipants(this)">
+                            <label class="form-check-label" for="checkboxParticipantsOmegaReady">OmegaReady</label>
+                        </div>
+
+                        <div class="col-6 col-sm-2 text-center mb-2">
+                            <input class="form-check-input" type="checkbox" value="actions" id="checkboxParticipantsActions" onchange="changeCheckboxParticipants(this)" checked>
+                            <label class="form-check-label" for="checkboxParticipantsActions">Ações</label>
+                        </div>
+
+                    </div>--}}
+
+                    {{!-- Tabela --}}
+                    <div class="col-12 col-lg-11 mt-3">
+                        <div class="table-responsive">
+                            <table id="tableParticipants" class="table table-sm table-bordered text-light text-center small">
+                                <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.5);">
+                                    <tr>
+
+                                        <th scope="col" class="username">Usuário</th>
+                                        <th scope="col" class="fullName">Nome</th>
+                                        <th scope="col" class="email">E-mail</th>
+                                        <th scope="col" class="ra">RA</th>
+                                        <th scope="col" class="cpf">CPF</th>
+                                        <th scope="col" class="edu">Inst. Ens.</th>
+                                        <th scope="col" class="age">Idade</th>
+                                        <th scope="col" class="omegaValue">Valor (Ω)</th>
+                                        <th scope="col" class="omegaReady">Status (Ω)</th>
+
+                                        {{!-- <th scope="col" class="actions" colspan="2"></th> --}}
+
+                                    </tr>
+                                </thead>
+                                <tbody id="tableParticipantsBody" class="align-middle" style="background-color: rgba(0, 0, 0, 0.5);">
+                                    {{> system10/adminParticipants allParticipants }}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="divModules" class="row justify-content-center d-none">
+
+                    {{!-- Tabela --}}
+                    <div class="col-12 col-lg-11 mt-3">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-bordered text-light text-center small">
+                                <thead class="align-middle" style="background-color: rgba(69, 69, 69, 0.5);">
+                                    <tr>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Letra</th>
+                                        <th scope="col">Fase</th>
+                                        <th scope="col">Terminado?</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableModulesBody" class="align-middle" style="background-color: rgba(0, 0, 0, 0.5);">
+                                    {{> system10/adminModules allModules }}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                    <p id="errUpdateGroupModules" class="text-center small-2 text-danger my-2 d-none">Algo deu errado, tente novamente!</p>
+
+                </div>
+
+                <div id="divConfigs" class="row justify-content-center d-none">
+
+                    <div class="col-sm-4 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <select class="form-select form-control-admin font-nasalization form-disabled" id="floatingConfigsSituation">
+                                    <option value="todo">Aguardando</option>
+                                    <option value="doing">Em Andamento</option>
+                                    <option value="done">Terminado</option>
+                                </select>
+                                <label class="label-admin" for="floatingConfigsSituation">Situação</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-sm-2 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <input type="number" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsMaxTime" value="{{oneGroup.maxTime}}" placeholder="Tempo Máximo">
+                                <label class="label-admin" for="floatingConfigsMaxTime">Tempo Máximo</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-sm-2 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent">
+                            <div class="form-floating text-dark">
+                                <input type="number" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsDuration" value="{{oneGroup.duration}}" placeholder="Duração">
+                                <label class="label-admin" for="floatingConfigsDuration">Duração</label>
+                            </div>
+                        </button>
+                    </div>
+                
+                    <div class="w-100"></div>
+
+                    <div class="col-sm-4 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <input type="date" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsDate" value="{{oneGroup.date}}" placeholder="Data">
+                                <label class="label-admin" for="floatingConfigsDate">Data</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <input type="time" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsTime" value="{{oneGroup.time}}" placeholder="Horário">
+                                <label class="label-admin" for="floatingConfigsTime">Horário</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-sm-4 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <select class="form-select form-control-admin form-disabled" id="floatingConfigsPhase">
+                                    {{#each options.0.phases}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                                <label class="label-admin" for="floatingConfigsPhase">Fase</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating">
+                                <select class="form-select form-control-admin form-disabled" id="floatingConfigsFinal">
+                                    <option value="F">F</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                </select>
+                                <label class="label-admin" for="floatingConfigsFinal">Final</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <div class="col-sm-8 mb-3">
+                        <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
+                            <div class="form-floating text-dark">
+                                <textarea class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsInfo" style="min-height: 75px;" value="{{oneGroup.info}}" placeholder="Info"></textarea>
+                                <label class="label-admin" for="floatingConfigsInfo">Info</label>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="w-100"></div>
+
+                    <p id="errUpdateGroupConfigs" class="text-center small-2 text-danger my-2 d-none">Algo deu errado, tente novamente!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdateGroupConfigs" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" style="background-color: rgb(0, 0, 0);">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title">Editar Config</h5>
+            </div>
+            <div class="modal-body text-center font-nasalization">
+
+                <div id="divContentToEdit">
+                    <input>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" onclick="updateGroup()" data-bs-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdateGroupModules" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" style="background-color: rgb(0, 0, 0);">
+            <div class="modal-header justify-content-center">
+                <h5 id="modalUpdateGroupModulesTitle" class="modal-title">Editar Módulo</h5>
+            </div>
+            <div class="modal-body text-center font-nasalization">
+
+                <div id="row justify-content-center">
+
+                    <input id="modalUpdateGroupModulesName" class="d-none">
+
+                    <div class="col-12 mb-3">
+                        <div class="form-floating text-dark">
+                            <select class="form-select form-control-admin font-nasalization" id="floatingModulesPhase" disabled>
+                            </select>
+                            <label class="label-admin" for="floatingModulesPhase">Fase</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="form-floating">
+                            <select class="form-select form-control-admin font-nasalization" id="floatingModulesIsDone">
+                                <option value="false">Não</option>
+                                <option value="true">Sim</option>
+                            </select>
+                            <label class="label-admin" for="floatingModulesIsDone">Terminado?</label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" onclick="updateGroupModule()" data-bs-dismiss="modal">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('floatingConfigsSituation').value = '{{oneGroup.situation}}'
+    document.getElementById('floatingConfigsPhase').value = '{{oneGroup.phase}}'
+    document.getElementById('floatingConfigsFinal').value = '{{oneGroup.final}}'
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="/system10/js/updateGroupScript.js"></script>

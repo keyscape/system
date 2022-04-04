@@ -3,17 +3,29 @@ const { Schema } = mongoose;
 const Module = require('./Module.model')
 
 const groupSchema = new Schema({
-    groupNum: {
+    num: {
         type: Number,
         required: true,
     },
-    groupId:	{
-        type: Number,
+    code:	{
+        type: String,
         required: true,
     },
-    initTime:	{
+    info: String,
+    date:	{
+        type: String,
+        required: true,
+    },
+    time:	{
+        type: String,
+        required: true,
+    },
+    datetime:	{
+        type: Date,
+        required: true,
+    },
+    maxTime:	{
         type: Number,
-        default: 0,
         required: true,
     },
     duration:	{
@@ -21,19 +33,14 @@ const groupSchema = new Schema({
         default: 0,
         required: true,
     },
+    situation:	{
+        type: String,
+        default: 'todo',
+        required: true,
+    },
     phase:	{
-        type: Number,
-        default: 0,
-        required: true,
-    },
-    omegaPhase:	{
-        type: Number,
-        default: 0,
-        required: true,
-    },
-    isDone:	{
-        type: Boolean,
-        default: false,
+        type: String,
+        default: 'init',
         required: true,
     },
     final:	{
@@ -41,29 +48,12 @@ const groupSchema = new Schema({
         default: 'F',
         required: true,
     },
-    team:	{
-        type: [{			
-            name:	{
-                type: String,
-                required: true,
-            },
-            info:	{
-                type: String,
-                required: true,
-            },
-            omegaPhase:	{
-                type: Number,
-                required: true,
-            },  
-            omegaUpdate:	{
-                type: Boolean,
-                default: false,
-                required: true,
-            },
-            resOmega:	{},
-        }]
-    },
-    modules: [Module.schema]	
+    modules: [Module.schema],
+    participants: {
+        type: Array,
+        default: [],
+        required: true,
+    }
 })
 
 module.exports = mongoose.model('group', groupSchema);

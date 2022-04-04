@@ -1,16 +1,25 @@
 @font-face {
 	font-family: monster;
-	src: url(../assets/mrmonster.ttf);
+	src: url(../assets/font/mrmonster.ttf);
 }
 
 @font-face {
 	font-family: xirod;
-	src: url(../assets/xirod.ttf);
+	src: url(../assets/font/xirod.ttf);
 }
 
 @font-face {
 	font-family: nasalization;
-	src: url(../assets/nasalization.otf);
+	src: url(../assets/font/nasalization.otf);
+}
+
+@font-face {
+	font-family: hack;
+	src: url(../assets/font/HackAttack.otf);
+}
+
+.font-hack {
+	font-family: hack;
 }
 
 .font-xirod {
@@ -101,36 +110,47 @@
 }
 
 .background-custom.sridhara.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/backSridhara.gif');
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backSridhara.gif');
 }
 
 .background-custom.sridhara.backImg {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/backStaticSridhara.jpg");
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticSridhara.jpg");
 }
 
 .background-custom.bhaskara.backGif {
- 	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/backBhaskara.gif');
+ 	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBhaskara.gif');
 }
 
 .background-custom.bhaskara.backImg {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/backStaticBhaskara.jpg");
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBhaskara.jpg");
 }
 
 .background-custom.bramagupta.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/backBramagupta.gif');
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBramagupta.gif');
 }
 
 .background-custom.bramagupta.backImg {
-   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/backStaticBramagupta.jpg");
+   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBramagupta.jpg");
 }
 
 .background-custom.aryabhata.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/backAryabhata.gif');
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backAryabhata.gif');
 }
 
 .background-custom.aryabhata.backImg {
-   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/backStaticAryabhata.jpg");
+   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticAryabhata.jpg");
 }
+
+.background-custom.login, .background-custom.signup, .background-custom.control, .background-custom.admin, .background-custom.user {
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/bg1.gif');
+}
+
+.background-custom.wait {
+	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1) 100%), url('../assets/back/bg3.jpg');
+}
+
+
+
 
 /*==================
 ====== Button ======
@@ -478,6 +498,30 @@ green: #085317
 	}
 }
 
+.dropdown-menu-bhaskara .dropdown-item.active{
+	color: #fff;
+    text-decoration: none;
+    background-color: #dc3545;
+}
+
+.dropdown-menu-bramagupta .dropdown-item.active{
+	color: #fff;
+    text-decoration: none;
+    background-color: #ffc107;
+}
+
+.dropdown-menu-sridhara .dropdown-item.active{
+	color: #fff;
+    text-decoration: none;
+    background-color: #198754;
+}
+
+.dropdown-menu-aryabhata .dropdown-item.active{
+	color: #fff;
+    text-decoration: none;
+    background-color: #797979;
+}
+
 .label-mi{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: .8em;
@@ -494,22 +538,48 @@ green: #085317
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
-.label-sigma, .label-gama{
+.form-select-mi:disabled{
+	background-color: rgba(70, 70, 70, 0.8);
+	color:white;
+}
+
+.form-select-control, .form-select-admin{
+	color:white;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.label-sigma, .label-gama, .label-login, .label-signup, .label-control, .label-admin, .label-user{
 	color:white;
 	font-size: .75em;
 	left: 50;
 }
 
-.form-control-sigma, .form-control-gama{
+.form-control-sigma, .form-control-gama, .form-control-login, .form-control-signup, .form-control-control, .form-control-admin, .form-control-user{
 	font-size: .7em;
 	background-color: rgba(0, 0, 0, 0.8);
 	color:white;
 	text-align: center;
 }
 
-.form-control-sigma:focus, .form-control-gama:focus{
+.form-control-sigma:focus, .form-control-gama:focus, .form-control-login:focus, .form-control-signup:focus, .form-control-control:focus, .form-control-admin:focus, .form-control-user:focus{
 	background-color: rgba(47, 47, 47, 0.8);
 	color:white;
+}
+
+.form-control-sigma:disabled, .form-control-gama:disabled, .form-control-login:disabled, .form-control-signup:disabled, .form-control-control:disabled, .form-control-admin:disabled, .form-control-user:disabled{
+	background-color: rgba(70, 70, 70, 0.8);
+	color:white;
+}
+
+.form-disabled{
+	background-color: rgba(70, 70, 70, 0.8) !important;
+	color:white;
+	pointer-events: none; 
+	touch-action: none;
+}
+
+.form-disabled.user{
+	background-color: rgba(13, 13, 13, 0.8) !important;
 }
 
 input:-webkit-autofill,
@@ -523,6 +593,11 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus{
 	-webkit-text-fill-color: white !important;
 	-webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset;
+}
+
+
+input::-ms-reveal {
+	display:none;
 }
 
 
@@ -567,3 +642,104 @@ select:-webkit-autofill:focus{
 	background-color: rgba(255, 255, 255, 0.53) !important;
 	color: rgb(41, 41, 41) !important;
 }
+
+.btn-login, .btn-signup{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	border: 1px solid rgb(0, 0, 0);
+}
+
+.btn-login:hover, .btn-signup:hover{
+	background-color: rgba(255, 255, 255, 0.653);
+	color: rgb(0, 0, 0);
+}
+
+
+
+
+
+.card-box {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ffffff !important;
+    border-radius: .5rem !important;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-box .card-box-title{
+    color: rgb(255, 255, 255);
+    font-size: 2.75rem;
+}
+
+.card-box .card-box-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    border-radius: .5rem !important;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.25s ease;
+    text-align: center;
+}
+
+.card-box .card-box-caption .description-head {
+    color: #bdbdbd;
+    font-size: 1.25rem;
+}
+
+.card-box .card-box-caption .description-body {
+    font-size: 1.75rem;
+}
+
+.card-box:hover .card-box-caption {
+    opacity: 1;
+}
+
+.border-todo{
+	border-color: red !important;
+}
+
+.border-doing{
+	border-color: #2bff00 !important;
+}
+
+.border-done{
+	border-color: white !important;
+}
+
+.border-qomega{
+	border-color: #ffac5e !important;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.h-55{
+	height: 55%!important;
+}
+
+.h-45{
+	height: 45%!important;
+}
+
+.cursor-todo{
+	cursor: default;
+}
+
+.cursor-doing, .cursor-done{
+	cursor: pointer;
+}
+

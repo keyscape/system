@@ -3,10 +3,10 @@ const express = require('express'); /* Importa o módulo express */
 const exphbs = require('express-handlebars'); /* Importa o módulo express-handlebars */
 const path = require('path'); /* Importa o módulo path */
 
-//const passport = require('passport');
-//const session = require('express-session');
+const passport = require('passport');
+const session = require('express-session');
 
-//require('./auth')(passport);
+require('./auth')(passport);
 
 /* Constante */
 const root = path.join(
@@ -39,17 +39,17 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// app.use(
-// 	session({
-// 		secret: process.env.SESSION_SECRET_KEY,
-// 		resave: false.valueOf,
-// 		saveUninitialized: false,
-// 		cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },
-// 	})
-// );
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET_KEY,
+		resave: false.valueOf,
+		saveUninitialized: false,
+		cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },
+	})
+);
 
-//app.use(passport.initialize());
-//app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* Exportação */
 module.exports = app;

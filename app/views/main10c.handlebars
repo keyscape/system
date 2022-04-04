@@ -1,0 +1,54 @@
+{{> system10/navbarLog user}}
+
+
+
+<div style="height: 100vh; padding-top: 3.5rem;">
+    <div class="container-fluid h-100">
+
+        <div class="row justify-content-center mt-3 font-nasalization">
+
+            <div class="col-lg-3 mb-2">
+                <div class="form-floating">
+                    <input name="code" class="form-control form-control-login font-nasalization" id="floatingCode" placeholder="Código">
+                    <label class="label-login" for="floatingCode">Código</label>
+                    <div class="invalid-tooltip">
+                        Código Inválido
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 mb-2">
+                <button class="btn btn-light w-100 h-100" onclick="joinGroup()">Entrar</button>
+            </div>
+
+            <div id="divGroupsContent" class="row justify-content-center mt-3">
+
+                {{#each allGroups}}
+                    <div class="col-6 col-lg-3 my-2">
+                        <a role="button" class="card-box" href="/room10c/group/{{codeGroup}}">
+                            <div class="card-box-title m-0">G#{{numGroup}}</div>
+                            <div class="card-box-caption">
+                                <div class="description-head">
+                                    {{date}}
+                                </div>
+                                <div class="description-body">
+                                    {{codeGroup}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {{/each}}
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="/system10/js/mainScript.js"></script>

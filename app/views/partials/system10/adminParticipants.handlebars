@@ -1,0 +1,74 @@
+{{#each this}}
+    <tr>
+        <td class="username">{{username}}</td>
+        <td class="fullName">{{fullName}}</td>
+        <td class="email">{{email}}</td>
+        <td class="ra">{{ra}}</td>
+        <td class="cpf">{{cpf}}</td>
+        <td class="edu">{{edu}}</td>
+        <td class="age">{{age}}</td>
+        <td class="omegaValue">{{omegaValue}}</td>
+        <td class="omegaReady">{{omegaReady}}</td>
+{{!-- 
+        <td class="actions">
+            <a role="button" data-bs-toggle="tooltip" title="Update" onclick="prepareToUpdate('{{_id}}')"><i class="far fa-edit"></i></a>
+        </td>
+        <td class="actions">
+            <a role="button" data-bs-toggle="tooltip" title="Delete" onclick="prepareToDelete('{{_id}}')"><i class="far fa-trash-alt"></i></a>
+        </td>
+         --}}
+    </tr>
+{{else}}
+    <tr>
+        <td class="username">-</td>
+        <td class="fullName">-</td>
+        <td class="email">-</td>
+        <td class="ra">-</td>
+        <td class="cpf">-</td>
+        <td class="edu">-</td>
+        <td class="age">-</td>
+        <td class="omegaValue">-</td>
+        <td class="omegaReady">-</td>
+{{!-- 
+        <td class="actions">-</td>
+        <td class="actions">-</td>
+         --}}
+    </tr>
+{{/each}}
+
+{{!-- 
+{{#each this}}
+    <tr>
+        <td class="username">{{username}}</td>
+        <td class="fullName">{{fullName}}</td>
+        <td class="email d-none">{{email}}</td>
+        <td class="ra d-none">{{ra}}</td>
+        <td class="cpf d-none">{{cpf}}</td>
+        <td class="edu d-none">{{edu}}</td>
+        <td class="age d-none">{{age}}</td>
+        <td class="omegaValue d-none">{{omegaValue}}</td>
+        <td class="omegaReady d-none">{{omegaReady}}</td>
+        <td class="actions">
+            <a role="button" data-bs-toggle="tooltip" title="Update" onclick="prepareToUpdate('{{_id}}')"><i class="far fa-edit"></i></a>
+        </td>
+        <td class="actions">
+            <a role="button" data-bs-toggle="tooltip" title="Delete" onclick="prepareToDelete('{{_id}}')"><i class="far fa-trash-alt"></i></a>
+        </td>
+    </tr>
+{{else}}
+    <tr>
+        <td class="username">-</td>
+        <td class="fullName">-</td>
+        <td class="email d-none">-</td>
+        <td class="ra d-none">-</td>
+        <td class="cpf d-none">-</td>
+        <td class="edu d-none">-</td>
+        <td class="age d-none">-</td>
+        <td class="omegaValue d-none">-</td>
+        <td class="omegaReady d-none">-</td>
+        <td class="actions">-</td>
+        <td class="actions">-</td>
+    </tr>
+{{/each}}
+
+ --}}

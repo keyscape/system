@@ -1,44 +1,30 @@
 
-<div class="col-12 my-2" id="{{name}}Card">
-
-    {{#if isDone}}
-
-        {{#if finalC}}
-            <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module aryabhata w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
-                        <div id="{{name}}TitleCard" class="games-box-title aryabhata">{{name}}</div>
-
-        {{else}}
-            <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module sridhara w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
-                <div id="{{name}}TitleCard" class="games-box-title sridhara">{{name}}</div>
-
-        {{/if}}
-
-    {{else}}
-        <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module bhaskara w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="playButton()">
-            <div id="{{name}}TitleCard" class="games-box-title bhaskara">{{name}}</div>
-    {{/if}}
+<div class="col-12 my-2" id="deltaCard">
+    <a id="deltaTagA" role="button" target="_blank" class="games-box btn btn-module {{@root.generalClass}} w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#deltaModule" onclick="moduleSound()">
+        <div id="deltaTitleCard" class="games-box-title {{@root.generalClass}}">delta</div>
 
         <div class="games-box-caption">
-            <div class="platform-body">{{{letter}}}</div>
+            <div class="platform-body">δ</div>
         </div>
     </a>
 </div>
 
-<div class="modal fade" id="{{name}}Module" tabindex="-1">
+
+<div class="modal fade" id="deltaModule" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header justify-content-center">
-                <h4 class="modal-title text-center">{{name}}</h4>
+                <h4 class="modal-title text-center">delta</h4>
             </div>
 
             {{#if isDone}}
-                <div id="{{name}}BodyDone" class="modal-body">
+                <div class="modal-body">
                     <div class="row justify-content-center text-center" style="font-size: 25px">
                         <h4>Módulo Finalizado</h4>
                     </div>
                 </div>
             {{else}}
-                <div id="{{name}}BodyNot" class="modal-body">
+                <div class="modal-body">
                     <div class="row justify-content-center text-center" style="font-size: 25px">
                         <h6>Olá Sílvio, para liberar o módulo ÔMEGA, faça login</h6>
 
@@ -83,12 +69,6 @@
                     </div>
                 </div>
 
-                <div id="{{name}}BodyDone" class="modal-body d-none">
-                    <div class="row justify-content-center text-center" style="font-size: 25px">
-                        <h4>Módulo Finalizado</h4>
-                    </div>
-                </div>
-
                 <script>
                     document.getElementById('buttonEye').addEventListener('mousedown', () => {
                         document.getElementById('floatingInputDeltaPwd').type = 'text';
@@ -110,10 +90,7 @@
                     });
                 </script>
 
-
-
             {{/if}}
-
 
         </div>
     </div>
