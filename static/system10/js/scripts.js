@@ -31,6 +31,15 @@ window.onload = (event) => {
 		}
 	}
 };
+
+function loadFinal(){
+	if(phaseGroup == 'done'){
+		new bootstrap.Modal(document.getElementById('omegaModule'), {
+			keyboard: false
+		}).show()
+	}
+}
+
   
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {

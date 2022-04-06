@@ -5,8 +5,12 @@
                 <h4 class="modal-title text-center">{{name}}</h4>
 
                 <div style="right: 3%; z-index: 10" class="position-absolute">
-                    <a role="button" class="link-light" tabindex="0" data-bs-html=true data-bs-trigger="focus" data-bs-container="body" data-bs-placement="left" data-bs-toggle="popover" title="Dicas" data-bs-content="<strong>[0]</strong> Dê muito zoom;<br><strong>[1]</strong> Sequência numérica.">
-                        <i class="far fa-question-circle h3 m-0"></i>
+                    <a role="button" class="link-light text-decoration-none" tabindex="0" data-bs-html=true data-bs-trigger="focus" data-bs-container="body" data-bs-placement="left" data-bs-toggle="popover" title="Dicas" data-bs-content="<strong>[0]</strong> Dê muito zoom;<br><strong>[1]</strong> Sequência numérica.">
+                        <i class="far fa-question-circle align-middle h3 m-0"></i>
+                    </a>
+
+                    <a role="button" class="link-light ms-2 text-decoration-none" data-bs-dismiss="modal">
+                        <i class="fas fa-times align-middle h3 m-0"></i>
                     </a>
                 </div>
 
@@ -56,12 +60,12 @@
                 <div id="{{name}}BodyNot" class="modal-body">
                     <div class="row justify-content-center text-center" style="font-size: 25px">
                         <div class="col-12">
-                            <iframe src="https://www.google.com/maps/d/embed?mid=13B4sGR4LEFckbX8atOG-aSSbe7YUGWdc&ehbc=2E312F" width="100%" height="400"></iframe>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=13B4sGR4LEFckbX8atOG-aSSbe7YUGWdc&ehbc=2E312F" width="100%" height="350"></iframe>
                             
                         
-                            <div class="border border-light mx-5 my-3">
+                            <div class="row justify-content-center border border-light mx-5 my-3">
 
-                                <div class="row justify-content-center text-center my-3">
+                                <div class="col-10 row justify-content-center text-center mt-3">
 
                                     <h6>Sequência</h6>
 
@@ -87,7 +91,7 @@
 
                                 </div>
 
-                                <div class="row justify-content-center text-center my-3">
+                                <div class="col-12 row justify-content-center text-center my-3">
 
                                     <div class="col-sm-8">
                                         <div class="form-floating text-dark">
@@ -99,7 +103,7 @@
 
                                 </div>
 
-                                <button id="buttonSigmaSubmit" type="button" class="btn btn-outline-light mb-3" onclick="sigmaSubmit()">Enviar</button>
+                                <button id="buttonSigmaSubmit" type="button" class="btn btn-outline-light mb-3 col-sm-4" onclick="sigmaSubmit()">Enviar</button>
 
                                 <h5 id="countdownSigma" class="d-none">10</h5>
 
