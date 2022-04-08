@@ -3,6 +3,28 @@
 <div class="container-fluid height-mobile-100">
     <div class="row text-center mx-0 height-mobile-100" id="boxAll">
 
+        {{!-- Modules --}}
+        <div class=" col-12 col-lg-4 border border-custom {{generalClass}} h-100">
+
+            <div class="row justify-content-center align-items-center text-center h-100 overflow-auto">
+
+                <h3 class="my-2">MÓDULOS</h3>
+
+                {{#if deltaContent.showDelta}}
+                    {{> system10/modules/deltaModule deltaContent}}
+                {{/if}}
+
+                {{#each modulesToShow}}
+                    {{> system10/allModules this}}
+                {{/each}}
+
+                {{#if omegaContent.showOmega}}
+                    {{> system10/modules/omegaModule omegaModuleContent}}
+                {{/if}}
+
+            </div>
+        </div>
+
         {{!-- Omega, Info e Files --}}
         <div class="col-12 col-lg-8 height-mobile-100">
 
@@ -142,28 +164,6 @@
             </div>
         </div>
 
-        {{!-- Modules --}}
-        <div class=" col-12 col-lg-4 border border-custom {{generalClass}} h-100">
-
-            <div class="row justify-content-center align-items-center text-center h-100 overflow-auto">
-
-                <h3 class="my-2">MÓDULOS</h3>
-
-                {{#if deltaContent.showDelta}}
-                    {{> system10/modules/deltaModule deltaContent}}
-                {{/if}}
-
-                {{#each modulesToShow}}
-                    {{> system10/allModules this}}
-                {{/each}}
-
-                {{#if omegaContent.showOmega}}
-                    {{> system10/modules/omegaModule omegaModuleContent}}
-                {{/if}}
-
-            </div>
-        </div>
-        
     </div>
 </div>
 

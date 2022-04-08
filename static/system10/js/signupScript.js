@@ -19,32 +19,70 @@ async function postData (_path, _data){
     return response.json()
 }
 
+function validationUsername(username){
+    if(!(/^[0-9a-zA-Z_.-]+$/.test(username.value)) || username.value.length < 3 || username.value.length > 16){
+        username.classList.remove('is-valid')
+        username.classList.add('is-invalid')
+        return false
+    }
+    else{
+        username.classList.remove('is-invalid')
+        username.classList.add('is-valid')
+        return true
+    }
+}
 
-function cpfChange(i){
-    var v = i.value;
+function validationPassword(password){
 
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-        i.value = v.substring(0, v.length-1);
-        return;
+    if(!(/^[0-9a-zA-Z_.@#$%&-]+$/.test(password.value)) || password.value.length < 8 || password.value.length > 16){
+        password.classList.remove('is-valid')
+        password.classList.add('is-invalid')
+        return false
+    }
+    else{
+        password.classList.remove('is-invalid')
+        password.classList.add('is-valid')
+        return true
     }
 
-    i.setAttribute("maxlength", "14");
-
-    if (v.length == 3 || v.length == 7) i.value += ".";
-    if (v.length == 11) i.value += "-";
 }
 
-function validationEmail(emailStr){
-    if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailStr)) return true
+function validationFullName(fullName){
+    if(fullName.value.length < 5){
+        fullName.classList.remove('is-valid')
+        fullName.classList.add('is-invalid')
+        return false
+    }
+    else{
+        fullName.classList.remove('is-invalid')
+        fullName.classList.add('is-valid')
+        return true
+    }
 
-    return false
+
 }
 
-function validationRA(numStr) {
+function validationEmail(email){
+    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))){
+        email.classList.remove('is-valid')
+        email.classList.add('is-invalid')
+        return false
+    }
+    else{
+        email.classList.remove('is-invalid')
+        email.classList.add('is-valid')
+        return true
+    }
 
+}
+
+function validationRA(ra) {
+
+    let numStr = ra.value
     const numLength = numStr.length;
     let nMult = numLength;
     let sum = 0;
+    let resBol = false
 
     for (let i = 0; i < numLength - 1; i++) {
         sum += parseInt(numStr.charAt(i)) * nMult;
@@ -55,11 +93,36 @@ function validationRA(numStr) {
 
     res = res == 10 || res == 11 ? 0 : res;
 
-    return (res == numStr[numLength - 1])
+    resBol = (res == numStr[numLength - 1])
 
+
+    if(!resBol && ra.value != ''){
+        ra.classList.remove('is-valid')
+        ra.classList.add('is-invalid')
+        return false
+    }
+    else{
+        ra.classList.remove('is-invalid')
+        ra.classList.add('is-valid')
+        return true
+    }
 }
 
-function validationCPF(numStr) {
+function validationCPF(cpf){
+
+    let v = cpf.value;
+
+    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+        cpf.value = v.substring(0, v.length-1);
+    }
+
+    cpf.setAttribute("maxlength", "14");
+
+    if (v.length == 3 || v.length == 7) cpf.value += ".";
+    if (v.length == 11) cpf.value += "-";
+
+    let numStr = v
+    let resBol = false
 
     if(numStr.length == 14){
         numStr = numStr.replace(/[\.\-]/g,'')
@@ -89,90 +152,57 @@ function validationCPF(numStr) {
         res2 = (sum * 10) % 11;
         res2 = res2 == 10 ? 0 : res2;
 
-        return (res1 == numStr[numLength - 2] && res2 == numStr[numLength - 1])
+        resBol = (res1 == numStr[numLength - 2] && res2 == numStr[numLength - 1])
 
     }
 
-    return false
+    if(!resBol && cpf.value != ''){
+        cpf.classList.remove('is-valid')
+        cpf.classList.add('is-invalid')
+        return false
+    }
+    else{
+        cpf.classList.remove('is-invalid')
+        cpf.classList.add('is-valid')
+        return true
+    }
+
+
+}
+
+function validationEdu(edu){
+    edu.classList.remove('is-invalid')
+    edu.classList.add('is-valid')
+    return true
+}
+
+function validationAge(age){
+
+    if(age.value < 5 || age.value > 150){
+        age.classList.remove('is-valid')
+        age.classList.add('is-invalid')
+        return false
+    }
+    else{
+        age.classList.remove('is-invalid')
+        age.classList.add('is-valid')
+        return true
+    }
+
 }
 
 function isValid(username, password, fullName, email, ra, age, cpf, edu){
 
     let isValid = true
 
-    if(username.value.length < 2 || username.value.length > 16){
-        username.classList.remove('is-valid')
-        username.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        username.classList.remove('is-invalid')
-        username.classList.add('is-valid')
-    }
-
-    if(password.value.length < 8 || password.value.length > 16){
-        password.classList.remove('is-valid')
-        password.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        password.classList.remove('is-invalid')
-        password.classList.add('is-valid')
-    }
-
-    if(fullName.value.length < 5){
-        fullName.classList.remove('is-valid')
-        fullName.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        fullName.classList.remove('is-invalid')
-        fullName.classList.add('is-valid')
-    }
-
-    //=======
-
-    if(!validationEmail(email.value)){
-        email.classList.remove('is-valid')
-        email.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        email.classList.remove('is-invalid')
-        email.classList.add('is-valid')
-    }
-
-    if(!validationRA(ra.value) && ra.value != ''){
-        ra.classList.remove('is-valid')
-        ra.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        ra.classList.remove('is-invalid')
-        ra.classList.add('is-valid')
-    }
-
-    if(age.value < 5 || age.value > 150){
-        age.classList.remove('is-valid')
-        age.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        age.classList.remove('is-invalid')
-        age.classList.add('is-valid')
-    }
-
-    if(!validationCPF(cpf.value) && cpf.value != ''){
-        cpf.classList.remove('is-valid')
-        cpf.classList.add('is-invalid')
-        isValid = false
-    }
-    else{
-        cpf.classList.remove('is-invalid')
-        cpf.classList.add('is-valid')
-    }
-
-    edu.classList.add('is-valid')
+    if(!validationUsername(username)) isValid = false
+    if(!validationPassword(password)) isValid = false
+    if(!validationFullName(fullName)) isValid = false
+    if(!validationEmail(email)) isValid = false
+    if(!validationRA(ra)) isValid = false
+    if(!validationAge(age)) isValid = false
+    if(!validationCPF(cpf)) isValid = false
+    if(!validationEdu(edu)) isValid = false
 
     return isValid
 }

@@ -12,11 +12,8 @@
 
                     <div class="col-12 mb-3">
                         <div class="form-floating">
-                            <input name="username" class="form-control form-control-signup font-nasalization" id="floatingUsername" placeholder="Nome de Usuário">
+                            <input name="username" class="form-control form-control-signup font-nasalization" id="floatingUsername" placeholder="Nome de Usuário"  oninput="validationUsername(this)">
                             <label class="label-signup" for="floatingUsername">Nome de Usuário <span class="text-danger">*</span></label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Deve conter de 3 a 16 caracteres
-                            </div>
                         </div>
                     </div>
 
@@ -24,11 +21,8 @@
                         <div class="col-10 pe-0">
 
                             <div class="form-floating">
-                                <input name="password" type="password" class="form-control form-control-signup font-nasalization rounded-0 rounded-start" id="floatingPassword" placeholder="Senha">
+                                <input name="password" type="password" class="form-control form-control-signup font-nasalization rounded-0 rounded-start" id="floatingPassword" placeholder="Senha" oninput="validationPassword(this)">
                                 <label class="label-signup" for="floatingPassword">Senha <span class="text-danger">*</span></label>
-                                <div class="invalid-tooltip small-3 font-nasalization">
-                                    Deve conter de 8 a 16 caracteres
-                                </div>
                             </div>
 
                         </div>
@@ -42,58 +36,43 @@
 
                     <div class="col-12 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingFullName" placeholder="Nome Completo" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Utilizado para gerar<br>o certificado.">
+                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingFullName" placeholder="Nome Completo" oninput="validationFullName(this)">
                             <label class="label-signup" for="floatingFullName">Nome Completo <span class="text-danger">*</span></label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Muito curto
-                            </div>
                         </div>
                     </div>
 
                     <div class="col-12 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="email" class="form-control form-control-signup font-nasalization" id="floatingEmail" placeholder="E-mail">
+                            <input type="email" class="form-control form-control-signup font-nasalization" id="floatingEmail" placeholder="E-mail" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Somente para comunicação." oninput="validationEmail(this)">
                             <label class="label-signup" for="floatingEmail">E-mail <span class="text-danger">*</span></label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Inválido
-                            </div>
                         </div>
                     </div>
                     
                     <div class="col-sm-5 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="number" class="form-control form-control-signup font-nasalization" id="floatingRA" placeholder="RA">
-                            <label class="label-signup" for="floatingRA">RA</label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Inválido
-                            </div>
+                            <input type="number" class="form-control form-control-signup font-nasalization" id="floatingRA" placeholder="RA" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Somente para<br>alunos da UTFPR." oninput="validationRA(this)">
+                            <label class="label-signup" for="floatingRA">RA <span class="text-secondary small-3">(alunos UTFPR)</span></label>
                         </div>
                     </div>
 
                     <div class="col-sm-7 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingCPF" placeholder="CPF" oninput="cpfChange(this)" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Utilizado para gerar<br>o certificado.">
-                            <label class="label-signup" for="floatingCPF">CPF</label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Inválido
-                            </div>
+                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingCPF" placeholder="CPF" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Utilizado para gerar o certificado." oninput="validationCPF(this)">
+                            <label class="label-signup" for="floatingCPF">CPF <span class="text-secondary small-3">(p/ certificado)</span></label>
                         </div>
                     </div>
 
                     <div class="col-sm-8 mb-1">
                         <div class="form-floating text-dark">
-                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingEdu" placeholder="Instituição de Ensino" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Instituição de Ensino<br>Ex: UTFPR-CP">
-                            <label class="label-signup" for="floatingEdu">Instit. Ens.</label>
+                            <input type="text" class="form-control form-control-signup font-nasalization" id="floatingEdu" placeholder="Instituição de Ensino" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="Ex: UTFPR-CP" oninput="validationEdu(this)">
+                            <label class="label-signup" for="floatingEdu">Instituição de Ensino</label>
                         </div>
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="number" class="form-control form-control-signup font-nasalization" id="floatingAge" placeholder="Idade">
+                            <input type="number" class="form-control form-control-signup font-nasalization" id="floatingAge" placeholder="Idade" oninput="validationAge(this)">
                             <label class="label-signup" for="floatingAge">Idade <span class="text-danger">*</span></label>
-                            <div class="invalid-tooltip small-3 font-nasalization">
-                                Inválida
-                            </div>
                         </div>
                     </div>
                     

@@ -136,7 +136,7 @@
 
 
     function validationUsername(username){
-        if(username.value.length < 2 || username.value.length > 16){
+        if(!(/^[0-9a-zA-Z_.-]+$/.test(username.value)) || username.value.length < 3 || username.value.length > 16){
             username.classList.remove('is-valid')
             username.classList.add('is-invalid')
             document.getElementById('buttonUpdateUser').disabled = true
@@ -150,7 +150,7 @@
 
     function validationPassword(password){
 
-        if(password.value.length < 8 || password.value.length > 16){
+        if(!(/^[0-9a-zA-Z_.@#$%&-]+$/.test(password.value)) || password.value.length < 8 || password.value.length > 16){
             password.classList.remove('is-valid')
             password.classList.add('is-invalid')
             document.getElementById('buttonUpdateUser').disabled = true
@@ -161,7 +161,7 @@
 
             let otherPassword = password.id.includes('Old') ? document.getElementById('floatingPasswordNew') : document.getElementById('floatingPasswordOld')
 
-            if(otherPassword.value.length < 8 || otherPassword.value.length > 16){
+            if(!(/^[0-9a-zA-Z_.@#$%&-]+$/.test(otherPassword.value)) || otherPassword.value.length < 8 || otherPassword.value.length > 16){
                 otherPassword.classList.remove('is-valid')
                 otherPassword.classList.add('is-invalid')
                 document.getElementById('buttonUpdateUser').disabled = true
@@ -292,9 +292,6 @@
             resBol = (res1 == numStr[numLength - 2] && res2 == numStr[numLength - 1])
 
         }
-
-        console.log(!resBol)
-        console.log(cpf.value != '')
 
         if(!resBol && cpf.value != ''){
             cpf.classList.remove('is-valid')
