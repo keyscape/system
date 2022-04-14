@@ -9,8 +9,8 @@
 
             <div class="col-lg-3 mb-2">
                 <div class="form-floating">
-                    <input name="code" class="form-control form-control-login font-nasalization" id="floatingCode" placeholder="Código">
-                    <label class="label-login" for="floatingCode">Código</label>
+                    <input name="code" class="form-control form-control-custom font-nasalization" id="floatingCode" placeholder="Código">
+                    <label class="label-custom" for="floatingCode">Código</label>
                     <div class="invalid-tooltip">
                         Código Inválido
                     </div>
@@ -25,13 +25,15 @@
 
                 {{#each allGroups}}
                     <div class="col-6 col-lg-3 my-2">
-                        <a role="button" class="card-box" href="/room10c/group/{{codeGroup}}">
-                            <div class="card-box-title m-0">G#{{numGroup}}</div>
+                        <a role="button" class="card-box card-box-module border-custom rounded" style="background-color: rgba(0, 0, 0, 0.5);" href="/room10c/group/{{codeGroup}}">
+                            <div class="card-box-title">
+                                G#{{numGroup}}
+                            </div>
                             <div class="card-box-caption">
-                                <div class="description-head">
+                                <div class="caption-head">
                                     {{date}}
                                 </div>
-                                <div class="description-body">
+                                <div class="caption-body">
                                     {{codeGroup}}
                                 </div>
                             </div>

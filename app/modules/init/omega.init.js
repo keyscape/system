@@ -2,31 +2,39 @@ const Omega = require('../../models/Omega.model');
 
 const omegaAns = [
     {
-        question: 'kdfghskdjfgsdf sdkfhgsdhkfjgsdf sbhsdkfjshdkfsdf',
+        module: {
+            name: 'Epsilon',
+            letter: 'ε',
+        },
+        question: '<img class="img-fluid" width="80%" src="/system10/assets/omega/img1.jpg">',
         alternatives: [
             {
                 letter: 'a',
-                content: 'Prócimo',
+                content: 'Dois pássaros perto de uma flor',
                 value: [0.0, 0.0],
             },
             {
                 letter: 'b',
-                content: 'Próssimo',
+                content: 'Homem de bigode e barba',
                 value: [0.0, 0.0],
             },
             {
                 letter: 'c',
-                content: 'Próximo',
+                content: 'Mancha de tinta com formato abstrato',
                 value: [0.0, 0.0],
             },
             {
                 letter: 'd',
-                content: 'Próçimo',
+                content: 'Parece um ser que conversou comigo num sonho ano passado',
                 value: [0.0, 0.0],
             },
         ]
     },
     {
+        module: {
+            name: 'Zeta',
+            letter: 'ζ',
+        },
         question: 'As decisões financeiras da Expoente são sugeridas por Euler. O que ele deveria sugerir para fazer com lucros inesperados?',
         alternatives: [
             {
@@ -52,6 +60,10 @@ const omegaAns = [
         ]
     },
     {
+        module: {
+            name: 'Pi',
+            letter: 'π',
+        },
         question: 'No ramo de entregas da Expoente, é comum pacotes serem enviados por caminhos alternativos. Qual dos serviços abaixo é mais vantajoso?',
         alternatives: [
             {
@@ -77,6 +89,10 @@ const omegaAns = [
         ]
     },
     {
+        module: {
+            name: 'Rô',
+            letter: 'ρ',
+        },
         question: 'O site de busca gerido por Euler recebe a seguinte pergunta "A empresa Expoente é ...". Como Euler deveria autocompletar essa pergunta?',
         alternatives: [
             {
@@ -102,6 +118,10 @@ const omegaAns = [
         ]
     },
     {
+        module: {
+            name: 'Tau',
+            letter: 'τ',
+        },
         question: 'Um passarinho pousa sobre uma árvore, num dia de vento. Uma criança brinca com um balão perto da árvore, e acaba soltando o balão. O que acontece com o balão?',
         alternatives: [
             {
@@ -127,6 +147,10 @@ const omegaAns = [
         ]
     },
     {
+        module: {
+            name: 'Fi',
+            letter: 'φ',
+        },
         question: 'Em um dos vários centros de processamento de dados da Expoente, Euler descobriu que havia um grande “gato” de energia para uma comunidade carente, onde várias crianças vivem em situação de miséria. O que Euler deveria sugerir?',
         alternatives: [
             {
@@ -152,6 +176,10 @@ const omegaAns = [
         ]
     },
     {
+        module: {
+            name: 'Chi',
+            letter: 'χ',
+        },
         question: 'Expoente controla a maior rede social do país de Zamunda. As eleições estão próximas, e o presidente com maior apoio popular é um conhecido traficante de armas e responsável por vários crimes internacionais. Se ele entrar, a Expoente poderá perder espaço no país. Euler, na rede social, deve:',
         alternatives: [
             {

@@ -9,30 +9,30 @@
 
             <div class="col-md-2 mb-2">
                 <div class="form-floating">
-                    <select class="form-select form-select-admin" id="floatingGroupsSituation" onchange="updateGroupButtons()">
+                    <select class="form-select form-select-custom" id="floatingGroupsSituation" onchange="updateGroupButtons()">
                         <option value="all" selected>Todas</option>
                         <option value="todo">Aguardando</option>
                         <option value="doing">Em Andamento</option>
                         <option value="done">Terminado</option>
                     </select>
-                    <label class="label-admin" for="floatingGroupsSituation">Situação</label>
+                    <label class="label-custom" for="floatingGroupsSituation">Situação</label>
                 </div>
             </div>
 
             <div class="col-md-2 mb-2">
                 <div class="form-floating">
-                    <select class="form-select form-select-admin" id="floatingGroupsDate" onchange="updateGroupButtons()">
+                    <select class="form-select form-select-custom" id="floatingGroupsDate" onchange="updateGroupButtons()">
                         <option value="all" selected>Todas</option>
                         {{#each allDates}}
                             <option value="{{this}}">{{this}}</option>
                         {{/each}}
                     </select>
-                    <label class="label-admin" for="floatingGroupsDate">Data</label>
+                    <label class="label-custom" for="floatingGroupsDate">Data</label>
                 </div>
             </div>
 
             <div class="col-md-2 mb-2">
-                <button class="btn btn-login w-100 h-100" onclick="showModalCreateGroup()">Criar Grupo</button>
+                <button class="btn btn-custom w-100 h-100" onclick="showModalCreateGroup()">Criar Grupo</button>
             </div>
 
             <div class="w-100"></div>
@@ -43,25 +43,6 @@
 
             <div id="divGroupsContent" class="row justify-content-center">
                 {{> system10/adminGroups allGroups}}
-
-{{!--                 {{#each allGroups}}
-
-                    <div class="col-6 col-lg-3 my-2 all {{dateFormated}} {{situation}}">
-                        <a role="button" class="card-box border-{{situation}}" href="/room10c/admin/updateGroup/{{_id}}">
-                            <div class="card-box-title m-0">G#{{num}}</div>
-                            <div class="card-box-caption">
-                                <div class="description-head">
-                                    {{dateFormated}}
-                                </div>
-                                <div class="description-body">
-                                    #{{numParticipants}}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                {{/each}} --}}
-
             </div>
 
         </div>
@@ -87,8 +68,8 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="date" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupDate" placeholder="Data">
-                            <label class="label-admin" for="floatingCreateGroupDate">Data <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control form-control-custom font-nasalization" id="floatingCreateGroupDate" placeholder="Data">
+                            <label class="label-custom" for="floatingCreateGroupDate">Data <span class="text-danger">*</span></label>
                             <div class="invalid-tooltip small-3 font-nasalization">
                                 Inválida
                             </div>
@@ -97,15 +78,15 @@
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="time" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupTime" placeholder="Horário">
-                            <label class="label-admin" for="floatingCreateGroupTime">Horário</label>
+                            <input type="time" class="form-control form-control-custom font-nasalization" id="floatingCreateGroupTime" placeholder="Horário">
+                            <label class="label-custom" for="floatingCreateGroupTime">Horário</label>
                         </div>
                     </div>
 
                     <div class="col-sm-4 mb-3">
                         <div class="form-floating text-dark">
-                            <input type="number" class="form-control form-control-admin font-nasalization" id="floatingCreateGroupMaxTime" value="30" placeholder="Tempo Máximo">
-                            <label class="label-admin" for="floatingCreateGroupMaxTime">Tempo Máximo <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control form-control-custom font-nasalization" id="floatingCreateGroupMaxTime" value="30" placeholder="Tempo Máximo">
+                            <label class="label-custom" for="floatingCreateGroupMaxTime">Tempo Máximo <span class="text-danger">*</span></label>
                             <div class="invalid-tooltip small-3 font-nasalization">
                                 Min. 20 - Max. 120
                             </div>
@@ -116,8 +97,8 @@
 
                     <div class="col-sm-12 mb-2">
                         <div class="form-floating text-dark">
-                            <textarea class="form-control form-control-admin font-nasalization" placeholder="Info" id="floatingCreateGroupInfo" style="min-height: 75px;"></textarea>
-                            <label class="label-admin" for="floatingCreateGroupInfo">Info</label>
+                            <textarea class="form-control form-control-custom font-nasalization" placeholder="Info" id="floatingCreateGroupInfo" style="min-height: 75px;"></textarea>
+                            <label class="label-custom" for="floatingCreateGroupInfo">Info</label>
                         </div>
                     </div>
 

@@ -18,15 +18,15 @@
 
                 <div class="col-6 col-md-2 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="number" class="form-control form-control-admin font-nasalization" id="floatingGroupNum" value="{{oneGroup.num}}" placeholder="NGrupo" disabled>
-                        <label class="label-admin" for="floatingGroupNum">N# Grupo</label>
+                        <input type="number" class="form-control form-control-custom font-nasalization" id="floatingGroupNum" value="{{oneGroup.num}}" placeholder="NGrupo" disabled>
+                        <label class="label-custom" for="floatingGroupNum">N# Grupo</label>
                     </div>
                 </div>
 
                 <div class="col-6 col-md-2 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="text" class="form-control form-control-admin font-nasalization" id="floatingGroupCode" value="{{oneGroup.code}}" placeholder="Código" disabled>
-                        <label class="label-admin" for="floatingGroupCode">Código</label>
+                        <input type="text" class="form-control form-control-custom font-nasalization" id="floatingGroupCode" value="{{oneGroup.code}}" placeholder="Código" disabled>
+                        <label class="label-custom" for="floatingGroupCode">Código</label>
                     </div>
                 </div>
 
@@ -167,12 +167,12 @@
                     <div class="col-sm-4 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <select class="form-select form-control-admin font-nasalization form-disabled" id="floatingConfigsSituation">
+                                <select class="form-select form-control-custom font-nasalization form-disabled" id="floatingConfigsSituation">
                                     <option value="todo">Aguardando</option>
                                     <option value="doing">Em Andamento</option>
                                     <option value="done">Terminado</option>
                                 </select>
-                                <label class="label-admin" for="floatingConfigsSituation">Situação</label>
+                                <label class="label-custom" for="floatingConfigsSituation">Situação</label>
                             </div>
                         </button>
                     </div>
@@ -180,8 +180,8 @@
                     <div class="col-sm-2 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <input type="number" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsMaxTime" value="{{oneGroup.maxTime}}" placeholder="Tempo Máximo">
-                                <label class="label-admin" for="floatingConfigsMaxTime">Tempo Máximo</label>
+                                <input type="number" class="form-control form-control-custom font-nasalization form-disabled" id="floatingConfigsMaxTime" value="{{oneGroup.maxTime}}" placeholder="Tempo Máximo">
+                                <label class="label-custom" for="floatingConfigsMaxTime">Tempo Máximo</label>
                             </div>
                         </button>
                     </div>
@@ -189,8 +189,8 @@
                     <div class="col-sm-2 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent">
                             <div class="form-floating text-dark">
-                                <input type="number" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsDuration" value="{{oneGroup.duration}}" placeholder="Duração">
-                                <label class="label-admin" for="floatingConfigsDuration">Duração</label>
+                                <input type="number" class="form-control form-control-custom font-nasalization form-disabled" id="floatingConfigsDuration" value="{{oneGroup.duration}}" placeholder="Duração">
+                                <label class="label-custom" for="floatingConfigsDuration">Duração</label>
                             </div>
                         </button>
                     </div>
@@ -200,8 +200,8 @@
                     <div class="col-sm-4 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <input type="date" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsDate" value="{{oneGroup.date}}" placeholder="Data">
-                                <label class="label-admin" for="floatingConfigsDate">Data</label>
+                                <input type="date" class="form-control form-control-custom font-nasalization form-disabled" id="floatingConfigsDate" value="{{oneGroup.date}}" placeholder="Data">
+                                <label class="label-custom" for="floatingConfigsDate">Data</label>
                             </div>
                         </button>
                     </div>
@@ -209,8 +209,8 @@
                     <div class="col-sm-4 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <input type="time" class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsTime" value="{{oneGroup.time}}" placeholder="Horário">
-                                <label class="label-admin" for="floatingConfigsTime">Horário</label>
+                                <input type="time" class="form-control form-control-custom font-nasalization form-disabled" id="floatingConfigsTime" value="{{oneGroup.time}}" placeholder="Horário">
+                                <label class="label-custom" for="floatingConfigsTime">Horário</label>
                             </div>
                         </button>
                     </div>
@@ -220,12 +220,12 @@
                     <div class="col-sm-4 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <select class="form-select form-control-admin form-disabled" id="floatingConfigsPhase">
+                                <select class="form-select form-control-custom form-disabled" id="floatingConfigsPhase">
                                     {{#each options.0.phases}}
                                         <option value="{{this}}">{{this}}</option>
                                     {{/each}}
                                 </select>
-                                <label class="label-admin" for="floatingConfigsPhase">Fase</label>
+                                <label class="label-custom" for="floatingConfigsPhase">Fase</label>
                             </div>
                         </button>
                     </div>
@@ -233,13 +233,13 @@
                     <div class="col-sm-4 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating">
-                                <select class="form-select form-control-admin form-disabled" id="floatingConfigsFinal">
+                                <select class="form-select form-control-custom form-disabled" id="floatingConfigsFinal">
                                     <option value="F">F</option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="C">C</option>
                                 </select>
-                                <label class="label-admin" for="floatingConfigsFinal">Final</label>
+                                <label class="label-custom" for="floatingConfigsFinal">Final</label>
                             </div>
                         </button>
                     </div>
@@ -249,8 +249,8 @@
                     <div class="col-sm-8 mb-3">
                         <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateGroupConfigs(this)">
                             <div class="form-floating text-dark">
-                                <textarea class="form-control form-control-admin font-nasalization form-disabled" id="floatingConfigsInfo" style="min-height: 75px;" value="{{oneGroup.info}}" placeholder="Info"></textarea>
-                                <label class="label-admin" for="floatingConfigsInfo">Info</label>
+                                <textarea class="form-control form-control-custom font-nasalization form-disabled" id="floatingConfigsInfo" style="min-height: 75px;" value="{{oneGroup.info}}" placeholder="Info"></textarea>
+                                <label class="label-custom" for="floatingConfigsInfo">Info</label>
                             </div>
                         </button>
                     </div>
@@ -298,19 +298,19 @@
 
                     <div class="col-12 mb-3">
                         <div class="form-floating text-dark">
-                            <select class="form-select form-control-admin font-nasalization" id="floatingModulesPhase" disabled>
+                            <select class="form-select form-control-custom font-nasalization" id="floatingModulesPhase" disabled>
                             </select>
-                            <label class="label-admin" for="floatingModulesPhase">Fase</label>
+                            <label class="label-custom" for="floatingModulesPhase">Fase</label>
                         </div>
                     </div>
 
                     <div class="mb-2">
                         <div class="form-floating">
-                            <select class="form-select form-control-admin font-nasalization" id="floatingModulesIsDone">
+                            <select class="form-select form-control-custom font-nasalization" id="floatingModulesIsDone">
                                 <option value="false">Não</option>
                                 <option value="true">Sim</option>
                             </select>
-                            <label class="label-admin" for="floatingModulesIsDone">Terminado?</label>
+                            <label class="label-custom" for="floatingModulesIsDone">Terminado?</label>
                         </div>
                     </div>
 

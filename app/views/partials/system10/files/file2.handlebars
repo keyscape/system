@@ -5,13 +5,9 @@
 
 <div class="modal fade" id="file2Modal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header justify-content-center">
-                {{#if @root.initPhase}}
-                    <h4 class="modal-title text-center">ARQUIVO #2 (GAMA)</h4>
-                {{else}}
-                    <h4 class="modal-title text-center">ARQUIVO #2 (BETA)</h4>
-                {{/if}}
+        <div class="modal-content border-custom {{@root.generalClass}}">
+            <div class="modal-header border-custom {{@root.generalClass}} justify-content-center">
+                <h4 class="modal-title text-center">ARQUIVO #2</h4>
 
                 <div style="right: 3%; z-index: 10" class="position-absolute">
                     <a role="button" class="link-light" data-bs-dismiss="modal">

@@ -1,7 +1,7 @@
 <div class="modal fade" id="{{name}}Module" tabindex="-1">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header justify-content-center">
+        <div class="modal-content border-custom {{specificClass}}">
+            <div class="modal-header border-custom {{specificClass}} justify-content-center">
                 <h4 class="modal-title text-center">{{name}}</h4>
 
                 <div style="right: 3%; z-index: 10" class="position-absolute">
@@ -26,14 +26,16 @@
                             <table class="table table-secondary table-hover table-bordered text-center font-nasalization">
                                 <thead class="table-dark">
                                     <tr>
+                                        <th scope="col">Nome</th>
                                         <th scope="col">E-mail</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    {{#each @root.miModuleContent.alt.1.opt}}
+                                    {{#each @root.miModuleContent.res}}
                                         <tr>
-                                            <td>{{this}}@expoente.com</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.email}}@expoente.com</td>
                                         </tr>
                                     {{/each}}
 
@@ -90,14 +92,16 @@
                             <table class="table table-secondary table-hover table-bordered text-center font-nasalization">
                                 <thead class="table-dark">
                                     <tr>
+                                        <th scope="col">Nome</th>
                                         <th scope="col">E-mail</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                    {{#each @root.miModuleContent.alt.1.opt}}
+                                    {{#each @root.miModuleContent.res}}
                                         <tr>
-                                            <td>{{this}}@expoente.com</td>
+                                            <td>{{this.name}}</td>
+                                            <td>{{this.email}}@expoente.com</td>
                                         </tr>
                                     {{/each}}
 

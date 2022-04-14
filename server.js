@@ -12,6 +12,7 @@ const room10cGroupRouter = require('./app/routes/room10c/group.route'); /* Impor
 const room10cJoinGroupRouter = require('./app/routes/room10c/joinGroup.route'); /* Importa a rota /romm10c/joinGroup */
 const room10cUserRouter = require('./app/routes/room10c/user.route'); /* Importa a rota /romm10c/user */
 const room10cAdminRouter = require('./app/routes/room10c/admin.route'); /* Importa a rota /romm10c/joinGroup */
+const room10cTestModule = require('./app/routes/room10c/test.route'); /* Importa a rota /romm10c/test/module */
 
 //require('./app/modules/init/module.init')
 //require('./app/modules/init/omega.init')
@@ -31,6 +32,7 @@ app.use(room10cGroupRouter); /* Adiciona ao middleware a rota /romm10c/group */
 app.use(room10cJoinGroupRouter); /* Adiciona ao middleware a rota /romm10c/joinGroup */
 app.use(room10cUserRouter); /* Adiciona ao middleware a rota /romm10c/user */
 app.use(room10cAdminRouter); /* Adiciona ao middleware a rota /romm10c/admin */
+app.use(room10cTestModule); /* Adiciona ao middleware a rota /romm10c/test/module */
 
 /* Abre o servidor na porta especificada */
 app.listen(PORT, () => {

@@ -1,7 +1,7 @@
 
 
 <div class="container-fluid height-mobile-100">
-    <div class="row text-center mx-0 height-mobile-100" id="boxAll">
+    <div class="row text-center mx-0 height-mobile-100">
 
         {{!-- Modules --}}
         <div class=" col-12 col-lg-4 border border-custom {{generalClass}} h-100">
@@ -32,7 +32,7 @@
             <div class="row text-center height-mobile-75">
 
                 {{!-- Omega --}}
-                 <div class="col-12 col-lg-8 btn btn-omega border border-custom {{generalClass}} p-0 position-relative overflow-hidden">
+                 <div class="col-12 col-lg-8 border-custom {{generalClass}} p-0 position-relative overflow-hidden">
 
 
                     {{!-- Options --}}
@@ -54,7 +54,7 @@
                             <ul class="dropdown-menu dropdown-menu-dark small-1 px-1">
                                 <label for="rangeVolume" class="form-label">Volume: <span id="spanVolume">12</span></label>
                                 <input type="range" class="form-range" min="0" max="4" step="0.4" value="1.2" id="rangeVolume" onchange="changeVolume(this.value)">
-                                <p id="pStateAudio" class="mb-1 mt-2 small text-danger text-center">som desabilitado</p>
+                                <p id="pStateAudio" class="mb-1 mt-2 small text-{{omegaContent.button}} text-center">som desabilitado</p>
                             </ul>
                         </div>
 
@@ -62,7 +62,7 @@
                         <button class="btn btn-outline-{{omegaContent.button}} btn-sm dropdown-toggle d-none" type="button" id="dropdownVoices" data-bs-toggle="dropdown">
                             <i class="fas fa-microphone"></i>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-{{generalClass}} small-1">
+                        <ul class="dropdown-menu dropdown-menu-dark {{generalClass}} small-1">
                             {{#each allVoices}}
                                 <li><button id="{{_id}}" class="dropdown-item {{active}}" type="button" onclick="changeVoice(this)">{{name}}</button></li>
                             {{/each}}
@@ -72,19 +72,22 @@
                     </div>
 
                     {{!-- Content --}}
-                    <a class="games-box w-100 h-100 d-flex justify-content-center align-items-center cursor-{{omegaContent.situation}}" data-bs-toggle="modal" data-bs-target="#omegaModule"> 
-                        <div class="games-box-title">
+                    <a class="card-box h-100 border-custom {{generalClass}} cursor-{{omegaContent.situation}}" data-bs-toggle="modal" data-bs-target="#omegaModule"> 
+                        <div class="card-box-title">
                             <img id="gifOmega" src="/system10/assets/room/{{generalClass}}Omega.gif" width="100%">
                             <img id="imgOmega" class="d-none" src="/system10/assets/room/{{generalClass}}Omega.png" width="100%">
                         </div>
-                        <div class="games-box-caption">
-                            <div class="platform-body {{generalClass}}">
-                                <div class="mb-2 h5 font-xirod">MÓDULO PRINCIPAL</div>
-                                <div class="h1"><span class="h2 font-xirod">ÔMEGA</span> (Ω)</div>
-                                <div class="h2 font-xirod m-0">{{omegaContent.status}}</div>
+                        <div class="card-box-caption font-xirod">
+                            <div class="caption-head shadow-custom {{generalClass}}">
+                                <div class="mb-2 h5 text-light">MÓDULO PRINCIPAL</div>
+                            </div>
+                            <div class="caption-body shadow-custom {{generalClass}}">
+                                <div class="h2">ÔMEGA <span class="h1 font-nasalization">(Ω)</span></div>
+                                <div class="h2 m-0">{{omegaContent.status}}</div>
                             </div>
                         </div>
                     </a> 
+
                 </div>
 
                 {{!-- Info --}}
@@ -97,37 +100,37 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <h6 class="text-white-75">NOME:</h6>
+                            <h6 class=" text-white-50">NOME:</h6>
                             <h6>EULER</h6>
                         </div>
 
                         <div class="col-sm-6">
-                            <h6 class="text-white-75">T-UNIT:</h6>
+                            <h6 class="text-white-50">T-UNIT:</h6>
                             <h6 id="timeSecondsShow">{{timeSeconds}}</h6>
                         </div>
 
                         <div class="col-sm-12">
-                            <h6 class="text-white-75">CLASSE OPER.:</h6>
+                            <h6 class="text-white-50">CLASSE OPER.:</h6>
                             <h6>HIGH>>X+++</h6>
                         </div>
 
                         <div class="col-sm-12">
-                            <h6 class="text-white-75">PROPRIEDADE:</h6>
+                            <h6 class="text-white-50">PROPRIEDADE:</h6>
                             <h6>EXPOENTE</h6>
                         </div>
 
                         <div class="col-sm-12">
-                            <h6 class="text-white-75">PROG-N:</h6>
+                            <h6 class="text-white-50">PROG-N:</h6>
                             <h6>{{oneUser.username}}-{{oneGroup.num}}</h6>
                         </div>
 
                         <div class="col-sm-12">
-                            <h6 class="text-white-75">STATUS:</h6>
-                            <h6 class="text-{{infoContent.color}} shadow-dark">{{infoContent.status}}</h6>
+                            <h6 class="text-white-50">STATUS:</h6>
+                            <h6 class="text-{{infoContent.color}}">{{infoContent.status}}</h6>
                         </div>
 
                         <div class="col-sm-12">
-                            <h6 class="text-{{infoContent.color}} shadow-dark">{{infoContent.text}}</h6>
+                            <h6 class="text-{{infoContent.color}}">{{infoContent.text}}</h6>
                         </div>
 
                     </div>
@@ -140,20 +143,22 @@
             <div class="row text-center height-mobile-25">
 
                 {{#each nFiles}}
-                    <div class="col-6 col-sm-3 btn btn-omega border border-custom {{@root.generalClass}} p-0 overflow-hidden">
-                        <a role="button" target="_blank" class="games-box w-100 h-100 d-flex justify-content-center align-items-center py-3" data-bs-toggle="modal" data-bs-target="#file{{this}}Modal">
-                            <div class="games-box-title">
-                                <img style="opacity: 0.8;" src="/system10/assets/room/file{{this}}.png" width="60%">
+                    <div class="col-6 col-sm-3 p-0 overflow-hidden">
+                        <a role="button" class="card-box h-100 py-3 border-custom {{@root.generalClass}}" data-bs-toggle="modal" data-bs-target="#file{{this}}Modal">
+                            <div class="card-box-title">
+                                <img style="opacity: 0.85;" src="/system10/assets/room/file{{this}}.png" width="60%">
                             </div>
-                            <div class="games-box-caption">
-                                <div class="platform-body {{@root.generalClass}}">
-                                    <div class="h5 font-xirod">Arquivo</div>
-                                    <div class="h1 m-0">#{{this}}</div>
+                            <div class="card-box-caption">
+                                <div class="caption-head shadow-custom {{@root.generalClass}} text-light">
+                                    Arquivo
+                                </div>
+
+                                <div class="caption-body shadow-custom {{@root.generalClass}}">
+                                    #{{this}}
                                 </div>
                             </div>
                         </a>
                     </div>
-
                 {{/each}}
 
                 {{> system10/files/file1 videoContent}}

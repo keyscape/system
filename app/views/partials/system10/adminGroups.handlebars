@@ -1,17 +1,21 @@
 {{#each this}}
 
     <div class="col-6 col-lg-3 my-2 all {{dateFormated}} {{situation}}">
-        <a role="button" class="card-box border-{{situation}}" href="/room10c/admin/updateGroup/show/{{_id}}">
-            <div class="card-box-title m-0">G#{{num}}</div>
+
+        <a role="button" class="card-box card-box-module border-custom {{situation}} rounded" style="background-color: rgba(0, 0, 0, 0.5);" href="/room10c/admin/updateGroup/show/{{_id}}">
+            <div class="card-box-title">
+                G#{{num}}
+            </div>
             <div class="card-box-caption">
-                <div class="description-head">
+                <div class="caption-head">
                     {{dateFormated}}
                 </div>
-                <div class="description-body">
+                <div class="caption-body">
                     #{{numParticipants}}
                 </div>
             </div>
         </a>
+
     </div>
 
 {{/each}}

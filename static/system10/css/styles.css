@@ -1,3 +1,26 @@
+:root {
+	--sridhara-light: #76fb76;
+	--sridhara-normal: #198754;
+	--sridhara-dark: #094a1c;
+
+	--madhava-light: #316fff;
+	--madhava-normal: #194987;
+	--madhava-dark: #09254a;
+
+	--bhaskara-light: #ff5e66;
+	--bhaskara-normal: #dc3545;
+	--bhaskara-dark: #6f171c;
+
+	--bramagupta-light: #ffac5e;
+	--bramagupta-normal: #ffc107;
+	--bramagupta-dark: #6f4c17;
+
+	--aryabhata-light: #ffffff;
+	--aryabhata-normal: #797979;
+	--aryabhata-dark: #acacac;
+
+}
+
 @font-face {
 	font-family: monster;
 	src: url(../assets/font/mrmonster.ttf);
@@ -42,14 +65,6 @@
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.text-c1{
-	color: rgb(146, 154, 206);
-}
-
-.text-c2{
-	color: rgb(149, 220, 150);
-}
-
 .background {
 	background-size: cover;
 	background-attachment: fixed;
@@ -61,669 +76,6 @@
 .background .container-fluid {
 	padding-top: 2.5vh;
 	padding-bottom: 2.5vh;
-}
-
-#boxAll {
-	height: 95vh;
-}
-
-.box-header {
-	margin-bottom: 1vh;
-	font-size: 4vh;
-	height: 4vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	line-height: 1;
-}
-
-.card-div-h {
-	margin-top: 1.5vh;
-	margin-bottom: 1.5vh;
-}
-
-.card-div-l {
-	margin-top: 1vh;
-	margin-bottom: 1vh;
-}
-
-.card-module {
-	padding-top: 6vh !important;
-	padding-bottom: 6vh !important;
-	font-size: 3vh;
-	height: 15vh;
-	line-height: 1;
-}
-
-/*##############################################################################
-################################## Dark Theme ##################################
-##############################################################################*/
-
-/*==================
-==== Background ====
-==================*/
-
-.background-custom{
-	background-color: rgba(0, 0, 0, 0.6);
-	/* background-color: rgb(33, 33, 33); */
-	color: white;
-}
-
-.background-custom.sridhara.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backSridhara.gif');
-}
-
-.background-custom.sridhara.backImg {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticSridhara.jpg");
-}
-
-.background-custom.bhaskara.backGif {
- 	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBhaskara.gif');
-}
-
-.background-custom.bhaskara.backImg {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBhaskara.jpg");
-}
-
-.background-custom.bramagupta.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBramagupta.gif');
-}
-
-.background-custom.bramagupta.backImg {
-   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBramagupta.jpg");
-}
-
-.background-custom.aryabhata.backGif {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backAryabhata.gif');
-}
-
-.background-custom.aryabhata.backImg {
-   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticAryabhata.jpg");
-}
-
-.background-custom.login, .background-custom.signup, .background-custom.control, .background-custom.admin, .background-custom.user {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/bg1.gif');
-}
-
-.background-custom.wait {
-	background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1) 100%), url('../assets/back/bg3.jpg');
-}
-
-
-
-
-/*==================
-====== Button ======
-==================*/
-
-/* 0f262e 
-red: 871317
-green: #085317
-*/
-
-.text-white-75 {
-	color: rgba(255, 255, 255, 0.75);
-}
-
-.btn-module {
-	background-color: #00000000;
-	color: #ffffff;
-	border-width: 1.5px;
-}
-
-.btn-module.sridhara{
-	border-color: #76fb76;
-	text-shadow: 0 0 10px #094a1c;
-}
-
-.btn-module.bhaskara{
-	border-color: #ff5e66;
-	text-shadow: 0 0 20px #6f171c;
-}
-
-.btn-module.bramagupta{
-	border-color: #ffac5e;
-	text-shadow: 0 0 20px #6f4c17;
-}
-
-.btn-module.aryabhata{
-	border-color: #ffffff;
-	text-shadow: 0 0 20px #acacac;
-}
-
-.btn-module:hover {
-	background-color: #00000070;
-	color: #ffffff;
-}
-
-.btn-module:focus {
-	outline: 0;
-	box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.3);
-}
-
-.btn-omega {
-	background-color: #00000000;
-	color: #ffffff;
-	border-width: 1.5px;
-}
-
-.btn-omega.sridhara{
-	border-color: #76fb76;
-	text-shadow: 0 0 10px #094a1c;
-}
-
-.btn-omega.bhaskara{
-	border-color: #ff5e66;
-	text-shadow: 0 0 20px #6f171c;
-}
-
-.btn-omega.bramagupta{
-	border-color: #ffac5e;
-	text-shadow: 0 0 20px #6f4c17;
-}
-
-.btn-omega.aryabhata{
-	border-color: #ffffff;
-	text-shadow: 0 0 20px #acacac;
-}
-
-.btn-omega:hover {
-	background-color: #00000070;
-	color: #ffffff;
-}
-
-.btn-omega:focus {
-	outline: 0;
-	box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.3);
-}
-
-/*==================
-====== Border ======
-==================*/
-
-.border-custom.sridhara {
-	border-color: #76fb76 !important;
-}
-
-.border-custom.bhaskara {
-	border-color: #ff5e66 !important;
-}
-
-.border-custom.bramagupta {
-	border-color: #ffac5e !important;
-}
-
-.border-custom.aryabhata {
-	border-color: #ffffff !important;
-}
-
-/*==================
-====== Modal =======
-==================*/
-
-.modal .modal-dialog .modal-content {
-	background-color: #000000d9;
-	color: rgb(255, 255, 255);
-	border-color: #ffffff;
-}
-
-.modal .modal-dialog .modal-content.sridhara {
-	border-color: #094a1c;
-}
-
-.modal .modal-dialog .modal-content.bhaskara {
-	border-color: #6f171c;
-}
-
-.modal .modal-dialog .modal-content.bramagupta {
-	border-color: #ca6a2a;
-}
-
-.modal .modal-dialog .modal-content.aryabhata {
-	border-color: #ffffff;
-}
-
-.modal .modal-dialog .modal-content .modal-header.sridhara {
-	border-color: #094a1c;
-}
-
-.modal .modal-dialog .modal-content .modal-header.bhaskara {
-	border-color: #6f171c;
-}
-
-.modal .modal-dialog .modal-content .modal-header.bramagupta {
-	border-color: #ca6a2a;
-}
-
-.modal .modal-dialog .modal-content .modal-header.aryabhata {
-	border-color: #ffffff;
-}
-
-.popover{
-	background-color: rgba(0, 0, 0, 0);
-}
-
-.popover-header{
-	color: rgb(0, 0, 0);
-	background-color: rgba(255, 255, 255, 0.9);
-	text-align: center;
-}
-
-.popover-body{
-	color: rgb(0, 0, 0);
-	background-color: rgba(221, 221, 221, 0.9);
-	text-align: center;
-}
-
-.badge{
-	font-family: var(--bs-font-sans-serif);
-	font-size: 0.6em;
-}
-
-
-/*##############################################################################
-################################################################################
-##############################################################################*/
-
-/* Scrollbar Custom */
-/* width */
-::-webkit-scrollbar {
-	width: .8vw;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-	background: rgb(255, 255, 255);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: rgb(167, 167, 167);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: rgb(118, 118, 118);
-}
-
-::-webkit-scrollbar-thumb:active {
-	background: rgb(63, 63, 63);
-}
-
-.games-box {
-    position: relative;
-    display: block;
-}
-
-.games-box .games-box-title.sridhara{
-	text-shadow: 0 0 10px #22ff00;
-}
-
-.games-box .games-box-title.bhaskara{
-	color: #ffffff;
-	text-shadow: 0 0 10px #ff0000;
-}
-
-.games-box .games-box-title.bramagupta{
-	color: #ffffff;
-	text-shadow: 0 0 10px #ff8400;
-}
-
-.games-box .games-box-title.aryabhata{
-	color: #ffffff;
-	text-shadow: 0 0 10px #ffffff;
-}
-
-
-
-.games-box .games-box-caption {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    opacity: 0;
-    color: #fff;
-    background: #000000b6;
-    transition: opacity 0.25s ease;
-    text-align: center;
-}
-
-.games-box .games-box-caption .platform-body {
-	font-family: nasalization;
-    font-size: 4vh;
-    line-height: 1;
-}
-
-.platform-body.sridhara{
-	text-shadow: 0 0 10px #22ff00;
-}
-
-.platform-body.bhaskara{
-	text-shadow: 0 0 10px #ff0000;
-}
-
-.platform-body.bramagupta{
-	text-shadow: 0 0 10px #ff8400;
-}
-
-.platform-body.aryabhata{
-	text-shadow: 0 0 10px #acacac;
-}
-
-.games-box:hover .games-box-caption {
-    opacity: 1;
-}
-
-.text-inside-modal{
-    font-size: 2.5vh;
-    line-height: 1;
-    color: #ffffff;
-}
-
-.title-main.sridhara{
-	text-shadow: 0 0 10px #22ff00;
-}
-
-.title-main.bhaskara{
-	text-shadow: 0 0 10px #ff0000;
-}
-
-.title-main.bramagupta{
-	text-shadow: 0 0 10px #ff8400;
-}
-
-.title-main.aryabhata{
-	text-shadow: 0 0 10px #acacac;
-}
-
-
-.shadow-dark {
-	text-shadow: 0 0 10px #000000;
-}
-
-.btn-outline-gama{
-	color:#f8f9fa;
-	border-color:#f8f9fa
-}
-.btn-outline-gama:hover{
-	color:rgb(255, 255, 255);
-	background-color:#ffffff35;
-	border-color:#f8f9fa
-}
-
-.btn-check:focus+.btn-outline-gama,.btn-outline-gama:focus{
-	box-shadow:0 0 0 .25rem rgba(248,249,250,.5)
-}
-.btn-check:active+.btn-outline-gama,.btn-check:checked+.btn-outline-gama,.btn-outline-gama.active,.btn-outline-gama.dropdown-toggle.show,.btn-outline-gama:active{
-	color:#000;
-	background-color:#ffe20777;
-	border-color:#f8f9fa
-}
-.btn-check:active+.btn-outline-gama:focus,.btn-check:checked+.btn-outline-gama:focus,.btn-outline-gama.active:focus,.btn-outline-gama.dropdown-toggle.show:focus,.btn-outline-gama:active:focus{
-	box-shadow:0 0 0 .25rem rgba(248,249,250,.5)
-}
-.btn-outline-gama.disabled,.btn-outline-gama:disabled{
-	color:#f8f9fa;
-	background-color:transparent
-}
-
-.height-mobile-100{
-	height: auto;
-}
-
-.height-mobile-75{
-	height: auto;
-}
-
-.height-mobile-25{
-	height: auto;
-}
-
-@media (min-width:992px){
-	.height-mobile-100{
-		height: 100%;
-	}
-
-	.height-mobile-75{
-		height: 75%;
-	}
-
-	.height-mobile-25{
-		height: 25%;
-	}
-}
-
-.dropdown-menu-bhaskara .dropdown-item.active{
-	color: #fff;
-    text-decoration: none;
-    background-color: #dc3545;
-}
-
-.dropdown-menu-bramagupta .dropdown-item.active{
-	color: #fff;
-    text-decoration: none;
-    background-color: #ffc107;
-}
-
-.dropdown-menu-sridhara .dropdown-item.active{
-	color: #fff;
-    text-decoration: none;
-    background-color: #198754;
-}
-
-.dropdown-menu-aryabhata .dropdown-item.active{
-	color: #fff;
-    text-decoration: none;
-    background-color: #797979;
-}
-
-.label-mi{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: .8em;
-	color:white;
-	padding: .75rem .45rem
-}
-
-.form-select-mi{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: .75em;
-	color:white;
-	height: calc(2.75rem + 2px);
-	padding: 1.15rem .75rem .5rem .75rem ;
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-.form-select-mi:disabled{
-	background-color: rgba(70, 70, 70, 0.8);
-	color:white;
-}
-
-.form-select-control, .form-select-admin{
-	color:white;
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-.label-sigma, .label-gama, .label-login, .label-signup, .label-control, .label-admin, .label-user{
-	color:white;
-	font-size: .75em;
-	left: 50;
-}
-
-.form-control-sigma, .form-control-gama, .form-control-login, .form-control-signup, .form-control-control, .form-control-admin, .form-control-user{
-	font-size: .7em;
-	background-color: rgba(0, 0, 0, 0.8);
-	color:white;
-	text-align: center;
-}
-
-.form-control-sigma:focus, .form-control-gama:focus, .form-control-login:focus, .form-control-signup:focus, .form-control-control:focus, .form-control-admin:focus, .form-control-user:focus{
-	background-color: rgba(47, 47, 47, 0.8);
-	color:white;
-}
-
-.form-control-sigma:disabled, .form-control-gama:disabled, .form-control-login:disabled, .form-control-signup:disabled, .form-control-control:disabled, .form-control-admin:disabled, .form-control-user:disabled{
-	background-color: rgba(70, 70, 70, 0.8);
-	color:white;
-}
-
-.form-disabled{
-	background-color: rgba(70, 70, 70, 0.8) !important;
-	color:white;
-	pointer-events: none; 
-	touch-action: none;
-}
-
-.form-disabled.user{
-	background-color: rgba(13, 13, 13, 0.8) !important;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus{
-	-webkit-text-fill-color: white !important;
-	-webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset;
-}
-
-input::-ms-reveal {
-	display:none;
-}
-
-
-.small-1{
-	font-size: .8em;
-}
-
-.small-2{
-	font-size: .75em;
-}
-
-.small-3{
-	font-size: .7em;
-}
-
-.small-4{
-	font-size: .6em;
-}
-
-.small-5{
-	font-size: .5em;
-}
-
-.small-6{
-	font-size: .4em;
-}
-
-.eye-border{
-	border-top-left-radius:0;
-	border-bottom-left-radius:0
-}
-
-.accordion{
-	font-family:monster;
-}
-
-.accordion-item {
-	background-color: rgba(255, 255, 255, 0.646);
-}
-
-.accordion-button {
-	background-color: rgba(255, 255, 255, 0.53) !important;
-	color: rgb(41, 41, 41) !important;
-}
-
-.btn-login, .btn-signup{
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
-	border: 1px solid rgb(0, 0, 0);
-}
-
-.btn-login:hover, .btn-signup:hover{
-	background-color: rgba(255, 255, 255, 0.653);
-	color: rgb(0, 0, 0);
-}
-
-
-
-
-
-.card-box {
-    position: relative;
-    display: flex;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    border: 1px solid #ffffff !important;
-    border-radius: .5rem !important;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.card-box .card-box-title{
-    color: rgb(255, 255, 255);
-    font-size: 2.75rem;
-}
-
-.card-box .card-box-caption {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    opacity: 0;
-    color: #fff;
-    border-radius: .5rem !important;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 0.25s ease;
-    text-align: center;
-}
-
-.card-box .card-box-caption .description-head {
-    color: #bdbdbd;
-    font-size: 1.25rem;
-}
-
-.card-box .card-box-caption .description-body {
-    font-size: 1.75rem;
-}
-
-.card-box:hover .card-box-caption {
-    opacity: 1;
-}
-
-.border-todo{
-	border-color: red !important;
-}
-
-.border-doing{
-	border-color: #2bff00 !important;
-}
-
-.border-done{
-	border-color: white !important;
-}
-
-.border-qomega{
-	border-color: #ffac5e !important;
-}
-
-::-webkit-calendar-picker-indicator {
-    filter: invert(1);
 }
 
 .h-55{
@@ -742,3 +94,494 @@ input::-ms-reveal {
 	cursor: pointer;
 }
 
+/*##############################################################################
+################################## Background ##################################
+##############################################################################*/
+
+	/*============================
+	======= Background GIF =======
+	============================*/
+		.background-custom.sridhara.backGif {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backSridhara.gif');
+		}
+
+		.background-custom.madhava.backGif {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backMadhava.gif');
+		}
+
+		.background-custom.bhaskara.backGif {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBhaskara.gif');
+		}
+
+		.background-custom.bramagupta.backGif {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backBramagupta.gif');
+		}
+
+		.background-custom.aryabhata.backGif {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/backAryabhata.gif');
+		}
+
+		.background-custom.login, .background-custom.signup, .background-custom.control, .background-custom.admin, .background-custom.user, .background-custom.test {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('../assets/back/bg1.gif');
+		}
+
+	/*============================
+	====== Background Image ======
+	============================*/
+		.background-custom.sridhara.backImg {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticSridhara.jpg");
+		}
+
+		.background-custom.madhava.backImg {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticMadhava.jpg");
+		}
+
+		.background-custom.bhaskara.backImg {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBhaskara.jpg");
+		}
+
+		.background-custom.bramagupta.backImg {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticBramagupta.jpg");
+		}
+
+		.background-custom.aryabhata.backImg {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/back/backStaticAryabhata.jpg");
+		}
+
+		.background-custom.wait {
+			background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1) 100%), url('../assets/back/bg3.jpg');
+		}
+
+
+/*##############################################################################
+#################################### Button ####################################
+##############################################################################*/
+
+	/*============================
+	========== Box Module ========
+	============================*/
+		.card-box{
+			position: relative;
+			display: flex;
+			text-decoration: none;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			border: 1px solid #ffffff !important;
+			background-color: rgba(0, 0, 0, 0);
+
+		}
+
+		.card-box-title{
+			color: rgb(255, 255, 255);
+			font-size: 3vh;
+		}
+
+		.card-box-caption {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			text-align: center;
+			opacity: 0;
+			color: #fff;
+			border-radius: .5rem !important;
+			background: rgba(0, 0, 0, 0.7);
+			transition: opacity 0.25s ease;
+			text-align: center;
+		}
+
+		.caption-head {
+			color: #bdbdbd;
+			font-size: 1.25rem;
+		}
+
+		.caption-body {
+			font-size: 1.75rem;
+		}
+		
+		.card-box:hover .card-box-caption {
+			opacity: 1;
+		}
+
+		.card-box-module {
+			padding-top: 6vh !important;
+			padding-bottom: 6vh !important;
+			font-size: 3vh;
+			height: 15vh;
+			line-height: 1;
+		}
+
+	/*============================
+	======== Outline Check =======
+	============================*/
+		.btn-outline-check{
+			color:#ffffff;
+			border-color:#f8f9fa
+		}
+
+		.btn-outline-check:hover{
+			background-color:#ffffff35;
+		}
+		
+		.btn-check:active+.btn-outline-check,.btn-check:checked+.btn-outline-check{
+			color:#000;
+			background-color:rgba(255, 226, 7, 0.4);
+		}
+		
+		.btn-check:focus+.btn-outline-check{
+			box-shadow:0 0 0 .25rem rgba(248, 249, 250, 0)
+		}
+
+	/*============================
+	=========== Custom ===========
+	============================*/
+		.btn-custom{
+			background-color: rgb(255, 255, 255);
+			color: rgb(0, 0, 0);
+			border: 1px solid rgb(0, 0, 0);
+		}
+		
+		.btn-custom:hover{
+			background-color: rgba(255, 255, 255, 0.653);
+			color: rgb(0, 0, 0);
+		}
+
+		.eye-border{
+			border-top-left-radius:0;
+			border-bottom-left-radius:0
+		}
+
+/*##############################################################################
+#################################### Border ####################################
+##############################################################################*/
+
+	.border-custom{
+		border-color: #fff !important;
+	}
+
+	.border-custom.sridhara {
+		border-color: var(--sridhara-light) !important;
+	}
+
+	.border-custom.madhava {
+		border-color: var(--madhava-light) !important;
+	}
+
+	.border-custom.bhaskara {
+		border-color: var(--bhaskara-light) !important;
+	}
+
+	.border-custom.bramagupta {
+		border-color: var(--bramagupta-light) !important;
+	}
+
+	.border-custom.aryabhata {
+		border-color: var(--aryabhata-light) !important;
+	}
+
+	.border-custom.qomega {
+		border-color: var(--bramagupta-light) !important;
+	}
+
+	.border-custom.todo {
+		border-color: #ff0000 !important;
+	}
+
+	.border-custom.doing {
+		border-color: #2bff00 !important;
+	}
+
+	.border-custom.done {
+		border-color: #fff !important;
+	}
+
+/*##############################################################################
+##################################### Text #####################################
+##############################################################################*/
+
+	.text-sender{
+		color: rgb(146, 154, 206);
+	}
+
+	.text-recipient{
+		color: rgb(149, 220, 150);
+	}
+
+	.small-1{
+		font-size: .8em;
+	}
+	
+	.small-2{
+		font-size: .75em;
+	}
+	
+	.small-3{
+		font-size: .7em;
+	}
+	
+	.small-4{
+		font-size: .6em;
+	}
+	
+	.small-5{
+		font-size: .5em;
+	}
+	
+	.small-6{
+		font-size: .4em;
+	}
+
+	/*============================
+	=========== Shadow ===========
+	============================*/
+		.shadow-custom{
+			text-shadow: 0 0 10px #fff;
+		}
+
+		.shadow-custom.sridhara{
+			text-shadow: 0 0 10px var(--sridhara-normal);
+		}
+		
+		.shadow-custom.madhava{
+			text-shadow: 0 0 10px var(--madhava-normal);
+		}
+		
+		.shadow-custom.bhaskara{
+			text-shadow: 0 0 10px var(--bhaskara-normal);
+		}
+		
+		.shadow-custom.bramagupta{
+			text-shadow: 0 0 10px var(--bramagupta-normal);
+		}
+		
+		.shadow-custom.aryabhata{
+			text-shadow: 0 0 10px var(--aryabhata-normal);
+		}
+
+		.shadow-custom.qomega{
+			text-shadow: 0 0 10px var(--bramagupta-normal);
+		}
+
+/*##############################################################################
+#################################### Modal #####################################
+##############################################################################*/
+
+	.modal-content {
+		background-color: #000000d9;
+		color: rgb(255, 255, 255);
+		border-color: #ffffff;
+	}
+
+/*##############################################################################
+################################### Popover ####################################
+##############################################################################*/
+
+	.popover{
+		background-color: rgba(0, 0, 0, 0);
+	}
+
+	.popover-header{
+		color: rgb(0, 0, 0);
+		background-color: rgba(255, 255, 255, 0.9);
+		text-align: center;
+	}
+
+	.popover-body{
+		color: rgb(0, 0, 0);
+		background-color: rgba(221, 221, 221, 0.9);
+		text-align: center;
+	}
+
+/*##############################################################################
+################################## Dropdown ####################################
+##############################################################################*/
+
+	.dropdown-menu.sridhara .dropdown-item.active{
+		color: #fff;
+		text-decoration: none;
+		background-color: var(--sridhara-normal);
+	}
+
+	.dropdown-menu.madhava .dropdown-item.active{
+		color: #fff;
+		text-decoration: none;
+		background-color: var(--madhava-normal);
+	}
+
+	.dropdown-menu.bhaskara .dropdown-item.active{
+		color: #fff;
+		text-decoration: none;
+		background-color: var(--bhaskara-normal);
+	}
+
+	.dropdown-menu.bramagupta .dropdown-item.active{
+		color: #fff;
+		text-decoration: none;
+		background-color: var(--bramagupta-normal);
+	}
+
+	.dropdown-menu.aryabhata .dropdown-item.active{
+		color: #fff;
+		text-decoration: none;
+		background-color: var(--aryabhata-normal);
+	}
+
+/*##############################################################################
+################################### Forms ######################################
+##############################################################################*/
+
+	/*============================
+	========== Mi Module =========
+	============================*/
+		.label-mi{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: .8em;
+			color:white;
+			padding: .75rem .45rem
+		}
+
+		.form-select-mi{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: .75em;
+			color:white;
+			height: calc(2.75rem + 2px);
+			padding: 1.15rem .75rem .5rem .75rem ;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.form-select-mi:disabled{
+			background-color: rgba(70, 70, 70, 0.8);
+			color:white;
+		}
+
+	/*============================
+	======== Input/Select ========
+	============================*/
+		.label-custom{
+			color:white;
+			font-size: .75em;
+			left: 50;
+		}
+
+		.form-select-custom{
+			color:white;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.form-control-custom{
+			font-size: .7em;
+			background-color: rgba(0, 0, 0, 0.8);
+			color:white;
+			text-align: center;
+		}
+
+		.form-control-custom:focus{
+			background-color: rgba(47, 47, 47, 0.8);
+			color:white;
+		}
+
+		.form-control-custom:disabled{
+			background-color: rgba(70, 70, 70, 0.8);
+			color:white;
+		}
+
+		.form-disabled{
+			background-color: rgba(70, 70, 70, 0.8) !important;
+			color:white;
+			pointer-events: none; 
+			touch-action: none;
+		}
+
+		.form-disabled.user{
+			background-color: rgba(13, 13, 13, 0.8) !important;
+		}
+
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:focus,
+		textarea:-webkit-autofill,
+		textarea:-webkit-autofill:hover,
+		textarea:-webkit-autofill:focus,
+		select:-webkit-autofill,
+		select:-webkit-autofill:hover,
+		select:-webkit-autofill:focus{
+			-webkit-text-fill-color: white !important;
+			-webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset;
+		}
+
+		input::-ms-reveal {
+			display:none;
+		}
+
+/*##############################################################################
+################################### Configs ####################################
+##############################################################################*/
+
+	/*============================
+	=========== Height ===========
+	============================*/
+		.height-mobile-100{
+			height: auto;
+		}
+
+		.height-mobile-75{
+			height: auto;
+		}
+
+		.height-mobile-25{
+			height: auto;
+		}
+
+		@media (min-width:992px){
+			.height-mobile-100{
+				height: 100%;
+			}
+
+			.height-mobile-75{
+				height: 75%;
+			}
+
+			.height-mobile-25{
+				height: 25%;
+			}
+		}
+
+	/*============================
+	========== Calendar ==========
+	============================*/
+		::-webkit-calendar-picker-indicator {
+			filter: invert(1);
+		}
+
+	/*============================
+	========== Scrollbar =========
+	============================*/
+		/* width */
+		::-webkit-scrollbar {
+			width: .8vw;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			background: rgb(255, 255, 255);
+		}
+
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: rgb(167, 167, 167);
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: rgb(118, 118, 118);
+		}
+
+		::-webkit-scrollbar-thumb:active {
+			background: rgb(63, 63, 63);
+		}

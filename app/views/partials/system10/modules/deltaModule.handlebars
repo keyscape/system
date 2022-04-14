@@ -1,19 +1,25 @@
 
 <div class="col-12 my-2" id="deltaCard">
-    <a id="deltaTagA" role="button" target="_blank" class="games-box btn btn-module {{@root.generalClass}} w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#deltaModule" onclick="moduleSound()">
-        <div id="deltaTitleCard" class="games-box-title {{@root.generalClass}}">delta</div>
 
-        <div class="games-box-caption">
-            <div class="platform-body">δ</div>
+    <a role="button" id="{{name}}TagA" class="card-box card-box-module border-custom {{@root.generalClass}} rounded" data-bs-toggle="modal" data-bs-target="#deltaModule" onclick="moduleSound()">
+        <div class="card-box-title shadow-custom {{@root.generalClass}}" id="deltaTitleCard">
+            delta
+        </div>
+
+        <div class="card-box-caption">
+            <div class="caption-body shadow-custom {{@root.generalClass}} font-nasalization">
+                δ
+            </div>
         </div>
     </a>
+
 </div>
 
 
 <div class="modal fade" id="deltaModule" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header justify-content-center">
+        <div class="modal-content border-custom {{@root.generalClass}}">
+            <div class="modal-header border-custom {{@root.generalClass}} justify-content-center">
                 <h4 class="modal-title text-center">delta</h4>
 
                 <div style="right: 3%; z-index: 10" class="position-absolute">
@@ -36,8 +42,8 @@
 
                         <div class="col-sm-6 my-3">
                             <div class="form-floating text-dark">
-                                <input type="email" class="form-control form-control-sigma small-5" id="floatingInputDeltaEmail" placeholder="E-mail">
-                                <label class="label-sigma" for="floatingInputDeltaEmail">E-mail</label>
+                                <input type="email" class="form-control form-control-custom small-5" id="floatingInputDeltaEmail" placeholder="E-mail">
+                                <label class="label-custom" for="floatingInputDeltaEmail">E-mail</label>
                             </div>
                         </div>
 
@@ -47,8 +53,8 @@
                             <div class="row mb-2">
                                 <div class="col-10 pe-0">
                                     <div class="form-floating text-dark">
-                                        <input type="password" class="form-control form-control-sigma small-5" id="floatingInputDeltaPwd" placeholder="Senha">
-                                        <label class="label-sigma" for="floatingInputDeltaPwd">Senha</label>
+                                        <input type="password" class="form-control form-control-custom small-5" id="floatingInputDeltaPwd" placeholder="Senha">
+                                        <label class="label-custom" for="floatingInputDeltaPwd">Senha</label>
                                     </div>
                                 </div>
 

@@ -9,8 +9,8 @@
                 <div class="col-12 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="username" class="form-control form-control-user font-nasalization form-disabled user" id="floatingUsername" value="{{user.username}}" placeholder="Nome de Usuário" oninput="validationUsername(this)">
-                            <label class="label-user" for="floatingUsername">Nome de Usuário</label>
+                            <input name="username" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingUsername" value="{{user.username}}" placeholder="Nome de Usuário" oninput="validationUsername(this)">
+                            <label class="label-custom" for="floatingUsername">Nome de Usuário</label>
                         </div>
                     </button>
                 </div>
@@ -18,8 +18,8 @@
                 <div class="col-12 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="password" type="password" class="form-control form-control-user font-nasalization form-disabled user" id="floatingPassword" value="NaoTemNadaAqui" placeholder="Senha" oninput="validationPassword(this)">
-                            <label class="label-user" for="floatingPassword">Senha</label>
+                            <input name="password" type="password" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingPassword" value="NaoTemNadaAqui" placeholder="Senha" oninput="validationPassword(this)">
+                            <label class="label-custom" for="floatingPassword">Senha</label>
                         </div>
                     </button>
                 </div>
@@ -27,8 +27,8 @@
                 <div class="col-12 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="fullName" class="form-control form-control-user font-nasalization form-disabled user" id="floatingFullName" value="{{user.fullName}}" placeholder="Nome Completo" oninput="validationFullName(this)">
-                            <label class="label-user" for="floatingFullName">Nome Completo</label>
+                            <input name="fullName" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingFullName" value="{{user.fullName}}" placeholder="Nome Completo" oninput="validationFullName(this)">
+                            <label class="label-custom" for="floatingFullName">Nome Completo</label>
                         </div>
                     </button>
                 </div>
@@ -36,8 +36,8 @@
                 <div class="col-12 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="email" type="email" class="form-control form-control-user font-nasalization form-disabled user" id="floatingEmail" value="{{user.email}}" placeholder="E-mail" oninput="validationEmail(this)">
-                            <label class="label-user" for="floatingEmail">E-mail</label>
+                            <input name="email" type="email" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingEmail" value="{{user.email}}" placeholder="E-mail" oninput="validationEmail(this)">
+                            <label class="label-custom" for="floatingEmail">E-mail</label>
                         </div>
                     </button>
                 </div>
@@ -45,8 +45,8 @@
                 <div class="col-sm-5 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="ra" type="number" class="form-control form-control-user font-nasalization form-disabled user" id="floatingRA" value="{{#if user.ra}}{{user.ra}}{{else}}0{{/if}}" placeholder="RA" oninput="validationRA(this)">
-                            <label class="label-user" for="floatingRA">RA</label>
+                            <input name="ra" type="number" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingRA" value="{{#if user.ra}}{{user.ra}}{{else}}0{{/if}}" placeholder="RA" oninput="validationRA(this)">
+                            <label class="label-custom" for="floatingRA">RA</label>
                         </div>
                     </button>
                 </div>
@@ -54,8 +54,8 @@
                 <div class="col-sm-7 mb-3">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="cpf" class="form-control form-control-user font-nasalization form-disabled user" id="floatingCPF" value="{{#if user.cpf}}{{user.cpf}}{{else}}-{{/if}}" placeholder="CPF" oninput="validationCPF(this)">
-                            <label class="label-user" for="floatingCPF">CPF</label>
+                            <input name="cpf" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingCPF" value="{{#if user.cpf}}{{user.cpf}}{{else}}-{{/if}}" placeholder="CPF" oninput="validationCPF(this)">
+                            <label class="label-custom" for="floatingCPF">CPF</label>
                         </div>
                     </button>
                 </div>
@@ -63,8 +63,8 @@
                 <div class="col-sm-8 mb-3 mb-sm-0">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="edu" class="form-control form-control-user font-nasalization form-disabled user" id="floatingEdu" value="{{#if user.edu}}{{user.edu}}{{else}}-{{/if}}" placeholder="Instituição de Ensino" oninput="validationEdu(this)">
-                            <label class="label-user" for="floatingEdu">Instituição de Ensino</label>
+                            <input name="edu" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingEdu" value="{{#if user.edu}}{{user.edu}}{{else}}-{{/if}}" placeholder="Instituição de Ensino" oninput="validationEdu(this)">
+                            <label class="label-custom" for="floatingEdu">Instituição de Ensino</label>
                         </div>
                     </button>
                 </div>
@@ -72,8 +72,8 @@
                 <div class="col-sm-4 mb-3 mb-sm-0">
                     <button class="w-100 p-0 border-0 bg-transparent" onclick="showModalUpdateUser(this)">
                         <div class="form-floating">
-                            <input name="age" type="number" class="form-control form-control-user font-nasalization form-disabled user" id="floatingAge" value="{{user.age}}" placeholder="Idade" oninput="validationAge(this)">
-                            <label class="label-user" for="floatingAge">Idade</label>
+                            <input name="age" type="number" class="form-control form-control-custom font-nasalization form-disabled user" id="floatingAge" value="{{user.age}}" placeholder="Idade" oninput="validationAge(this)">
+                            <label class="label-custom" for="floatingAge">Idade</label>
                         </div>
                     </button>
                 </div>
@@ -420,8 +420,8 @@
 
                 <div class="col-12 mb-3">
                     <div class="form-floating">
-                        <input name="username" class="form-control form-control-signup font-nasalization" id="floatingUsername" placeholder="Nome de Usuário">
-                        <label class="label-signup" for="floatingUsername">Nome de Usuário <span class="text-danger">*</span></label>
+                        <input name="username" class="form-control form-control-custom font-nasalization" id="floatingUsername" placeholder="Nome de Usuário">
+                        <label class="label-custom" for="floatingUsername">Nome de Usuário <span class="text-danger">*</span></label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Deve conter de 3 a 16 caracteres
                         </div>
@@ -432,8 +432,8 @@
                     <div class="col-10 pe-0">
 
                         <div class="form-floating">
-                            <input name="password" type="password" class="form-control form-control-signup font-nasalization rounded-0 rounded-start" id="floatingPassword" placeholder="Senha">
-                            <label class="label-signup" for="floatingPassword">Senha <span class="text-danger">*</span></label>
+                            <input name="password" type="password" class="form-control form-control-custom font-nasalization rounded-0 rounded-start" id="floatingPassword" placeholder="Senha">
+                            <label class="label-custom" for="floatingPassword">Senha <span class="text-danger">*</span></label>
                             <div class="invalid-tooltip small-3 font-nasalization">
                                 Deve conter de 8 a 16 caracteres
                             </div>
@@ -450,8 +450,8 @@
 
                 <div class="col-12 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="text" class="form-control form-control-signup font-nasalization" id="floatingFullName" placeholder="Nome Completo">
-                        <label class="label-signup" for="floatingFullName">Nome Completo <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control form-control-custom font-nasalization" id="floatingFullName" placeholder="Nome Completo">
+                        <label class="label-custom" for="floatingFullName">Nome Completo <span class="text-danger">*</span></label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Muito curto
                         </div>
@@ -460,8 +460,8 @@
 
                 <div class="col-12 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="email" class="form-control form-control-signup font-nasalization" id="floatingEmail" placeholder="E-mail">
-                        <label class="label-signup" for="floatingEmail">E-mail <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control form-control-custom font-nasalization" id="floatingEmail" placeholder="E-mail">
+                        <label class="label-custom" for="floatingEmail">E-mail <span class="text-danger">*</span></label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Inválido
                         </div>
@@ -470,8 +470,8 @@
                 
                 <div class="col-sm-5 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="number" class="form-control form-control-signup font-nasalization" id="floatingRA" placeholder="RA">
-                        <label class="label-signup" for="floatingRA">RA</label>
+                        <input type="number" class="form-control form-control-custom font-nasalization" id="floatingRA" placeholder="RA">
+                        <label class="label-custom" for="floatingRA">RA</label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Inválido
                         </div>
@@ -480,8 +480,8 @@
 
                 <div class="col-sm-7 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="text" class="form-control form-control-signup font-nasalization" id="floatingCPF" placeholder="CPF" oninput="cpfChange(this)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Utilizado para obtenção<br>de certificados">
-                        <label class="label-signup" for="floatingCPF">CPF</label>
+                        <input type="text" class="form-control form-control-custom font-nasalization" id="floatingCPF" placeholder="CPF" oninput="cpfChange(this)" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Utilizado para obtenção<br>de certificados">
+                        <label class="label-custom" for="floatingCPF">CPF</label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Inválido
                         </div>
@@ -490,8 +490,8 @@
 
                 <div class="col-sm-5 mb-3">
                     <div class="form-floating text-dark">
-                        <input type="number" class="form-control form-control-signup font-nasalization" id="floatingAge" placeholder="Idade">
-                        <label class="label-signup" for="floatingAge">Idade <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control form-control-custom font-nasalization" id="floatingAge" placeholder="Idade">
+                        <label class="label-custom" for="floatingAge">Idade <span class="text-danger">*</span></label>
                         <div class="invalid-tooltip small-3 font-nasalization">
                             Inválida
                         </div>
@@ -501,15 +501,15 @@
 
                 <div class="col-sm-7 mb-1">
                     <div class="form-floating text-dark">
-                        <input type="text" class="form-control form-control-signup font-nasalization" id="floatingEdu" placeholder="Instituição de Ensino" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Instituição de Ensino<br>Ex: UTFPR-CP">
-                        <label class="label-signup" for="floatingEdu">Instit. Ens.</label>
+                        <input type="text" class="form-control form-control-custom font-nasalization" id="floatingEdu" placeholder="Instituição de Ensino" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" title="Instituição de Ensino<br>Ex: UTFPR-CP">
+                        <label class="label-custom" for="floatingEdu">Instit. Ens.</label>
                     </div>
                 </div>
                 
                 <p class="text-start small-4 text-white font-nasalization mb-1"> <span class="text-danger">*</span> Obrigatório</p>
 
                 <div class="col-sm-6 mb-3">
-                    <button class="btn btn-signup w-100" onclick="buttonCreateUser()">Criar</button>
+                    <button class="btn btn-custom w-100" onclick="buttonCreateUser()">Criar</button>
                 </div>
 
 

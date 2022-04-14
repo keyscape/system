@@ -6,7 +6,6 @@ const optionSchema = new Schema({
         type: [String],
         required: true,
     },
-    mi: Object,
     diffToFinalC: Number
 })
 

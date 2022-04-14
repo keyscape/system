@@ -1,0 +1,157 @@
+<div class="container-fluid height-mobile-100" style="background-color: rgba(0, 0, 0, 0.567);">
+
+    <div class="row justify-content-center text-center">
+
+        {{#if whatModule.mi}}
+
+            <h3 class="my-2">INFOS</h3>
+
+            <div class="col-6 col-sm-2 p-0 me-2 mb-3 overflow-hidden">
+                <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file3Modal">
+                    <div class="card-box-title">
+                        <img style="opacity: 0.85;" src="/system10/assets/room/file3.png" width="60%">
+                    </div>
+                    <div class="card-box-caption">
+                        <div class="caption-head shadow-custom text-light">
+                            Arquivo
+                        </div>
+
+                        <div class="caption-body shadow-custom">
+                            #3
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-6 col-sm-2 p-0 ms-2 mb-3 overflow-hidden">
+                <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file4Modal">
+                    <div class="card-box-title">
+                        <img style="opacity: 0.85;" src="/system10/assets/room/file4.png" width="60%">
+                    </div>
+                    <div class="card-box-caption">
+                        <div class="caption-head shadow-custom text-light">
+                            Arquivo
+                        </div>
+
+                        <div class="caption-body shadow-custom">
+                            #4
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            {{> system10/files/file3}}
+            {{> system10/files/file4}}
+
+        {{else}}
+
+            {{#if whatModule.gamaBeta}}
+
+                <h3 class="my-2">INFOS</h3>
+
+                <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
+                    <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file2Modal">
+                        <div class="card-box-title">
+                            <img style="opacity: 0.85;" src="/system10/assets/room/file2.png" width="60%">
+                        </div>
+                        <div class="card-box-caption">
+                            <div class="caption-head shadow-custom text-light">
+                                Arquivo
+                            </div>
+
+                            <div class="caption-body shadow-custom">
+                                #2
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                {{> system10/files/file2}}
+
+            {{else}}
+
+                {{#if whatModule.lambda}}
+
+                    <h3 class="my-2">INFOS</h3>
+                    
+                    <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
+                        <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file3Modal">
+                            <div class="card-box-title">
+                                <img style="opacity: 0.85;" src="/system10/assets/room/file3.png" width="60%">
+                            </div>
+                            <div class="card-box-caption">
+                                <div class="caption-head shadow-custom text-light">
+                                    Arquivo
+                                </div>
+
+                                <div class="caption-body shadow-custom">
+                                    #3
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    {{> system10/files/fileX}}
+
+                {{/if}}
+
+            {{/if}}
+
+        {{/if}}
+
+        <div class="w-100"></div>
+
+        <h3 class="my-2">MÓDULO</h3>
+
+        <div class="row col-12 col-sm-8 justify-content-center">
+            {{> system10/allModules oneModule}} 
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    const timeBlockDefault = 10
+
+    var btnSnd1 = new Audio('/system10/assets/sounds/btn0.mp3'),
+        btnSnd2 = new Audio('/system10/assets/sounds/btn1.mp3')
+
+    window.onclick = clickSound;
+
+    function moduleSound() {
+        btnSnd1.play();
+    }
+
+    function clickSound() {
+        btnSnd2.play();
+    }
+
+    function moduleDone(moduleName){
+        alert("Módulo Concluido");
+    }
+
+    function clog(content){
+        console.log(content)
+    }
+
+    function gebid(elm){
+        return document.getElementById(elm)
+    }
+
+</script>
+
+<script src="/system10/js/modules/{{oneModule.name}}.js"></script>

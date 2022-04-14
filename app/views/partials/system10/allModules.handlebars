@@ -4,13 +4,19 @@
     <div class="col-6 my-2" id="{{name}}Card">
 {{/if}}
 
-    <a id="{{name}}TagA" role="button" target="_blank" class="games-box btn btn-module {{specificClass}} w-100 card-module d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="moduleSound()">
-        <div id="{{name}}TitleCard" class="games-box-title {{specificClass}}">{{name}}</div>
 
-        <div class="games-box-caption">
-            <div class="platform-body">{{{letter}}}</div>
+    <a role="button" id="{{name}}TagA" class="card-box card-box-module border-custom {{specificClass}} rounded" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="moduleSound()">
+        <div id="{{name}}TitleCard" class="card-box-title shadow-custom {{specificClass}}">
+            {{name}}
+        </div>
+
+        <div class="card-box-caption">
+            <div class="caption-body shadow-custom {{specificClass}} font-nasalization">
+                {{{letter}}}
+            </div>
         </div>
     </a>
+
 </div>
 
 {{> (lookup . 'path') this}}

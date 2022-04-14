@@ -5,12 +5,12 @@ const 	_pathUpdateInitPage = '/room10c/update/init/',
 		_pathModuleDone = '/room10c/moduleDone/',
 		_pathModuleDoneOmega = '/room10c/moduleDoneOmega/'
 
-const	phaseGroup = document.getElementById('phaseGroup').value,
-		omegaReady = document.getElementById('omegaReady').value == 'true',
+const	phaseGroup = gebid('phaseGroup').value,
+		omegaReady = gebid('omegaReady').value == 'true',
 		timeBlockDefault = 10
 
-var modulesDone = JSON.parse(document.getElementById('modulesDone').value),
-	timeSeconds = parseInt(document.getElementById('timeSeconds').value)
+var modulesDone = JSON.parse(gebid('modulesDone').value),
+	timeSeconds = parseInt(gebid('timeSeconds').value)
 
 if(omegaReady && phaseGroup != 'done'){
 	gebid('modalQuestionsBody').classList.add('d-none')
@@ -34,7 +34,23 @@ window.onload = (event) => {
 
 function loadFinal(){
 	if(phaseGroup == 'done'){
-		new bootstrap.Modal(document.getElementById('omegaModule'), {
+		new bootstrap.Modal(gebid('omegaModule'), {
+			keyboard: false
+		}).show()
+	}
+}
+
+function loadOmegaIntro(){
+	if(phaseGroup == 'omega'){
+		new bootstrap.Modal(gebid('modalOmegaIntro'), {
+			keyboard: false
+		}).show()
+	}
+}
+
+function loadIntro(){
+	if(phaseGroup == 'init'){
+		new bootstrap.Modal(gebid('file1Modal'), {
 			keyboard: false
 		}).show()
 	}
@@ -66,7 +82,7 @@ btnSnd2.volume = 0.01;
 window.onclick = clickSound;
 
 function changeVolume(volume){
-	document.getElementById('spanVolume').innerHTML = Math.ceil(((Math.exp(volume) - 1) / 53.8) * 100)
+	gebid('spanVolume').innerHTML = Math.ceil(((Math.exp(volume) - 1) / 53.8) * 100)
 	ambSnd.volume = (Math.exp(volume) - 1) / 53.8
 }
 
@@ -80,14 +96,14 @@ function ambientSound(isChecked) {
 
 		ambSnd.play();
 
-		document.getElementById('pStateAudio').classList.add('d-none')
-		document.getElementById('iconPlay').classList.replace('fa-play', 'fa-stop')
+		gebid('pStateAudio').classList.add('d-none')
+		gebid('iconPlay').classList.replace('fa-play', 'fa-stop')
 	}
 	
 	else{
 		ambSnd.pause();
-		document.getElementById('pStateAudio').classList.remove('d-none')
-		document.getElementById('iconPlay').classList.replace('fa-stop', 'fa-play')
+		gebid('pStateAudio').classList.remove('d-none')
+		gebid('iconPlay').classList.replace('fa-stop', 'fa-play')
 	}
 }
 
@@ -100,9 +116,9 @@ function clickSound() {
 }
 
 function staticBack(isChecked) {
-	let gifOmega = document.getElementById('gifOmega'),
-		imgOmega = document.getElementById('imgOmega'),
-		iconBackOmega = document.getElementById('iconBack')
+	let gifOmega = gebid('gifOmega'),
+		imgOmega = gebid('imgOmega'),
+		iconBackOmega = gebid('iconBack')
 
 	if(isChecked){
 		document.body.classList.replace('backGif', 'backImg');
@@ -114,7 +130,7 @@ function staticBack(isChecked) {
 	}
 	
 	else {
-		document.body.classList.replace('backGif', 'backImg');
+		document.body.classList.replace('backImg', 'backGif');
 		
 		gifOmega.classList.remove('d-none')
 		imgOmega.classList.add('d-none')
@@ -149,12 +165,15 @@ async function postData (_path, _data){
 function moduleDoneVisual(moduleName){
 	modulesDone.push(moduleName)
 
-	document.getElementById(moduleName + 'BodyNot').classList.add('d-none')
+	gebid(moduleName + 'BodyNot').classList.add('d-none')
 
-	document.getElementById(moduleName + 'BodyDone').classList.remove('d-none')
+	gebid(moduleName + 'BodyDone').classList.remove('d-none')
 
-	document.getElementById(moduleName + 'TagA').classList.replace('bhaskara', 'sridhara')
-	document.getElementById(moduleName + 'TitleCard').classList.replace('bhaskara', 'sridhara')
+	gebid(moduleName + 'TagA').classList.replace('bhaskara', 'sridhara')
+	gebid(moduleName + 'TitleCard').classList.replace('bhaskara', 'sridhara')
+
+	gebid(moduleName + 'Module').getElementsByClassName('modal-content')[0].classList.replace('bhaskara', 'sridhara')
+	gebid(moduleName + 'Module').getElementsByClassName('modal-header')[0].classList.replace('bhaskara', 'sridhara')
 }
 
 function moduleDone(moduleName){
@@ -181,7 +200,7 @@ function updateInitPage(){
 
 	gebid('timeSecondsShow').innerHTML = (timeSeconds / 60).toFixed(2)
 
-	getData(_pathUpdateInitPage, document.getElementById('idGroup').value).then(resp => {
+	getData(_pathUpdateInitPage, gebid('idGroup').value).then(resp => {
 
 		if(!resp.err){
 			if(resp.phase != phaseGroup){
@@ -194,11 +213,11 @@ function updateInitPage(){
 			}
 		}
 		else{
-			console.log('err')
+			clog('err')
 		}
 
 	}).catch(err => {
-		console.log(err)
+		clog(err)
 	})
 }
 
@@ -208,7 +227,7 @@ function updateFinalPage(){
 
 	gebid('timeSecondsShow').innerHTML = (timeSeconds / 60).toFixed(2)
 
-	getData(_pathUpdateFinalPage, document.getElementById('idGroup').value).then(resp => {
+	getData(_pathUpdateFinalPage, gebid('idGroup').value).then(resp => {
 
 		if(!resp.err){
 			if(resp.phase != phaseGroup){
@@ -216,28 +235,28 @@ function updateFinalPage(){
 			}
 		}
 		else{
-			console.log('err')
+			clog('err')
 		}
 
 	}).catch(err => {
-		console.log(err)
+		clog(err)
 	})
 }
 
 function changeQuestion(index, action){
 
-	let oneModal = bootstrap.Modal.getInstance(document.getElementById('modalQuestion' + index))
+	let oneModal = bootstrap.Modal.getInstance(gebid('modalQuestion' + index))
 
-	let omegaModuleSize = document.getElementById('omegaModuleSize').value
+	let omegaModuleSize = gebid('omegaModuleSize').value
 
 	if(action == 'prev'){
 		try{
-			new bootstrap.Modal(document.getElementById('modalQuestion' + (index - 1)), {
+			new bootstrap.Modal(gebid('modalQuestion' + (index - 1)), {
 				keyboard: false
 			}).show()
 		}
 		catch(err){
-			new bootstrap.Modal(document.getElementById('modalQuestion' + (omegaModuleSize - 1)), {
+			new bootstrap.Modal(gebid('modalQuestion' + (omegaModuleSize - 1)), {
 				keyboard: false
 			}).show()
 		}		
@@ -248,12 +267,12 @@ function changeQuestion(index, action){
 	}
 	else if(action == 'next'){
 		try{
-			new bootstrap.Modal(document.getElementById('modalQuestion' + (index + 1)), {
+			new bootstrap.Modal(gebid('modalQuestion' + (index + 1)), {
 				keyboard: false
 			}).show()
 		}
 		catch(err){
-			new bootstrap.Modal(document.getElementById('modalQuestion0'), {
+			new bootstrap.Modal(gebid('modalQuestion0'), {
 				keyboard: false
 			}).show()
 		}		
@@ -264,13 +283,13 @@ function changeQuestion(index, action){
 }
 
 function ansQuestion(num, letter){
-	document.getElementById('descriptionQuestion' + num).innerHTML = letter
-	document.getElementById('buttonQuestion' + num).classList.remove('border-qomega')
+	gebid('descriptionQuestion' + num).innerHTML = letter
+	gebid('buttonQuestion' + num).classList.remove('qomega')
 }
 
 function sendOmega(){
 	try{
-		let allId = JSON.parse(document.getElementById('arrayIdOmegaModule').value),
+		let allId = JSON.parse(gebid('arrayIdOmegaModule').value),
 			dataToSend = {omega: {}}
 	
 		for(oneId of allId){
@@ -295,14 +314,14 @@ function sendOmega(){
 			}
 			
 		}).catch(err => {
-			console.log(err)
+			clog(err)
 			location.reload()
 		})
 
 	}
 	catch(err){
-		console.log(err)
-		document.getElementById('errOmegaModule').classList.remove('d-none')
+		clog(err)
+		gebid('errOmegaModule').classList.remove('d-none')
 	}
 }
 
