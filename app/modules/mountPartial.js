@@ -4,18 +4,19 @@ const   fs = require('fs'),
 
 var hbs = exphbs.create({});
 
-console.log('\n##### -- Path process.cwd()\n' + process.cwd() + '\n\n')
+console.log('\n##### -- Path process.cwd()\n' + process.cwd())
+console.log('\n##### -- Path __dirname\n' + __dirname + '\n')
 
-/* 
-hbs.handlebars.registerPartial('adminParticipants', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminParticipants.handlebars').toString('utf-8')));
-hbs.handlebars.registerPartial('adminModules', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminModules.handlebars').toString('utf-8')));
-hbs.handlebars.registerPartial('adminGroups', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminGroups.handlebars').toString('utf-8')));
- */
-hbs.handlebars.registerPartial('adminParticipants', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminParticipants.handlebars').toString('utf-8')));
-hbs.handlebars.registerPartial('adminModules', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminModules.handlebars').toString('utf-8')));
-hbs.handlebars.registerPartial('adminGroups', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminGroups.handlebars').toString('utf-8')));
-
-
+if(process.env.NODE_ENV === 'development'){
+    hbs.handlebars.registerPartial('adminParticipants', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminParticipants.handlebars').toString('utf-8')));
+    hbs.handlebars.registerPartial('adminModules', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminModules.handlebars').toString('utf-8')));
+    hbs.handlebars.registerPartial('adminGroups', hbs.handlebars.compile(fs.readFileSync(process.cwd() + '/app/views/partials/system10/adminGroups.handlebars').toString('utf-8')));
+}
+else{
+    hbs.handlebars.registerPartial('adminParticipants', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminParticipants.handlebars').toString('utf-8')));
+    hbs.handlebars.registerPartial('adminModules', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminModules.handlebars').toString('utf-8')));
+    hbs.handlebars.registerPartial('adminGroups', hbs.handlebars.compile(fs.readFileSync('/opt/system/app/views/partials/system10/adminGroups.handlebars').toString('utf-8')));
+}
 
 module.exports = {
     createAdminParticipants: (allParticipants) => {

@@ -171,6 +171,8 @@ async function initPage(oneParticipant, oneGroup, idVoice){
         omegaModuleContent = await Omega.find().lean()
         arrayIdOmegaModule = JSON.stringify(omegaModuleContent.map(value => {return value._id}))
 
+        modulesInfo.modulesNotDone = [{name: 'omega'}]
+
     }
     else{
         if(oneGroup.phase == 'init') initPhase = true
