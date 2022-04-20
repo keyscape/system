@@ -93,6 +93,31 @@
 
                     {{> system10/files/fileX}}
 
+                {{else}}
+
+                    {{#if omegaContent.showOmega}}
+                        <h3 class="my-2">INFOS</h3>
+                    
+                        <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
+                            <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file1Modal">
+                                <div class="card-box-title">
+                                    <img style="opacity: 0.85;" src="/system10/assets/room/file1.png" width="60%">
+                                </div>
+                                <div class="card-box-caption">
+                                    <div class="caption-head shadow-custom text-light">
+                                        Arquivo
+                                    </div>
+
+                                    <div class="caption-body shadow-custom">
+                                        #1
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        {{> system10/files/file1}}
+                    {{/if}}
+
                 {{/if}}
 
             {{/if}}
@@ -104,12 +129,34 @@
         <h3 class="my-2">MÓDULO</h3>
 
         <div class="row col-12 col-sm-8 justify-content-center">
-            {{> system10/allModules oneModule}} 
+            {{#unless omegaContent.showOmega}}
+                {{> system10/allModules oneModule}} 
+            {{else}}
+
+                <div class="col-6 my-2" id="{{oneModule.name}}Card">
+                    <a role="button" id="{{oneModule.name}}TagA" class="card-box card-box-module border-custom {{oneModule.specificClass}} rounded" data-bs-toggle="modal" data-bs-target="#{{oneModule.name}}Module" onclick="moduleSound()">
+                        <div id="{{oneModule.name}}TitleCard" class="card-box-title shadow-custom {{oneModule.specificClass}}">
+                            {{oneModule.name}}
+                        </div>
+
+                        <div class="card-box-caption">
+                            <div class="caption-body shadow-custom {{oneModule.specificClass}} font-nasalization">
+                                {{{oneModule.letter}}}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                {{> system10/modules/omegaModule omegaModuleContent}}
+
+            {{/unless}}
         </div>
-
     </div>
-
 </div>
+
+<input class="d-none" id="omegaModuleSize" value="{{omegaModuleContent.length}}">
+<input class="d-none" id="arrayIdOmegaModule" value="{{arrayIdOmegaModule}}">
+<input class="d-none" id="allOmegas" value="{{allOmegas}}">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -141,7 +188,42 @@
     }
 
     function moduleDone(moduleName){
-        alert("Módulo Concluido");
+        alert("Módulo Concluído");
+    }
+
+    function sendOmega(){
+        try{
+            let allId = JSON.parse(gebid('arrayIdOmegaModule').value),
+                dataToSend = {omega: {}}
+        
+            for(oneId of allId){
+                dataToSend.omega[oneId] = document.querySelector('input[name="' + oneId + '"]:checked').value
+            }
+
+            gebid('modalQuestionsBody').classList.add('d-none')
+            gebid('modalQuestionsFooter').classList.add('d-none')
+            gebid('modalLoading').classList.remove('d-none')
+
+            let allOmegas = JSON.parse(gebid('allOmegas').value),
+                omegaValue = [0.0, 0.0]
+                
+            for(oneOmega of allOmegas){
+                for(oneAlternative of oneOmega.alternatives){
+                    if(oneAlternative.letter == dataToSend.omega[oneOmega._id.toString()]){
+                        omegaValue[0] += oneAlternative.value[0]
+                        omegaValue[1] += oneAlternative.value[1]
+
+                        break
+                    }
+                }
+            }
+
+            alert('A: ' + omegaValue[0].toFixed(2) + '\nB: ' + omegaValue[1].toFixed(2) + '\n\nMódulo Concluído');
+
+        }
+        catch(err){
+            gebid('errOmegaModule').classList.remove('d-none')
+        }
     }
 
     function clog(content){
