@@ -1,0 +1,116 @@
+<div class="modal fade" id="{{name}}Module" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-custom {{specificClass}}">
+            <div class="modal-header border-custom {{specificClass}} justify-content-center">
+                <h4 class="modal-title text-center">{{name}}</h4>
+
+                <div style="right: 3%; z-index: 10" class="position-absolute">
+                    <a role="button" class="link-light text-decoration-none" tabindex="0" data-bs-html=true data-bs-trigger="focus" data-bs-container="body" data-bs-placement="left" data-bs-toggle="popover" title="Dicas" data-bs-content="<strong>[0]</strong> Arquivo 2: Papel;<br><strong>[1]</strong> Dobre o papel;<br><strong>[2]</strong> _ - _">
+                        <i class="far fa-question-circle align-middle h3 m-0"></i>
+                    </a>
+
+                    <a role="button" class="link-light ms-2 text-decoration-none" data-bs-dismiss="modal">
+                        <i class="fas fa-times align-middle h3 m-0"></i>
+                    </a>
+                </div>
+
+
+            </div>
+            {{#if isDone}}
+                <div id="{{name}}BodyDone" class="modal-body">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h6>Módulo Finalizado</h6>
+                        <h6>Informação Recuperada</h6>
+                        <img class="img-fluid" src="/system10c/assets/gama/done.png">
+                    </div>
+                </div>
+            {{else}}
+                <div id="{{name}}BodyNot" class="modal-body">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12">
+                            <h4 class="mb-1">Sequência</h4>
+                            <h5 class="mb-3">14 - 5E - 7G</h5>
+   
+                            <div class="row justify-content-center text-center mb-3">
+
+                                <h5>Formato do papel</h5>
+
+                                <input type="radio" name="gamaRadio" class="d-none" value="0" autocomplete="off" checked>
+
+                                <div class="col-sm-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="1" id="btn-check-gama-1" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-1" for="btn-check-gama-1">
+                                        <img class="img-fluid" src="/system10c/assets/gama/1.png">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="2" id="btn-check-gama-2" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-2" for="btn-check-gama-2">
+                                        <img class="img-fluid" src="/system10c/assets/gama/2.png">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="3" id="btn-check-gama-3" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-3" for="btn-check-gama-3">
+                                        <img class="img-fluid" src="/system10c/assets/gama/3.png">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="4" id="btn-check-gama-4" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-4" for="btn-check-gama-4">
+                                        <img class="img-fluid" src="/system10c/assets/gama/4.png">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="5" id="btn-check-gama-5" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-5" for="btn-check-gama-5">
+                                        <img class="img-fluid" src="/system10c/assets/gama/5.png">
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="row justify-content-center text-center mt-4 mb-3">
+
+                                <h5>Letras e números completamente visíveis</h5>
+
+                                <div class="col-sm-4">
+                                    <div class="form-floating text-dark">
+                                        <input type="text" class="form-control form-control-custom" id="floatingInputGamaFront" placeholder="Frente">
+                                        <label class="label-custom" for="floatingInputGamaFront">Frente</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="form-floating text-dark">
+                                        <input type="text" class="form-control form-control-custom" id="floatingInputGamaBack" placeholder="Frente">
+                                        <label class="label-custom" for="floatingInputGamaBack">Verso</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button id="buttonGamaSubmit" type="button" class="btn btn-outline-light mb-3" onclick="gamaSubmit()">Enviar</button>
+
+                            <h5 id="countdownGama" class="d-none">10</h5>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="{{name}}BodyDone" class="modal-body d-none">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h6>Módulo Finalizado</h6>
+                        <h6>Informação Recuperada</h6>
+                        <img class="img-fluid" src="/system10c/assets/gama/done.png">
+                    </div>
+                </div>
+
+            {{/if}}
+        </div>
+    </div>
+</div> 

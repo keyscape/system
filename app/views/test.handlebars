@@ -9,7 +9,7 @@
             <div class="col-6 col-sm-2 p-0 me-2 mb-3 overflow-hidden">
                 <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file3Modal">
                     <div class="card-box-title">
-                        <img style="opacity: 0.85;" src="/system10/assets/room/file3.png" width="60%">
+                        <img style="opacity: 0.85;" src="/system10c/assets/room/file3.png" width="60%">
                     </div>
                     <div class="card-box-caption">
                         <div class="caption-head shadow-custom text-light">
@@ -26,7 +26,7 @@
             <div class="col-6 col-sm-2 p-0 ms-2 mb-3 overflow-hidden">
                 <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file4Modal">
                     <div class="card-box-title">
-                        <img style="opacity: 0.85;" src="/system10/assets/room/file4.png" width="60%">
+                        <img style="opacity: 0.85;" src="/system10c/assets/room/file4.png" width="60%">
                     </div>
                     <div class="card-box-caption">
                         <div class="caption-head shadow-custom text-light">
@@ -40,8 +40,8 @@
                 </a>
             </div>
 
-            {{> system10/files/file3}}
-            {{> system10/files/file4}}
+            {{> system10c/files/file3}}
+            {{> system10c/files/file4}}
 
         {{else}}
 
@@ -52,7 +52,7 @@
                 <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
                     <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file2Modal">
                         <div class="card-box-title">
-                            <img style="opacity: 0.85;" src="/system10/assets/room/file2.png" width="60%">
+                            <img style="opacity: 0.85;" src="/system10c/assets/room/file2.png" width="60%">
                         </div>
                         <div class="card-box-caption">
                             <div class="caption-head shadow-custom text-light">
@@ -66,7 +66,7 @@
                     </a>
                 </div>
 
-                {{> system10/files/file2}}
+                {{> system10c/files/file2}}
 
             {{else}}
 
@@ -77,7 +77,7 @@
                     <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
                         <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file3Modal">
                             <div class="card-box-title">
-                                <img style="opacity: 0.85;" src="/system10/assets/room/file3.png" width="60%">
+                                <img style="opacity: 0.85;" src="/system10c/assets/room/file3.png" width="60%">
                             </div>
                             <div class="card-box-caption">
                                 <div class="caption-head shadow-custom text-light">
@@ -91,7 +91,7 @@
                         </a>
                     </div>
 
-                    {{> system10/files/fileX}}
+                    {{> system10c/files/fileX}}
 
                 {{else}}
 
@@ -101,7 +101,7 @@
                         <div class="col-6 col-sm-2 p-0 mb-3 overflow-hidden">
                             <a role="button" class="card-box h-100 py-3 border-custom rounded" data-bs-toggle="modal" data-bs-target="#file1Modal">
                                 <div class="card-box-title">
-                                    <img style="opacity: 0.85;" src="/system10/assets/room/file1.png" width="60%">
+                                    <img style="opacity: 0.85;" src="/system10c/assets/room/file1.png" width="60%">
                                 </div>
                                 <div class="card-box-caption">
                                     <div class="caption-head shadow-custom text-light">
@@ -115,7 +115,7 @@
                             </a>
                         </div>
 
-                        {{> system10/files/file1}}
+                        {{> system10c/files/file1}}
                     {{/if}}
 
                 {{/if}}
@@ -130,7 +130,7 @@
 
         <div class="row col-12 col-sm-8 justify-content-center">
             {{#unless omegaContent.showOmega}}
-                {{> system10/allModules oneModule}} 
+                {{> system10c/allModules oneModule}} 
             {{else}}
 
                 <div class="col-6 my-2" id="{{oneModule.name}}Card">
@@ -147,7 +147,7 @@
                     </a>
                 </div>
 
-                {{> system10/modules/omegaModule omegaModuleContent}}
+                {{> system10c/modules/omegaModule omegaModuleContent}}
 
             {{/unless}}
         </div>
@@ -174,8 +174,8 @@
 
     const timeBlockDefault = 10
 
-    var btnSnd1 = new Audio('/system10/assets/sounds/btn0.mp3'),
-        btnSnd2 = new Audio('/system10/assets/sounds/btn1.mp3')
+    var btnSnd1 = new Audio('/system10c/assets/sounds/btn0.mp3'),
+        btnSnd2 = new Audio('/system10c/assets/sounds/btn1.mp3')
 
     window.onclick = clickSound;
 
@@ -236,4 +236,4 @@
 
 </script>
 
-<script src="/system10/js/modules/{{oneModule.name}}.js"></script>
+<script src="/system10c/js/modules/{{oneModule.name}}.js"></script>

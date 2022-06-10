@@ -1,0 +1,111 @@
+
+<div class="col-12 my-2" id="deltaCard">
+
+    <a role="button" id="{{name}}TagA" class="card-box card-box-module border-custom {{@root.generalClass}} rounded" data-bs-toggle="modal" data-bs-target="#deltaModule" onclick="moduleSound()">
+        <div class="card-box-title shadow-custom {{@root.generalClass}}" id="deltaTitleCard">
+            delta
+        </div>
+
+        <div class="card-box-caption">
+            <div class="caption-body shadow-custom {{@root.generalClass}} font-nasalization">
+                δ
+            </div>
+        </div>
+    </a>
+
+</div>
+
+
+<div class="modal fade" id="deltaModule" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-custom {{@root.generalClass}}">
+            <div class="modal-header border-custom {{@root.generalClass}} justify-content-center">
+                <h4 class="modal-title text-center">delta</h4>
+
+                <div style="right: 3%; z-index: 10" class="position-absolute">
+                    <a role="button" class="link-light" data-bs-dismiss="modal">
+                        <i class="fas fa-times align-middle h3 m-0"></i>
+                    </a>
+                </div>
+            </div>
+
+            {{#if isDone}}
+                <div class="modal-body">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h6>Módulo Finalizado</h6>
+                        <h6>Informação Recuperada</h6>
+                        <img class="img-fluid" src="/system10c/assets/delta/done.jpg">
+                    </div>
+                </div>
+            {{else}}
+                <div class="modal-body">
+                    <div class="row justify-content-center text-center" style="font-size: 25px">
+                        <h6>Olá Sílvio, para liberar o módulo ÔMEGA, faça login</h6>
+
+                        <div class="col-sm-6 my-3">
+                            <div class="form-floating text-dark">
+                                <input type="email" class="form-control form-control-custom small-5" id="floatingInputDeltaEmail" placeholder="E-mail">
+                                <label class="label-custom" for="floatingInputDeltaEmail">E-mail</label>
+                            </div>
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="row mb-2">
+                                <div class="col-10 pe-0">
+                                    <div class="form-floating text-dark">
+                                        <input type="password" class="form-control form-control-custom small-5" id="floatingInputDeltaPwd" placeholder="Senha">
+                                        <label class="label-custom" for="floatingInputDeltaPwd">Senha</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-2 ps-0">
+                                    <button class="btn btn-outline-light w-100 h-100 eye-border" type="button" id="buttonEye">
+                                        <i class="fas fa-eye-slash" id="iconEye"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                            
+                            <a tabindex="0" class="link-secondary small-6" role="button" data-bs-container="body" data-bs-placement="bottom" data-bs-toggle="popover" data-bs-trigger="focus" title="Dica" data-bs-content="Meu animal de estimação tem 8 pernas">Esqueceu sua senha?</a>
+
+                        </div>
+
+                        <div class="w-100"></div>
+
+                        <div class="col-sm-5 mb-3">
+                            <button id="buttonDeltaSubmit" type="button" class="btn btn-outline-light" onclick="deltaSubmit()">Entrar</button>
+                        </div>
+
+                        <h5 id="countdownDelta" class="d-none">10</h5>
+
+                    </div>
+                </div>
+
+                <script>
+                    document.getElementById('buttonEye').addEventListener('mousedown', () => {
+                        document.getElementById('floatingInputDeltaPwd').type = 'text';
+                        document.getElementById("iconEye").classList.remove('fa-eye-slash');
+                        document.getElementById("iconEye").classList.add('fa-eye');
+                    });
+
+                    document.getElementById('buttonEye').addEventListener('mouseup', () => {
+                        document.getElementById('floatingInputDeltaPwd').type = 'password';
+                        document.getElementById("iconEye").classList.remove('fa-eye');
+                        document.getElementById("iconEye").classList.add('fa-eye-slash');
+                    });
+
+                    // Para que o password não fique exposto apos mover a imagem.
+                    document.getElementById('buttonEye').addEventListener('mousemove', () => {
+                        document.getElementById('floatingInputDeltaPwd').type = 'password';
+                        document.getElementById("iconEye").classList.remove('fa-eye');
+                        document.getElementById("iconEye").classList.add('fa-eye-slash');
+                    });
+                </script>
+
+            {{/if}}
+
+        </div>
+    </div>
+</div> 

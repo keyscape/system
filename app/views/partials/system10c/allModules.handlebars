@@ -1,0 +1,22 @@
+{{#if @root.initPhase}}
+    <div class="col-12 my-2" id="{{name}}Card">
+{{else}}
+    <div class="col-6 my-2" id="{{name}}Card">
+{{/if}}
+
+
+    <a role="button" id="{{name}}TagA" class="card-box card-box-module border-custom {{specificClass}} rounded" data-bs-toggle="modal" data-bs-target="#{{name}}Module" onclick="moduleSound()">
+        <div id="{{name}}TitleCard" class="card-box-title shadow-custom {{specificClass}}">
+            {{name}}
+        </div>
+
+        <div class="card-box-caption">
+            <div class="caption-body shadow-custom {{specificClass}} font-nasalization">
+                {{{letter}}}
+            </div>
+        </div>
+    </a>
+
+</div>
+
+{{> (lookup . 'path') this}}

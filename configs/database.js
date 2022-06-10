@@ -9,7 +9,7 @@ const mongoose = require('mongoose'); /* Importa o módulo mongoose */
 
 /* Conectar no banco */
 module.exports = mongoose
-	.connect(process.env.NODE_ENV === 'development' ? process.env.MONGODB_DEV_KEY : process.env.MONGODB_PROD_KEY, {
+	.connect(process.env.NODE_ENV === 'production' ? process.env.MONGODB_PROD_KEY : process.env.MONGODB_DEV_KEY, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})

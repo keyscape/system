@@ -6,7 +6,7 @@ const omegaAns = [
             name: 'Epsilon',
             letter: 'ε',
         },
-        question: '<img class="img-fluid" width="80%" src="/system10/assets/omega/img1.jpg">',
+        question: '<img class="img-fluid" width="80%" src="/system10c/assets/omega/img1.jpg">',
         alternatives: [
             {
                 letter: 'a',
