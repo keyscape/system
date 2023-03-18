@@ -288,12 +288,12 @@ module.exports = {
                 if(oneGroup){
                     
                     if(oneGroup.situation == 'todo'){
-                        res.render('wait', {title: '10Conectados', pathFile: 'system10c/', generalClass: 'wait', idGroup: oneGroup._id})
+                        res.render('wait', {title: '10Conectados', pathFile: 'system10c/', generalClass: 'wait', idGroup: oneGroup._id, assetsVersion: process.env.ASSETS_VERSION})
                     }
                     else{
                         const initInfos = await initPage(oneParticipant, oneGroup, oneParticipant.voice)
     
-                        res.render('system10c', {title: '10Conectados', pathFile: 'system10c/', oneUser: req.user, ...initInfos})
+                        res.render('system10c', {title: '10Conectados', pathFile: 'system10c/', oneUser: req.user, ...initInfos, assetsVersion: process.env.ASSETS_VERSION})
                     }
                 }
                 else throw 'Error: Não achou o grupo'

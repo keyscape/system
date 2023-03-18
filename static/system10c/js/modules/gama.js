@@ -1,12 +1,10 @@
 
-var timeCountdownGama = timeBlockDefault,
+var timeCountdownGama = timeBlockDefault + 20,
     intervalCountdownGama
 
 function gamaSubmit(){
-    let front = document.getElementById('floatingInputGamaFront'),
-        back = document.getElementById('floatingInputGamaBack')
 
-    if(document.querySelector('input[name="gamaRadio"]:checked').value == '3' && ((front.value == '8' && back.value == '6') || (front.value == '6' && back.value == '8'))){
+    if(document.querySelector('input[name="gamaRadio"]:checked').value == '5'){
 
         document.getElementById('buttonGamaSubmit').style.backgroundColor = "#198754"
 
@@ -33,7 +31,7 @@ function countdownGama(){
 
         document.getElementById('countdownGama').classList.add('d-none')
 
-        timeCountdownGama = timeBlockDefault
+        timeCountdownGama = timeBlockDefault + 20
 
         clearInterval(intervalCountdownGama)
     }

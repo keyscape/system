@@ -14,14 +14,13 @@
                     </a>
                 </div>
 
-
             </div>
             {{#if isDone}}
                 <div id="{{name}}BodyDone" class="modal-body">
                     <div class="row justify-content-center text-center" style="font-size: 25px">
                         <h6>Módulo Finalizado</h6>
                         <h6>Informação Recuperada</h6>
-                        <img class="img-fluid" src="/system10c/assets/gama/done.png">
+                        <img class="img-fluid" src="/system10c/assets/gama/done.png?assetsVersion={{@root.assetsVersion}}">
                     </div>
                 </div>
             {{else}}
@@ -29,74 +28,83 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-12">
                             <h4 class="mb-1">Sequência</h4>
-                            <h5 class="mb-3">14 - 5E - 7G</h5>
+                            <h5 class="mb-3">6 G - 2 1 - 8 B - 7 3 - D 4</h5>
+
+                            <hr>
    
                             <div class="row justify-content-center text-center mb-3">
 
-                                <h5>Formato do papel</h5>
+                                <div class="col-sm-2">
+                                    <button id="buttonGamaSubmit" type="button" class="btn btn-outline-light mb-3" onclick="gamaSubmit()">Enviar</button>
+                                </div>
+
+                                <div class="w-100"></div>
+
+                                <div class="col-sm-2 my-2">
+                                    <h5 id="countdownGama" class="d-none">30</h5>
+                                </div>
+                                
+                                <div class="w-100"></div>
 
                                 <input type="radio" name="gamaRadio" class="d-none" value="0" autocomplete="off" checked>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-4 mb-2">
                                     <input type="radio" name="gamaRadio" class="btn-check" value="1" id="btn-check-gama-1" autocomplete="off">
                                     <label class="btn btn-outline-check" id="label-check-gama-1" for="btn-check-gama-1">
-                                        <img class="img-fluid" src="/system10c/assets/gama/1.png">
+                                        <img class="img-fluid" src="/system10c/assets/gama/1.png?assetsVersion={{@root.assetsVersion}}">
                                     </label>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-4 mb-2">
                                     <input type="radio" name="gamaRadio" class="btn-check" value="2" id="btn-check-gama-2" autocomplete="off">
                                     <label class="btn btn-outline-check" id="label-check-gama-2" for="btn-check-gama-2">
-                                        <img class="img-fluid" src="/system10c/assets/gama/2.png">
+                                        <img class="img-fluid" src="/system10c/assets/gama/2.png?assetsVersion={{@root.assetsVersion}}">
                                     </label>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-4 mb-2">
                                     <input type="radio" name="gamaRadio" class="btn-check" value="3" id="btn-check-gama-3" autocomplete="off">
                                     <label class="btn btn-outline-check" id="label-check-gama-3" for="btn-check-gama-3">
-                                        <img class="img-fluid" src="/system10c/assets/gama/3.png">
+                                        <img class="img-fluid" src="/system10c/assets/gama/3.png?assetsVersion={{@root.assetsVersion}}">
                                     </label>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-4 mb-2">
                                     <input type="radio" name="gamaRadio" class="btn-check" value="4" id="btn-check-gama-4" autocomplete="off">
                                     <label class="btn btn-outline-check" id="label-check-gama-4" for="btn-check-gama-4">
-                                        <img class="img-fluid" src="/system10c/assets/gama/4.png">
+                                        <img class="img-fluid" src="/system10c/assets/gama/4.png?assetsVersion={{@root.assetsVersion}}">
                                     </label>
                                 </div>
 
-                                <div class="col-sm-2">
+                                <div class="col-sm-4 mb-2">
                                     <input type="radio" name="gamaRadio" class="btn-check" value="5" id="btn-check-gama-5" autocomplete="off">
                                     <label class="btn btn-outline-check" id="label-check-gama-5" for="btn-check-gama-5">
-                                        <img class="img-fluid" src="/system10c/assets/gama/5.png">
+                                        <img class="img-fluid" src="/system10c/assets/gama/5.png?assetsVersion={{@root.assetsVersion}}">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4 mb-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="6" id="btn-check-gama-6" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-6" for="btn-check-gama-6">
+                                        <img class="img-fluid" src="/system10c/assets/gama/6.png?assetsVersion={{@root.assetsVersion}}">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4 mb-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="7" id="btn-check-gama-7" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-7" for="btn-check-gama-7">
+                                        <img class="img-fluid" src="/system10c/assets/gama/7.png?assetsVersion={{@root.assetsVersion}}">
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4 mb-2">
+                                    <input type="radio" name="gamaRadio" class="btn-check" value="8" id="btn-check-gama-8" autocomplete="off">
+                                    <label class="btn btn-outline-check" id="label-check-gama-8" for="btn-check-gama-8">
+                                        <img class="img-fluid" src="/system10c/assets/gama/8.png?assetsVersion={{@root.assetsVersion}}">
                                     </label>
                                 </div>
 
                             </div>
-
-                            <div class="row justify-content-center text-center mt-4 mb-3">
-
-                                <h5>Letras e números completamente visíveis</h5>
-
-                                <div class="col-sm-4">
-                                    <div class="form-floating text-dark">
-                                        <input type="text" class="form-control form-control-custom" id="floatingInputGamaFront" placeholder="Frente">
-                                        <label class="label-custom" for="floatingInputGamaFront">Frente</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="form-floating text-dark">
-                                        <input type="text" class="form-control form-control-custom" id="floatingInputGamaBack" placeholder="Frente">
-                                        <label class="label-custom" for="floatingInputGamaBack">Verso</label>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <button id="buttonGamaSubmit" type="button" class="btn btn-outline-light mb-3" onclick="gamaSubmit()">Enviar</button>
-
-                            <h5 id="countdownGama" class="d-none">10</h5>
 
                         </div>
                     </div>
@@ -106,7 +114,7 @@
                     <div class="row justify-content-center text-center" style="font-size: 25px">
                         <h6>Módulo Finalizado</h6>
                         <h6>Informação Recuperada</h6>
-                        <img class="img-fluid" src="/system10c/assets/gama/done.png">
+                        <img class="img-fluid" src="/system10c/assets/gama/done.png?assetsVersion={{@root.assetsVersion}}">
                     </div>
                 </div>
 

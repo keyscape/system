@@ -9,7 +9,7 @@ module.exports = {
             oneGroup.date = oneGroup.date.substr(8,2) + '/' + oneGroup.date.substr(5,2) + '/' + oneGroup.date.substr(0,4)
         }
         
-        res.render('main10c', {title: '10Conectados', pathFile: 'system10c/', generalClass: 'control', user: req.user, allGroups})
+        res.render('main10c', {title: '10Conectados', pathFile: 'system10c/', generalClass: 'control', user: req.user, allGroups, assetsVersion: process.env.ASSETS_VERSION})
         
     }
 };

@@ -4,7 +4,7 @@ const bcrypt =  require('bcryptjs')
 
 module.exports = {
     get: (req, res) => {
-        res.render('user', {title: '10Conectados | Usuário', pathFile: 'system10c/', generalClass: 'user', user: req.user})
+        res.render('user', {title: '10Conectados | Usuário', pathFile: 'system10c/', generalClass: 'user', user: req.user, assetsVersion: process.env.ASSETS_VERSION})
 
 
     },

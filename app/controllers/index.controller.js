@@ -15,7 +15,7 @@ module.exports = {
 
 		contentAll.team.columns = parseInt(12 / contentAll.team.columns)
 
-		res.render('index', {title: 'Keyscape', ...contentAll});
+		res.render('index', {title: 'Keyscape', ...contentAll, assetsVersion: process.env.ASSETS_VERSION});
 
 	}
 };

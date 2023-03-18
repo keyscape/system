@@ -43,7 +43,7 @@ module.exports = {
 
         
 
-        res.render('admin10c', {title: '10Conectados | Admin', pathFile: 'system10c/', generalClass: 'admin', user: req.user, allGroups, allDates, nGroups: allGroups.length})
+        res.render('admin10c', {title: '10Conectados | Admin', pathFile: 'system10c/', generalClass: 'admin', user: req.user, allGroups, allDates, nGroups: allGroups.length, assetsVersion: process.env.ASSETS_VERSION})
 
     },
     postCreateGroup: (req, res) => {
@@ -81,7 +81,7 @@ module.exports = {
 
                 let allParticipants = await prepareParticipants(oneGroup)
 
-                res.render('updateGroup10c', {title: '10Conectados | Editar Grupo', pathFile: 'system10c/', generalClass: 'admin', allParticipants, allModules: oneGroup.modules, oneGroup, options: await Option.find().lean()})
+                res.render('updateGroup10c', {title: '10Conectados | Editar Grupo', pathFile: 'system10c/', generalClass: 'admin', allParticipants, allModules: oneGroup.modules, oneGroup, options: await Option.find().lean(), assetsVersion: process.env.ASSETS_VERSION})
             
             }
             else{

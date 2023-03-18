@@ -36,7 +36,7 @@ module.exports = {
 
                 }
         
-                res.render('test', {title: '10Conectados | Teste', pathFile: 'system10c/', generalClass: 'test', oneModule, miModuleContent, whatModule, ...allOmegaModuleContent})
+                res.render('test', {title: '10Conectados | Teste', pathFile: 'system10c/', generalClass: 'test', oneModule, miModuleContent, whatModule, ...allOmegaModuleContent, assetsVersion: process.env.ASSETS_VERSION})
             }
             else throw 'Errouuu'
             
