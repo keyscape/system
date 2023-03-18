@@ -4,7 +4,7 @@ var timeCountdownGama = timeBlockDefault + 20,
 
 function gamaSubmit(){
 
-    if(document.querySelector('input[name="gamaRadio"]:checked').value == '5'){
+    if(document.querySelector('input[name="gamaRadio"]:checked').value == '7'){
 
         document.getElementById('buttonGamaSubmit').style.backgroundColor = "#198754"
 

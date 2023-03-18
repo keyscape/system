@@ -4,7 +4,7 @@ var timeCountdownBeta = timeBlockDefault + 20,
 
 function betaSubmit(){
 
-    if(document.querySelector('input[name="betaRadio"]:checked').value == '7'){
+    if(document.querySelector('input[name="betaRadio"]:checked').value == '5'){
 
         document.getElementById('buttonBetaSubmit').style.backgroundColor = "#198754"
 
