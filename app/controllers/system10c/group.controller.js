@@ -95,10 +95,14 @@ async function initPage(oneParticipant, oneGroup, idVoice){
         arrayIdOmegaModule = '',
         initPhase = false,
         deltaContent = {showDelta: true, isDone: true},
-        timeSeconds = oneGroup.duration
+        timeSeconds = oneGroup.duration,
+        formLink = ''
 
 
     if(oneGroup.phase == 'done'){
+        let optionPhases = await Option.findOne().lean()
+        
+        formLink = optionPhases.formLink
 
         if(oneGroup.final == 'C'){
             generalClass = 'aryabhata'
@@ -227,7 +231,8 @@ async function initPage(oneParticipant, oneGroup, idVoice){
         isDone: oneGroup.phase == 'done',
         allVoices,
         nFiles: [1,2,3,4],
-        timeSeconds
+        timeSeconds,
+        formLink
     }
 
 }

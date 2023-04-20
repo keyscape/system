@@ -43,4 +43,3 @@ function ansQuestion(num, letter){
 	gebid('descriptionQuestion' + num).innerHTML = letter
 	gebid('buttonQuestion' + num).classList.remove('qomega')
 }
-

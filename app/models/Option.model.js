@@ -6,7 +6,8 @@ const optionSchema = new Schema({
         type: [String],
         required: true,
     },
-    diffToFinalC: Number
+    diffToFinalC: Number,
+    formLink: String
 })
 
 module.exports = mongoose.model('option', optionSchema);
